@@ -7,34 +7,28 @@ using namespace std;
 int main(){
         vector<int> Teacher_Numbers;
         vector<int> Written_Numbers;
-        cout << "What are the Teachers Numbers? Type 0 then enter to end it " << endl;
-        int Temp_Teacher_Number;
+        
 	int Temp_Number;
-	bool Get_Number = true;
-        while(Get_Number){
-		cin >> Temp_Teacher_Number;
-		if(Temp_Teacher_Number == 0 ){
-			Get_Number = false;
+
+        while(cin >> Temp_Number){
+		bool ForTeacher = false;
+		for(int i = 0; i < Teacher_Numbers.size(); i++){
+			if(Temp_Number == Teacher_Numbers[i]){
+				ForTeacher = true;
+			}
 		}
-		else{
-                	Teacher_Numbers.push_back(Temp_Teacher_Number);
-		}
-        }
-	
-	Get_Number = true;
-        cout << "What are the Written Numbers? Type 0 then enter to end it" << endl;
-        while(Get_Number){
-		cin >> Temp_Number;
-		if(Temp_Number == 0){
-			Get_Number = false;
-		}
-		else{
+		if(ForTeacher){
                 	Written_Numbers.push_back(Temp_Number);
+		}
+		else{
+			Teacher_Numbers.push_back(Temp_Number);
 		}
         }
 	
 	bool Found_Written_Number;
 	bool Found_Teacher_Number;
+	bool Not_True = true;
+
 	for(int i = 0; i < Written_Numbers.size(); i++){
 		Found_Written_Number = false;
 		for(int j = 0; j < Teacher_Numbers.size(); j++){
@@ -44,6 +38,7 @@ int main(){
 		}
 		if(Found_Written_Number == false){
 			cout << Written_Numbers[i] << endl;
+			Not_True = false;
 		}
 	}
 
@@ -56,7 +51,12 @@ int main(){
 		}
 		if(Found_Teacher_Number == false){
 			cout << Teacher_Numbers[j] << endl;
+			Not_True = false;
 		}
+	}
+
+	if(Not_True) {
+		cout << "0" << endl;
 	}
         return 0;
 }
