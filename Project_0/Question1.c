@@ -7,7 +7,7 @@ using namespace std;
 int main(){
         vector<int> Teacher_Numbers;
         vector<int> Written_Numbers;
-        cout << "What are the Teachers Numbers?" << endl;
+        cout << "What are the Teachers Numbers? Type 0 then enter to end it " << endl;
         int Temp_Teacher_Number;
 	int Temp_Number;
 	bool Get_Number = true;
@@ -20,14 +20,9 @@ int main(){
                 	Teacher_Numbers.push_back(Temp_Teacher_Number);
 		}
         }
-        cout << "Teachers Said Numbers Are:" << endl;
-        for(int i = 0; i < Teacher_Numbers.size(); i++){
-                cout << Teacher_Numbers[i] << " ";
-        }
-        cout << endl;
 	
 	Get_Number = true;
-        cout << "What are the Written Numbers?" << endl;
+        cout << "What are the Written Numbers? Type 0 then enter to end it" << endl;
         while(Get_Number){
 		cin >> Temp_Number;
 		if(Temp_Number == 0){
@@ -37,21 +32,30 @@ int main(){
                 	Written_Numbers.push_back(Temp_Number);
 		}
         }
-        cout << "Student Written Numbers Are:" << endl;
-        for(int i = 0; i < Written_Numbers.size(); i++){
-                cout << Written_Numbers[i] << " ";
-        }
-        cout << endl;
 	
-	sort(Teacher_Numbers.begin(), Teacher_Numbers.end());
-	sort(Written_Numbers.begin(), Written_Numbers.end());
-
+	bool Found_Written_Number;
+	bool Found_Teacher_Number;
 	for(int i = 0; i < Written_Numbers.size(); i++){
-		if(Written_Numbers[i] == Teacher_Numbers[i]){
-			cout << "Correct ";
+		Found_Written_Number = false;
+		for(int j = 0; j < Teacher_Numbers.size(); j++){
+			if(Written_Numbers[i] == Teacher_Numbers[j]){
+				Found_Written_Number = true;
+			}
 		}
-		else{
-			cout << Written_Numbers[i];
+		if(Found_Written_Number == false){
+			cout << Written_Numbers[i] << endl;
+		}
+	}
+
+	for(int j = 0; j < Teacher_Numbers.size(); j++){
+		Found_Teacher_Number = false;
+		for(int i = 0; i < Written_Numbers.size(); i++){
+			if(Teacher_Numbers[j] == Written_Numbers[i]){
+				Found_Teacher_Number = true;
+			}
+		}
+		if(Found_Teacher_Number == false){
+			cout << Teacher_Numbers[j] << endl;
 		}
 	}
         return 0;
