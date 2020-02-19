@@ -1,0 +1,3 @@
+/home/sspc/Desktop/AP_Projects/Recursive_Functions/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/sspc/Desktop/AP_Projects/Recursive_Functions/cmake-build-debug/CMakeFiles/Recursive_Functions.dir
+/home/sspc/Desktop/AP_Projects/Recursive_Functions/cmake-build-debug/CMakeFiles/edit_cache.dir
