@@ -1,5 +1,0 @@
-decrypt
-simple
-PASSWORD
-./input.txt
-./output.txt

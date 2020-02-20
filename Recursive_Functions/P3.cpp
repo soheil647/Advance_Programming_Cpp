@@ -1,59 +1,49 @@
-// C++ program to solve Gold Mine problem
-#include<bits/stdc++.h>
+#include<iostream>
+#include<vector>
 using namespace std;
-
-const int MAX = 100;
-// Returns maximum amount of gold that can be collected
-// when journey started from first column and moves
-// allowed are right, right-up and right-down
-int getMaxGold(int gold[][MAX], int m, int n)
+int func(vector<vector<int>>a,int p,int q,int n,int m,int ans)
 {
-    // Create a table for storing intermediate results
-    // and initialize all cells to 0. The first row of
-    // goldMineTable gives the maximum gold that the miner
-    // can collect when starts that row
-    int goldTable[m][n];
-    memset(goldTable, 0, sizeof(goldTable));
-
-    for (int col=n-1; col>=0; col--)
+    if(q==m-1)
     {
-        for (int row=0; row<m; row++)
-        {
-            // Gold collected on going to the cell on the right(->)
-            int right = (col==n-1)? 0: goldTable[row][col+1];
-
-            // Gold collected on going to the cell to right up (/)
-            int right_up = (row==0 || col==n-1)? 0:
-                           goldTable[row-1][col+1];
-
-            // Gold collected on going to the cell to right down (\)
-            int right_down = (row==m-1 || col==n-1)? 0:
-                             goldTable[row+1][col+1];
-
-            // Max gold collected from taking either of the
-            // above 3 paths
-            goldTable[row][col] = gold[row][col] +
-                                  max(right, max(right_up, right_down));
-
-        }
+        return ans;
     }
-
-    // The max amount of gold collected will be the max
-    // value in first column of all rows
-    int res = goldTable[0][0];
-    for (int i=1; i<m; i++)
-        res = max(res, goldTable[i][0]);
-    return res;
+    if(p==0)
+    {
+        return max(func(a,p,q+1,n,m,ans+a[p][q+1]),func(a,p+1,q+1,n,m,ans+a[p+1][q+1]));
+    }
+    else if(p==n-1)
+    {
+        return max(func(a,p,q+1,n,m,ans+a[p][q+1]),func(a,p-1,q+1,n,m,ans+a[p-1][q+1]));
+    }
+    else
+    {
+        return max(func(a,p,q+1,n,m,ans+a[p][q+1]),
+                   max(func(a,p-1,q+1,n,m,ans+a[p-1][q+1]),func(a,p+1,q+1,n,m,ans+a[p+1][q+1])));
+    }
 }
-
-// Driver Code
 int main()
 {
-    int gold[MAX][MAX]= { {0, 6, 0},
-                          {5, 8, 7},
-                          {0, 9, 0}
-    };
-    int m = 4, n = 4;
-    cout << getMaxGold(gold, m, n);
+    //code
+    int t;
+    cin>>t;
+    while(t--)
+    {
+        int n,m;
+        cin>>n>>m;
+        vector<vector<int>>a;
+        for(int i=0;i<n;i++)
+        {
+            for(int j=0;j<m;j++)
+            {
+                int temp;
+                cin>>temp;
+                a[i].push_back(temp);
+            }
+        }
+        int p=0;
+        int q=0;
+        int ans=0;
+        cout<<func(a,p,q,n,m,ans+a[0][0])<<endl;
+    }
     return 0;
 }
