@@ -3,34 +3,37 @@
 
 using namespace std;
 
-string Find_Password(int n, string Char_Set, char New_Char, int indx, long int Hash_Code, string Answer, int number);
+// For Finding Password Recursively
+string Find_Password(string Char_Set, int Password_Length, unsigned long int Password_Hash, string Password);
 
-
-int main(){
-    int Legnth_Password = 4;
-    string Chars = "abcdefghijklmnopqrstuvwxyz";
-    long int Code = 3042236360593357275;
-//    cin >> Legnth_Password;
-//    cin >> Chars;
-//    cin >> Code;
-    cout << Find_Password(Legnth_Password, Chars,Chars[0], 0, Code, "", 0);
+int main() {
+    int Password_Length;
+    string Char_Set;
+    unsigned long int Password_Hash;
+    // Get Input: Length of password, Chars that can be in password and Hash of password
+    cin >> Password_Length >> Char_Set >> Password_Hash;
+    // Recursively find what is the Password
+    cout << Find_Password(Char_Set, Password_Length, Password_Hash, "") << endl;
+    return 0;
 }
 
-string Find_Password(int n, string Char_Set, char New_Char, int indx, long int Hash_Code, string Answer, int number)
-{
-    hash<string> myhash;
-    long int Code = 0;
-    Answer += New_Char;
-    cout << Answer << endl;
-    for(int j = 0; j < n; j++) {
-        for (int i = 0; i < Char_Set.length() && indx != n - 1; i++) {
-            Answer = Find_Password(n, Char_Set, Char_Set[number], ++indx, Hash_Code, Answer, ++number);
+string Find_Password(string Char_Set, int Password_Length, unsigned long int Password_Hash, string Password) {
+    hash<string> HashOfPassword;
+    // To check if founded password is the real key
+    if (Password.length() == Password_Length) {
+        if (HashOfPassword(Password) == Password_Hash) {
+            return Password;
+        } else {
+            return "Not_Found";
         }
     }
-
-    Code = myhash(Answer);
-    if(Code == Hash_Code)
-        return Answer;
-    else
-        return "Not_Found";
+    // To add each character from Char_set to password and check if we got the real one
+    for (int i = 0; i < Char_Set.length(); i++) {
+        // Add a new Char from Charset until checking all of the possible Passwords
+        string new_pass = Find_Password(Char_Set, Password_Length, Password_Hash, Password + Char_Set[i]);
+        // If it Finds the Password Return it
+        if (new_pass != "Not_Found")
+            return new_pass;
+    }
+    return "Not_Found";
 }

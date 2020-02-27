@@ -3,6 +3,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/Recursive_Functions.dir/P2.cpp.o"
   "CMakeFiles/Recursive_Functions.dir/P3.cpp.o"
   "CMakeFiles/Recursive_Functions.dir/P4.cpp.o"
+  "CMakeFiles/Recursive_Functions.dir/soal3.cpp.o"
   "Recursive_Functions"
   "Recursive_Functions.pdb"
 )

@@ -3,4 +3,4 @@ project(Recursive_Functions)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(Recursive_Functions P1.cpp P2.cpp P3.cpp P4.cpp)
+add_executable(Recursive_Functions P1.cpp P2.cpp P3.cpp P4.cpp soal3.cpp)

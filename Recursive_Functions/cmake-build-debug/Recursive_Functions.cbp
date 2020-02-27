@@ -96,6 +96,9 @@
 		<Unit filename="/home/sspc/Desktop/AP_Projects/Recursive_Functions/P4.cpp">
 			<Option target="Recursive_Functions"/>
 		</Unit>
+		<Unit filename="/home/sspc/Desktop/AP_Projects/Recursive_Functions/soal3.cpp">
+			<Option target="Recursive_Functions"/>
+		</Unit>
 		<Unit filename="/home/sspc/Desktop/AP_Projects/Recursive_Functions/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>

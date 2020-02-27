@@ -1,0 +1,34 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/sspc/Desktop/AP_Projects/Recursive_Functions/P1.cpp
+iostream
+-
+string
+-
+bits/stdc++.h
+-
+
+/home/sspc/Desktop/AP_Projects/Recursive_Functions/P2.cpp
+iostream
+-
+vector
+-
+
+/home/sspc/Desktop/AP_Projects/Recursive_Functions/P3.cpp
+iostream
+-
+vector
+-
+
+/home/sspc/Desktop/AP_Projects/Recursive_Functions/P4.cpp
+iostream
+-
+string
+-
+

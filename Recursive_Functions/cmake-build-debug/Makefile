@@ -231,6 +231,33 @@ P4.cpp.s:
 	$(MAKE) -f CMakeFiles/Recursive_Functions.dir/build.make CMakeFiles/Recursive_Functions.dir/P4.cpp.s
 .PHONY : P4.cpp.s
 
+soal3.o: soal3.cpp.o
+
+.PHONY : soal3.o
+
+# target to build an object file
+soal3.cpp.o:
+	$(MAKE) -f CMakeFiles/Recursive_Functions.dir/build.make CMakeFiles/Recursive_Functions.dir/soal3.cpp.o
+.PHONY : soal3.cpp.o
+
+soal3.i: soal3.cpp.i
+
+.PHONY : soal3.i
+
+# target to preprocess a source file
+soal3.cpp.i:
+	$(MAKE) -f CMakeFiles/Recursive_Functions.dir/build.make CMakeFiles/Recursive_Functions.dir/soal3.cpp.i
+.PHONY : soal3.cpp.i
+
+soal3.s: soal3.cpp.s
+
+.PHONY : soal3.s
+
+# target to generate assembly for a file
+soal3.cpp.s:
+	$(MAKE) -f CMakeFiles/Recursive_Functions.dir/build.make CMakeFiles/Recursive_Functions.dir/soal3.cpp.s
+.PHONY : soal3.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -252,6 +279,9 @@ help:
 	@echo "... P4.o"
 	@echo "... P4.i"
 	@echo "... P4.s"
+	@echo "... soal3.o"
+	@echo "... soal3.i"
+	@echo "... soal3.s"
 .PHONY : help
 
 
