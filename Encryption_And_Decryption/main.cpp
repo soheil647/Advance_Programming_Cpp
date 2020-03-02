@@ -188,7 +188,7 @@ void Do_Action(const string& InputPath, const string& OutputPath, const string& 
         getline(InputFile, line);
         if(Kind == "simple")
             ASCIICode = Simple_Encryption(Key, line);
-        else if(Kind == "complex")
+        else if(Kind == "complicated")
             ASCIICode = Complex_Encryption(Key, line);
 
         for(int i : ASCIICode)
@@ -202,7 +202,7 @@ void Do_Action(const string& InputPath, const string& OutputPath, const string& 
         }
         if(Kind == "simple")
             StringCode = Simple_Decryption(Key, ASCIICode);
-        else if(Kind == "complex")
+        else if(Kind == "complicated")
             StringCode = Complex_Decryption(Key, ASCIICode);
 
         OutFile << StringCode;

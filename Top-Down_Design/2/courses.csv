@@ -1,0 +1,47 @@
+Id,Name,Units,Schedule,Prerequisites
+1,ICSP,4,Sat-9:00-10:30/Mon-9:00-10:30/Thu-9:00-10:30,0
+2,Math1,3,Sun-10:30-12:00/Tue-10:30-12:00,0
+3,Physics1,3,Sun-9:00-10:30/Tue-9:00-10:30,0
+4,Math2,3,Sat-17:30-19:00/Mon-17:30-19:00,2
+5,DE,3,Mon-10:30-12:00/Wed-10:30-12:00,2
+6,Physics2,3,Sun-9:00-10:30/Tue-9:00-10:30,3
+7,Advanced Programming,3,Sun-9:00-10:30/Tue-9:00-10:30,1
+8,Discrete Mathematics,3,Sun-14:00-15:30/Tue-14:00-15:30,2
+9,Digital Logic Design,3,Sat-7:30-9:00/Mon-7:30-9:00,1
+10,Engineering Mathematics,3,Sat-10:30-12:00/Mon-10:30-12:00,4-5
+11,Data Structure and Algorithm,3,Sun-9:00-10:30/Tue-9:00-10:30,7
+12,Engineering Probability and Statistics,3,Sat-9:00-10:30/Mon-9:00-10:30,4
+13,Electrical Circuits,3,Sat-10:30-12:00/Mon-10:30-12:00,6
+14,Design and Analysis of Algorithms,3,Sat-9:00-10:30/Mon-9:00-10:30,11
+15,The Theory of Formal Languages and Automata,3,Sun-9:00-10:30/Tue-9:00-10:30,11
+16,Computer Architecture,3,Sat-7:30-9:00/Mon-7:30-9:00,9
+17,Signals and Systems,3,Sat-14:00-15:30/Mon-14:00-15:30,10
+18,Circuit Lab,1,Sun-8:00-11:00,0
+19,Digital Logic Design Lab,1,Wed-8:00-11:00,9
+20,Programming Languages and Compilers,3,Sun-14:00-15:30/Tue-14:00-15:30,15
+21,Operating Systems,4,Sun-9:00-10:30/Tue-9:00-10:30/Mon-14:00-16:00,16
+22,System Analysis and Design,3,Sun-14:00-15:30/Tue-14:00-15:30,21
+23,Real-Time Embedded Systems,3,Sun-10:30-12:00/Tue-10:30-12:00,21
+24,Database Systems,3,Sun-9:00-10:30/Tue-9:00-10:30,21
+25,Computer Networks,3,Sun-7:30-9:00/Tue-7:30-9:00,21
+26,Internet Engineering,3,Sat-16:00-17:30/Mon-16:00-17:30,25
+27,Software Engineering,3,Sun-14:00-15:30/Tue-14:00-15:30,22
+28,Introduction to Software Testing,3,Sat-16:00-17:30/Mon-16:00-17:30,22
+29,Network security,3,Sun-10:30-12:00/Tue-10:30-12:00,25-26
+30,Artificial intelligence,3,Sat-9:00-10:30/Mon-9:00-10:30,14
+31,Database Lab,1,Wed-8:00-11:00,24
+32,Computer Networks Lab,1,Wed-8:00-11:00,25
+33,English,3,Sun-10:30-12:00/Tue-10:30-12:00,0
+34,Technical English,2,Wed-8:00-10:00,33
+35,General1,2,Sun-14:00-15:30,0
+36,General2,2,Sun-16:00-17:30,0
+37,General3,2,Sun-16:00-17:30,0
+38,General4,2,Sun-16:00-17:30,0
+39,General5,2,Sun-14:00-15:30,35
+40,General6,2,Sun-16:00-17:30,0
+41,General7,2,Sun-16:00-17:30,0
+42,General8,2,Sun-16:00-17:30,0
+43,Physics Lab1,1,Sat-13:00-16:00,3
+44,Physics Lab2,1,Sat-16:00-19:00,6
+45,Sport,1,Wed-15:00-17:00,0
+46,Sport2,1,Wed-13:00-15:00,0
