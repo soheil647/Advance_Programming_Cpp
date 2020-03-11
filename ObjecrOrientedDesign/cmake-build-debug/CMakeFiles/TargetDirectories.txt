@@ -1,0 +1,3 @@
+/home/sspc/Desktop/AP_Projects/ObjecrOrientedDesign/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/sspc/Desktop/AP_Projects/ObjecrOrientedDesign/cmake-build-debug/CMakeFiles/ObjecrOrientedDesign.dir
+/home/sspc/Desktop/AP_Projects/ObjecrOrientedDesign/cmake-build-debug/CMakeFiles/edit_cache.dir

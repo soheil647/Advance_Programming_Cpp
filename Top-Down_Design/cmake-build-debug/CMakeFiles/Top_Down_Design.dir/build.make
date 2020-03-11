@@ -70,18 +70,18 @@ CMakeFiles/Top_Down_Design.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Top_Down_Design.dir/main.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sspc/Desktop/AP_Projects/Top-Down_Design/main.cpp -o CMakeFiles/Top_Down_Design.dir/main.cpp.s
 
-CMakeFiles/Top_Down_Design.dir/Stage1.cpp.o: CMakeFiles/Top_Down_Design.dir/flags.make
-CMakeFiles/Top_Down_Design.dir/Stage1.cpp.o: ../Stage1.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sspc/Desktop/AP_Projects/Top-Down_Design/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Top_Down_Design.dir/Stage1.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Top_Down_Design.dir/Stage1.cpp.o -c /home/sspc/Desktop/AP_Projects/Top-Down_Design/Stage1.cpp
+CMakeFiles/Top_Down_Design.dir/1.cpp.o: CMakeFiles/Top_Down_Design.dir/flags.make
+CMakeFiles/Top_Down_Design.dir/1.cpp.o: ../1.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sspc/Desktop/AP_Projects/Top-Down_Design/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Top_Down_Design.dir/1.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Top_Down_Design.dir/1.cpp.o -c /home/sspc/Desktop/AP_Projects/Top-Down_Design/1.cpp
 
-CMakeFiles/Top_Down_Design.dir/Stage1.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Top_Down_Design.dir/Stage1.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/sspc/Desktop/AP_Projects/Top-Down_Design/Stage1.cpp > CMakeFiles/Top_Down_Design.dir/Stage1.cpp.i
+CMakeFiles/Top_Down_Design.dir/1.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Top_Down_Design.dir/1.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/sspc/Desktop/AP_Projects/Top-Down_Design/1.cpp > CMakeFiles/Top_Down_Design.dir/1.cpp.i
 
-CMakeFiles/Top_Down_Design.dir/Stage1.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Top_Down_Design.dir/Stage1.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sspc/Desktop/AP_Projects/Top-Down_Design/Stage1.cpp -o CMakeFiles/Top_Down_Design.dir/Stage1.cpp.s
+CMakeFiles/Top_Down_Design.dir/1.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Top_Down_Design.dir/1.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sspc/Desktop/AP_Projects/Top-Down_Design/1.cpp -o CMakeFiles/Top_Down_Design.dir/1.cpp.s
 
 CMakeFiles/Top_Down_Design.dir/2.cpp.o: CMakeFiles/Top_Down_Design.dir/flags.make
 CMakeFiles/Top_Down_Design.dir/2.cpp.o: ../2.cpp
@@ -99,14 +99,14 @@ CMakeFiles/Top_Down_Design.dir/2.cpp.s: cmake_force
 # Object files for target Top_Down_Design
 Top_Down_Design_OBJECTS = \
 "CMakeFiles/Top_Down_Design.dir/main.cpp.o" \
-"CMakeFiles/Top_Down_Design.dir/Stage1.cpp.o" \
+"CMakeFiles/Top_Down_Design.dir/1.cpp.o" \
 "CMakeFiles/Top_Down_Design.dir/2.cpp.o"
 
 # External object files for target Top_Down_Design
 Top_Down_Design_EXTERNAL_OBJECTS =
 
 Top_Down_Design: CMakeFiles/Top_Down_Design.dir/main.cpp.o
-Top_Down_Design: CMakeFiles/Top_Down_Design.dir/Stage1.cpp.o
+Top_Down_Design: CMakeFiles/Top_Down_Design.dir/1.cpp.o
 Top_Down_Design: CMakeFiles/Top_Down_Design.dir/2.cpp.o
 Top_Down_Design: CMakeFiles/Top_Down_Design.dir/build.make
 Top_Down_Design: CMakeFiles/Top_Down_Design.dir/link.txt

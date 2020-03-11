@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/sspc/Desktop/AP_Projects/ObjecrOrientedDesign/Date.cpp
+Date.h
+/home/sspc/Desktop/AP_Projects/ObjecrOrientedDesign/Date.h
+
+/home/sspc/Desktop/AP_Projects/ObjecrOrientedDesign/Date.h
+string
+-
+

@@ -57,6 +57,8 @@ bool compareByName(const Course &course1, const Course &course2);
 
 bool checkCoursesTimeConflicts(const CourseTable &chosenCourses, const Course &availableCourse);
 
+bool compareValue(const Course &course1, const Course &course2);
+
 int findMaximumAvailableUnitsToTake(const GradesTable &grades);
 
 CourseTable findNextTermCourses(CourseTable availableCourses, const GradesTable &grades);
@@ -66,10 +68,21 @@ int main(int argc, char *argv[]) {
     GradesTable grades = getAllGrades(argv[2]);
 
     CourseTable availableCourses = findAvailableCourses(courses, grades);
+    CourseTable coursesForSemester1 = findNextTermCourses(availableCourses, grades);
 
-    CourseTable coursesForNextTerm = findNextTermCourses(availableCourses, grades);
-    for (const auto &course : coursesForNextTerm)
-        cout << course.id << endl;
+
+        sort(coursesForSemester1.begin(),coursesForSemester1.end(),compareValue);
+
+
+        for (const auto &course : courses)
+            cout << course.id << endl;
+
+        for (const auto &passCourse : coursesForSemester1) {
+                courses.erase(courses.begin() + passCourse.id -1);
+        }
+
+
+    cout << endl << endl;
 
 }
 
@@ -266,4 +279,8 @@ bool checkCoursesTimeConflicts(const CourseTable &chosenCourses, const Course &a
         }
     }
     return true;
+}
+
+bool compareValue(const Course &course1, const Course &course2){
+    return course1.id > course2.id;
 }
