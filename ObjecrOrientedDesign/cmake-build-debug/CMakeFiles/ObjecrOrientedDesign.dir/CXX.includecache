@@ -6,11 +6,45 @@
 
 #IncludeRegexTransform: 
 
-/home/sspc/Desktop/AP_Projects/ObjecrOrientedDesign/Date.cpp
+/home/sspc/Desktop/AP_Projects/ObjecrOrientedDesign/Authors.h
+string
+-
+vector
+-
+sstream
+-
 Date.h
 /home/sspc/Desktop/AP_Projects/ObjecrOrientedDesign/Date.h
+
+/home/sspc/Desktop/AP_Projects/ObjecrOrientedDesign/Books.h
+string
+-
+Authors.h
+/home/sspc/Desktop/AP_Projects/ObjecrOrientedDesign/Authors.h
 
 /home/sspc/Desktop/AP_Projects/ObjecrOrientedDesign/Date.h
 string
 -
+sstream
+-
+
+/home/sspc/Desktop/AP_Projects/ObjecrOrientedDesign/main.cpp
+iostream
+-
+string
+-
+vector
+-
+fstream
+-
+sstream
+-
+algorithm
+-
+Date.h
+/home/sspc/Desktop/AP_Projects/ObjecrOrientedDesign/Date.h
+Authors.h
+/home/sspc/Desktop/AP_Projects/ObjecrOrientedDesign/Authors.h
+Books.h
+/home/sspc/Desktop/AP_Projects/ObjecrOrientedDesign/Books.h
 

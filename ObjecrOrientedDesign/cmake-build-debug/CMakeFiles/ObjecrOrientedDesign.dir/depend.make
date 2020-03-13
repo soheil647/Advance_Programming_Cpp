@@ -5,12 +5,29 @@ CMakeFiles/ObjecrOrientedDesign.dir/Authors.cpp.o: ../Authors.cpp
 CMakeFiles/ObjecrOrientedDesign.dir/Authors.cpp.o: ../Authors.h
 CMakeFiles/ObjecrOrientedDesign.dir/Authors.cpp.o: ../Date.h
 
+CMakeFiles/ObjecrOrientedDesign.dir/Books.cpp.o: ../Authors.h
 CMakeFiles/ObjecrOrientedDesign.dir/Books.cpp.o: ../Books.cpp
 CMakeFiles/ObjecrOrientedDesign.dir/Books.cpp.o: ../Books.h
+CMakeFiles/ObjecrOrientedDesign.dir/Books.cpp.o: ../Date.h
 
 CMakeFiles/ObjecrOrientedDesign.dir/Date.cpp.o: ../Date.cpp
 CMakeFiles/ObjecrOrientedDesign.dir/Date.cpp.o: ../Date.h
 
+CMakeFiles/ObjecrOrientedDesign.dir/Reviews.cpp.o: ../Authors.h
+CMakeFiles/ObjecrOrientedDesign.dir/Reviews.cpp.o: ../Books.h
+CMakeFiles/ObjecrOrientedDesign.dir/Reviews.cpp.o: ../Date.h
+CMakeFiles/ObjecrOrientedDesign.dir/Reviews.cpp.o: ../Reviews.cpp
+CMakeFiles/ObjecrOrientedDesign.dir/Reviews.cpp.o: ../Reviews.h
+CMakeFiles/ObjecrOrientedDesign.dir/Reviews.cpp.o: ../User.h
+
+CMakeFiles/ObjecrOrientedDesign.dir/User.cpp.o: ../Authors.h
+CMakeFiles/ObjecrOrientedDesign.dir/User.cpp.o: ../Books.h
+CMakeFiles/ObjecrOrientedDesign.dir/User.cpp.o: ../Date.h
+CMakeFiles/ObjecrOrientedDesign.dir/User.cpp.o: ../User.cpp
+CMakeFiles/ObjecrOrientedDesign.dir/User.cpp.o: ../User.h
+
+CMakeFiles/ObjecrOrientedDesign.dir/main.cpp.o: ../Authors.h
+CMakeFiles/ObjecrOrientedDesign.dir/main.cpp.o: ../Books.h
 CMakeFiles/ObjecrOrientedDesign.dir/main.cpp.o: ../Date.h
 CMakeFiles/ObjecrOrientedDesign.dir/main.cpp.o: ../main.cpp
 

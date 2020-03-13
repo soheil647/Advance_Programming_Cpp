@@ -1,4 +1,3 @@
-#include <sstream>
 #include "Authors.h"
 
 using namespace std;
@@ -8,7 +7,7 @@ Authors::Authors(int author_id, const string& author_name, const string& author_
     id = author_id;
     name = author_name;
     gender = author_gender;
-    date = parse_date_object(member_since);
+    date = member_since;
     year_of_birth = author_birth_year;
     place_of_birth = author_birth_place;
     genres = parse_genres(author_genres);
@@ -26,3 +25,4 @@ vector<string> parse_genres(const string& genres_string) {
     }
     return genres;
 }
+

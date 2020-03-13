@@ -177,32 +177,86 @@ Books.cpp.s:
 	$(MAKE) -f CMakeFiles/ObjecrOrientedDesign.dir/build.make CMakeFiles/ObjecrOrientedDesign.dir/Books.cpp.s
 .PHONY : Books.cpp.s
 
-Date.o: Date.cpp.o
+Google_read.o: Google_read.cpp.o
 
-.PHONY : Date.o
+.PHONY : Google_read.o
 
 # target to build an object file
-Date.cpp.o:
-	$(MAKE) -f CMakeFiles/ObjecrOrientedDesign.dir/build.make CMakeFiles/ObjecrOrientedDesign.dir/Date.cpp.o
-.PHONY : Date.cpp.o
+Google_read.cpp.o:
+	$(MAKE) -f CMakeFiles/ObjecrOrientedDesign.dir/build.make CMakeFiles/ObjecrOrientedDesign.dir/Google_read.cpp.o
+.PHONY : Google_read.cpp.o
 
-Date.i: Date.cpp.i
+Google_read.i: Google_read.cpp.i
 
-.PHONY : Date.i
+.PHONY : Google_read.i
 
 # target to preprocess a source file
-Date.cpp.i:
-	$(MAKE) -f CMakeFiles/ObjecrOrientedDesign.dir/build.make CMakeFiles/ObjecrOrientedDesign.dir/Date.cpp.i
-.PHONY : Date.cpp.i
+Google_read.cpp.i:
+	$(MAKE) -f CMakeFiles/ObjecrOrientedDesign.dir/build.make CMakeFiles/ObjecrOrientedDesign.dir/Google_read.cpp.i
+.PHONY : Google_read.cpp.i
 
-Date.s: Date.cpp.s
+Google_read.s: Google_read.cpp.s
 
-.PHONY : Date.s
+.PHONY : Google_read.s
 
 # target to generate assembly for a file
-Date.cpp.s:
-	$(MAKE) -f CMakeFiles/ObjecrOrientedDesign.dir/build.make CMakeFiles/ObjecrOrientedDesign.dir/Date.cpp.s
-.PHONY : Date.cpp.s
+Google_read.cpp.s:
+	$(MAKE) -f CMakeFiles/ObjecrOrientedDesign.dir/build.make CMakeFiles/ObjecrOrientedDesign.dir/Google_read.cpp.s
+.PHONY : Google_read.cpp.s
+
+Reviews.o: Reviews.cpp.o
+
+.PHONY : Reviews.o
+
+# target to build an object file
+Reviews.cpp.o:
+	$(MAKE) -f CMakeFiles/ObjecrOrientedDesign.dir/build.make CMakeFiles/ObjecrOrientedDesign.dir/Reviews.cpp.o
+.PHONY : Reviews.cpp.o
+
+Reviews.i: Reviews.cpp.i
+
+.PHONY : Reviews.i
+
+# target to preprocess a source file
+Reviews.cpp.i:
+	$(MAKE) -f CMakeFiles/ObjecrOrientedDesign.dir/build.make CMakeFiles/ObjecrOrientedDesign.dir/Reviews.cpp.i
+.PHONY : Reviews.cpp.i
+
+Reviews.s: Reviews.cpp.s
+
+.PHONY : Reviews.s
+
+# target to generate assembly for a file
+Reviews.cpp.s:
+	$(MAKE) -f CMakeFiles/ObjecrOrientedDesign.dir/build.make CMakeFiles/ObjecrOrientedDesign.dir/Reviews.cpp.s
+.PHONY : Reviews.cpp.s
+
+User.o: User.cpp.o
+
+.PHONY : User.o
+
+# target to build an object file
+User.cpp.o:
+	$(MAKE) -f CMakeFiles/ObjecrOrientedDesign.dir/build.make CMakeFiles/ObjecrOrientedDesign.dir/User.cpp.o
+.PHONY : User.cpp.o
+
+User.i: User.cpp.i
+
+.PHONY : User.i
+
+# target to preprocess a source file
+User.cpp.i:
+	$(MAKE) -f CMakeFiles/ObjecrOrientedDesign.dir/build.make CMakeFiles/ObjecrOrientedDesign.dir/User.cpp.i
+.PHONY : User.cpp.i
+
+User.s: User.cpp.s
+
+.PHONY : User.s
+
+# target to generate assembly for a file
+User.cpp.s:
+	$(MAKE) -f CMakeFiles/ObjecrOrientedDesign.dir/build.make CMakeFiles/ObjecrOrientedDesign.dir/User.cpp.s
+.PHONY : User.cpp.s
 
 main.o: main.cpp.o
 
@@ -246,9 +300,15 @@ help:
 	@echo "... Books.o"
 	@echo "... Books.i"
 	@echo "... Books.s"
-	@echo "... Date.o"
-	@echo "... Date.i"
-	@echo "... Date.s"
+	@echo "... Google_read.o"
+	@echo "... Google_read.i"
+	@echo "... Google_read.s"
+	@echo "... Reviews.o"
+	@echo "... Reviews.i"
+	@echo "... Reviews.s"
+	@echo "... User.o"
+	@echo "... User.i"
+	@echo "... User.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

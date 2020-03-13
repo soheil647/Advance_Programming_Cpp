@@ -96,10 +96,22 @@
 		<Unit filename="/home/sspc/Desktop/AP_Projects/ObjecrOrientedDesign/Books.h">
 			<Option target="ObjecrOrientedDesign"/>
 		</Unit>
-		<Unit filename="/home/sspc/Desktop/AP_Projects/ObjecrOrientedDesign/Date.cpp">
+		<Unit filename="/home/sspc/Desktop/AP_Projects/ObjecrOrientedDesign/Google_read.cpp">
 			<Option target="ObjecrOrientedDesign"/>
 		</Unit>
-		<Unit filename="/home/sspc/Desktop/AP_Projects/ObjecrOrientedDesign/Date.h">
+		<Unit filename="/home/sspc/Desktop/AP_Projects/ObjecrOrientedDesign/Google_read.h">
+			<Option target="ObjecrOrientedDesign"/>
+		</Unit>
+		<Unit filename="/home/sspc/Desktop/AP_Projects/ObjecrOrientedDesign/Reviews.cpp">
+			<Option target="ObjecrOrientedDesign"/>
+		</Unit>
+		<Unit filename="/home/sspc/Desktop/AP_Projects/ObjecrOrientedDesign/Reviews.h">
+			<Option target="ObjecrOrientedDesign"/>
+		</Unit>
+		<Unit filename="/home/sspc/Desktop/AP_Projects/ObjecrOrientedDesign/User.cpp">
+			<Option target="ObjecrOrientedDesign"/>
+		</Unit>
+		<Unit filename="/home/sspc/Desktop/AP_Projects/ObjecrOrientedDesign/User.h">
 			<Option target="ObjecrOrientedDesign"/>
 		</Unit>
 		<Unit filename="/home/sspc/Desktop/AP_Projects/ObjecrOrientedDesign/main.cpp">

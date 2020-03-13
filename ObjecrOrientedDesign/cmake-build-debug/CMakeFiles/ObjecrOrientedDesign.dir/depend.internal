@@ -6,11 +6,28 @@ CMakeFiles/ObjecrOrientedDesign.dir/Authors.cpp.o
  /home/sspc/Desktop/AP_Projects/ObjecrOrientedDesign/Authors.h
  /home/sspc/Desktop/AP_Projects/ObjecrOrientedDesign/Date.h
 CMakeFiles/ObjecrOrientedDesign.dir/Books.cpp.o
+ /home/sspc/Desktop/AP_Projects/ObjecrOrientedDesign/Authors.h
  /home/sspc/Desktop/AP_Projects/ObjecrOrientedDesign/Books.cpp
  /home/sspc/Desktop/AP_Projects/ObjecrOrientedDesign/Books.h
+ /home/sspc/Desktop/AP_Projects/ObjecrOrientedDesign/Date.h
 CMakeFiles/ObjecrOrientedDesign.dir/Date.cpp.o
  /home/sspc/Desktop/AP_Projects/ObjecrOrientedDesign/Date.cpp
  /home/sspc/Desktop/AP_Projects/ObjecrOrientedDesign/Date.h
+CMakeFiles/ObjecrOrientedDesign.dir/Reviews.cpp.o
+ /home/sspc/Desktop/AP_Projects/ObjecrOrientedDesign/Authors.h
+ /home/sspc/Desktop/AP_Projects/ObjecrOrientedDesign/Books.h
+ /home/sspc/Desktop/AP_Projects/ObjecrOrientedDesign/Date.h
+ /home/sspc/Desktop/AP_Projects/ObjecrOrientedDesign/Reviews.cpp
+ /home/sspc/Desktop/AP_Projects/ObjecrOrientedDesign/Reviews.h
+ /home/sspc/Desktop/AP_Projects/ObjecrOrientedDesign/User.h
+CMakeFiles/ObjecrOrientedDesign.dir/User.cpp.o
+ /home/sspc/Desktop/AP_Projects/ObjecrOrientedDesign/Authors.h
+ /home/sspc/Desktop/AP_Projects/ObjecrOrientedDesign/Books.h
+ /home/sspc/Desktop/AP_Projects/ObjecrOrientedDesign/Date.h
+ /home/sspc/Desktop/AP_Projects/ObjecrOrientedDesign/User.cpp
+ /home/sspc/Desktop/AP_Projects/ObjecrOrientedDesign/User.h
 CMakeFiles/ObjecrOrientedDesign.dir/main.cpp.o
+ /home/sspc/Desktop/AP_Projects/ObjecrOrientedDesign/Authors.h
+ /home/sspc/Desktop/AP_Projects/ObjecrOrientedDesign/Books.h
  /home/sspc/Desktop/AP_Projects/ObjecrOrientedDesign/Date.h
  /home/sspc/Desktop/AP_Projects/ObjecrOrientedDesign/main.cpp
