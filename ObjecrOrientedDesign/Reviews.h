@@ -1,27 +1,33 @@
 #ifndef OBJECRORIENTEDDESIGN_REVIEWS_H
 #define OBJECRORIENTEDDESIGN_REVIEWS_H
 
+#include <vector>
+#include <string>
 #include "Authors.h"
 #include "Books.h"
 #include "User.h"
-#include "Google_read.h"
 
 
 class Reviews {
 private:
-    int id;
-    Books book;
-    User user;
-    int rating;
+    int id{};
+    int book_id{};
+    int user_id{};
+    int rating{};
     std::string date;
-    int number_of_likes;
+    int number_of_likes{};
 public:
-    Reviews(int review_id, int book_id, int user_id, int review_rate, const std::string &review_date, int review_number_of_like,
-            const std::vector<Books>& all_books, const std::vector<User>& all_users);
+    Reviews(int review_id, int temp_book_id, int temp_user_id, int review_rate, const std::string &review_date,
+            int review_number_of_like);
+
     Reviews() = default;
 
-    User get_user() { return user; };
+    int get_id() { return id; };
+    int get_user_id() { return user_id; };
+    int get_book_id() { return book_id; };
+    int get_rating() { return rating; };
     int get_number_of_likes() { return number_of_likes; };
+    std::string get_date() { return date; };
 };
 
 

@@ -10,19 +10,17 @@ Authors::Authors(int author_id, const string& author_name, const string& author_
     date = member_since;
     year_of_birth = author_birth_year;
     place_of_birth = author_birth_place;
-    genres = parse_genres(author_genres);
+    parse_genres(author_genres);
 }
 
 
-vector<string> parse_genres(const string& genres_string) {
+void Authors::parse_genres(const string& genres_string) {
     string parsed;
-    stringstream genres_stringstream(genres_string);
-    vector<string> genres;
+    stringstream genres_string_stream(genres_string);
 
-    while (getline(genres_stringstream,parsed,'$'))
+    while (getline(genres_string_stream,parsed,'$'))
     {
         genres.push_back(parsed);
     }
-    return genres;
 }
 
