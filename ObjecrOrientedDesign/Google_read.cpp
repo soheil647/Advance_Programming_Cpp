@@ -161,8 +161,13 @@ void Google_read::show_author_info(int author_id) {
     cout << "Place of Birth: " << requested_author.get_place_of_birth() << endl;
     cout << "Member Since: " << requested_author.get_member_since() << endl;
     cout << "Genres: ";
-    for (const string &genre : requested_author.get_genres())
-        cout << genre << ", ";
+    int count = 0;
+    for (const string &genre : requested_author.get_genres()) {
+        cout << genre;
+        count++;
+        if(count != requested_author.get_genres().size())
+            cout << ", ";
+    }
     cout << endl;
     cout << "Books: " << endl;
     for (auto book: find_books_by_author_name(requested_author.get_name()))
@@ -188,8 +193,8 @@ void Google_read::show_best_book() {
     cout << "id: " << best_book.get_id() << endl;
     cout << "Title: " << best_book.get_title() << endl;
     cout << "Genre: " << best_book.get_genres() << endl;
-    cout << "Author " << find_author_by_id(best_book.get_author_id()).get_name() << endl;
-    printf("%.2f\n", average_rate);
+    cout << "Author: " << find_author_by_id(best_book.get_author_id()).get_name() << endl;
+    printf("Average Rating: %.2f\n", average_rate);
 }
 
 void Google_read::show_user_credit(int user_id) {
@@ -205,12 +210,23 @@ void Google_read::show_best_reviewer() {
     cout << "Name: " << best_review_user.get_name() << endl;
     cout << "Place of Birth: " << best_review_user.get_place_of_birth() << endl;
     cout << "Member Since: " << best_review_user.get_member_since() << endl;
-    cout << "Favorite Genres: " << endl;
-    for (const string &genre : best_review_user.get_favorite_genres())
-        cout << genre << ", ";
+    cout << "Favorite Genres: ";
+    int count = 0;
+    for (const string &genre : best_review_user.get_favorite_genres()) {
+        count++;
+        cout << genre;
+        if(count != best_review_user.get_favorite_genres().size())
+            cout << ", ";
+    }
     cout << endl;
-    for (int author_id : best_review_user.get_favorite_authors())
-        cout << find_author_by_id(author_id).get_name() << ", ";
+    count = 0;
+    cout << "Favorite Authors: ";
+    for (int author_id : best_review_user.get_favorite_authors()) {
+        count++;
+        cout << find_author_by_id(author_id).get_name();
+        if(count != best_review_user.get_favorite_authors().size())
+            cout << ", ";
+    }
     cout << endl;
     cout << "Number of Books in Read Shelf: " << best_review_user.get_read_books().size() << endl;
     cout << "Number of Books in Want to Read Shelf: " << best_review_user.get_want_to_read_books().size() << endl;
@@ -242,22 +258,26 @@ bool Google_read::compare_by_title(Books book1, Books book2) {
 }
 
 void Google_read::show_books_by_order(const string &genre, const vector<Books> &my_shelf_books) {
+    int count = 0;
     for (Books book : my_shelf_books) {
         if (book.get_genres() == genre) {
+            count++;
             cout << "id: " << book.get_id() << endl;
             cout << "Title: " << book.get_title() << endl;
             cout << "Genre: " << book.get_genres() << endl;
             cout << "Author: " << find_author_by_id(book.get_author_id()).get_name() << endl;
-            cout << "***" << endl;
+            if(count != my_shelf_books.size())
+                cout << "***" << endl;
         }
     }
     for (Books book : my_shelf_books) {
         if (book.get_genres() != genre) {
+            count++;
             cout << "id: " << book.get_id() << endl;
             cout << "Title: " << book.get_title() << endl;
             cout << "Genre: " << book.get_genres() << endl;
             cout << "Author: " << find_author_by_id(book.get_author_id()).get_name() << endl;
-            if(my_shelf_books.size() != 1)
+            if(count != my_shelf_books.size())
                 cout << "***" << endl;
         }
     }

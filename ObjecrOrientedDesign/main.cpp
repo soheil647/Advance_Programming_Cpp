@@ -13,12 +13,12 @@ int main(int argv, char *argc[]) {
 
 
     auto start = high_resolution_clock::now();
-//    all_data.show_author_info(1122);
-    all_data.show_sorted_shelf(8, "currently_reading", "Fiction");
+//    all_data.show_author_info(1121);
+//    all_data.show_sorted_shelf(100, "currently_reading", "Fiction");
 //    all_data.show_user_credit(123);
 //    all_data.show_best_book();
 //    all_data.show_best_reviewer();
-//    all_data.show_recommended_books(50);
+    all_data.show_recommended_books(10);
     auto stop = high_resolution_clock::now();
     auto duration = duration_cast<seconds>(stop - start);
     cout << "Function Duration: " << duration.count() << endl;
