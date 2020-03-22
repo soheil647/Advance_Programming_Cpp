@@ -3,9 +3,6 @@
 
 #include <vector>
 #include <string>
-#include "Authors.h"
-#include "Books.h"
-#include "User.h"
 
 
 class Reviews {

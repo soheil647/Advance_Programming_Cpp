@@ -4,8 +4,6 @@
 #include <string>
 #include <vector>
 #include <sstream>
-#include "Authors.h"
-#include "Books.h"
 
 class User {
 private:
