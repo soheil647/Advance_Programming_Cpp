@@ -1,10 +1,11 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/ObjecrOrientedDesign.dir/Authors.cpp.o"
-  "CMakeFiles/ObjecrOrientedDesign.dir/Books.cpp.o"
-  "CMakeFiles/ObjecrOrientedDesign.dir/Google_read.cpp.o"
-  "CMakeFiles/ObjecrOrientedDesign.dir/Reviews.cpp.o"
-  "CMakeFiles/ObjecrOrientedDesign.dir/User.cpp.o"
-  "CMakeFiles/ObjecrOrientedDesign.dir/main.cpp.o"
+  "CMakeFiles/ObjecrOrientedDesign.dir/Source/Authors.cpp.o"
+  "CMakeFiles/ObjecrOrientedDesign.dir/Source/Books.cpp.o"
+  "CMakeFiles/ObjecrOrientedDesign.dir/Source/Follow_edges.cpp.o"
+  "CMakeFiles/ObjecrOrientedDesign.dir/Source/Google_read.cpp.o"
+  "CMakeFiles/ObjecrOrientedDesign.dir/Source/Reviews.cpp.o"
+  "CMakeFiles/ObjecrOrientedDesign.dir/Source/User.cpp.o"
+  "CMakeFiles/ObjecrOrientedDesign.dir/Source/main.cpp.o"
   "ObjecrOrientedDesign"
   "ObjecrOrientedDesign.pdb"
 )

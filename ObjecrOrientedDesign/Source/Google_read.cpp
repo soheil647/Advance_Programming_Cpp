@@ -1,4 +1,4 @@
-#include "Google_read.h"
+#include "../Header/Google_read.h"
 
 using namespace std;
 
@@ -145,12 +145,57 @@ void Google_read::parse_reviews_csv(const std::string &reviews_file_path) {
     }
 }
 
+void Google_read::parse_follow_edges_csv(const std::string &follow_edges_file_path) {
+    int column_number = 0;
+    int column_size = 0;
+    ifstream inputFile(follow_edges_file_path);
+    if (inputFile.fail()) {
+        cerr << "Error Opening the file" << endl;
+        inputFile.close();
+        exit(1);
+    }
+    vector<string> row;
+    string line, word_temp, temp;
+
+    getline(inputFile, line);
+    column_size = int(count(line.begin(), line.end(), ',') + 1);
+    while (getline(inputFile, line)) {
+        if(count_string_in_csv_line_comma_delimiter(line) == 2)
+           line +="-1";
+
+        stringstream s(line);
+        while (getline(s, word_temp, ',')) {
+//            cout << word_temp << endl;
+            row.emplace_back(word_temp);
+        }
+    }
+
+    int temp_follow_edge_id = 0, temp_following_id = 0;
+    string temp_followers_string_id;
+    for (const string &word : row) {
+        if (column_number == 0)
+            temp_follow_edge_id = stoi(word);
+        if (column_number == 1)
+            temp_following_id = stoi(word);
+        if (column_number == 2) {
+                temp_followers_string_id = word;
+        }
+        column_number++;
+        if (column_number == column_size) {
+            follow_edges.emplace_back(temp_follow_edge_id, temp_following_id, temp_followers_string_id);
+            column_number = 0;
+        }
+    }
+}
+
 Google_read::Google_read(const std::string &authors_filepath, const std::string &books_filepath,
-                         const std::string &users_filePath, const std::string &review_filepath) {
+                         const std::string &users_filepath, const std::string &review_filepath,
+                         const std::string &follow_edges_filepath) {
     parse_authors_csv(authors_filepath);
     parse_books_csv(books_filepath);
-    parse_users_csv(users_filePath);
+    parse_users_csv(users_filepath);
     parse_reviews_csv(review_filepath);
+    parse_follow_edges_csv(follow_edges_filepath);
 }
 
 void Google_read::show_author_info(int author_id) {
@@ -250,7 +295,22 @@ void Google_read::show_recommended_books(int user_id) {
              << find_review_by_id(review_id).get_number_of_likes() << " Date: "
              << find_review_by_id(review_id).get_date() << endl;
     }
+}
 
+void Google_read::show_recommended_complex_books(int user_id) {
+    int best_book_id = find_recommend_complex_book(user_id);
+    vector<int> book_reveiws_ids = find_reviews_by_book_id(best_book_id);
+    Books my_book = find_book_by_id(best_book_id);
+    cout << "id: " << my_book.get_id() << endl;
+    cout << "Title: " << my_book.get_title() << endl;
+    cout << "Genre: " << my_book.get_genres() << endl;
+    cout << "Author: " << find_author_by_id(my_book.get_author_id()).get_name() << endl;
+    cout << "Reviews: " << endl;
+    for (int review_id : book_reveiws_ids) {
+        cout << "id: " << review_id << " Rating: " << find_review_by_id(review_id).get_rating() << " Likes: "
+             << find_review_by_id(review_id).get_number_of_likes() << " Date: "
+             << find_review_by_id(review_id).get_date() << endl;
+    }
 }
 
 bool Google_read::compare_by_title(Books book1, Books book2) {
@@ -335,13 +395,14 @@ float Google_read::find_user_credit(int user_id) {
 
 vector<int> Google_read::find_recommend_book(int user_id, float &recommend_book_rate, int &recommend_book_id) {
     vector<int> review_ids;
+    float user_credit = find_user_credit(user_id);
     for (auto book : books) {
         vector<int> temp_review_ids;
         float temp_recommend_book_rate = 0, sum_of_rating = 0;
         int temp_recommend_book_id = 0, number_of_review = 0, is_genre_favorite = 0;
         for (auto review : reviews) {
             if (book.get_id() == review.get_book_id()) {
-                sum_of_rating += (float(review.get_rating()) * find_user_credit(user_id));
+                sum_of_rating += (float(review.get_rating()) * user_credit);
                 number_of_review++;
                 temp_review_ids.push_back(review.get_id());
             }
@@ -405,4 +466,111 @@ vector<Books> Google_read::find_books_by_author_name(const std::string &author_n
             author_books.push_back(book);
     }
     return author_books;
+}
+
+
+std::vector<int> Google_read::find_user_follow_edge(vector<int>& checked_users_id, int user_id) {
+    if(find(checked_users_id.begin(), checked_users_id.end(), user_id) == checked_users_id.end()) {
+        checked_users_id.push_back(user_id);
+        for (auto follow_edge : follow_edges) {
+            for(int follower_id : follow_edge.get_followers()) {
+                if (follower_id == user_id) {
+//                    cout << follow_edge.get_following() << endl;
+                    return find_user_follow_edge(checked_users_id, follow_edge.get_following());
+                }
+            }
+        }
+    }
+    return checked_users_id;
+}
+
+int Google_read::count_string_in_csv_line_comma_delimiter(const std::string& line) {
+    string parsed;
+    stringstream str_stream(line);
+    vector<string> separated_numbers;
+
+    while (getline(str_stream, parsed, ',')) {
+        separated_numbers.push_back(parsed);
+    }
+    return separated_numbers.size();
+}
+
+std::vector<int> Google_read::find_3_best_books_of_user(int user_id) {
+    vector<int> best_books_id{};
+    vector<Books> books_with_rate;
+    float user_credit = find_user_credit(user_id);
+    vector<Books> readed_books{};
+    for(int book_id : find_user_by_id(user_id).get_read_books())
+        readed_books.push_back(find_book_by_id(book_id));
+
+    for (auto book : readed_books) {
+        float sum_of_rating = 0;
+        int number_of_review = 0, is_genre_favorite = 0;
+        for (auto review : reviews) {
+            if (book.get_id() == review.get_book_id()) {
+                sum_of_rating += (float(review.get_rating()) * user_credit);
+                number_of_review++;
+            }
+        }
+        float book_rate = sum_of_rating / float(number_of_review) + float(is_genre_favorite);
+        int book_id = book.get_id();
+        books_with_rate.emplace_back(book_id, book_rate);
+    }
+
+    books_with_rate = sort_by_rate(books_with_rate);
+    int count = 0;
+    for(auto book : books_with_rate){
+        if(count == 3)
+            break;
+        best_books_id.push_back(book.get_id());
+        count++;
+    }
+    return best_books_id;
+}
+
+std::vector<Books> Google_read::sort_by_rate(std::vector<Books> my_books) {
+    sort(my_books.begin(), my_books.end(), rate_cmp);
+    return my_books;
+}
+
+int Google_read::find_most_common_element_in_vector(const std::vector<int>& ids) {
+    //Build a frequency table
+    map<int, int> most_frequent;
+    for(auto &i : ids)
+    {
+        most_frequent[i]++;
+    }
+//Find the value with the maximum frequency
+    int max_freq = -1, most_freq_val = -1; //Initialize these values to -1
+    for(auto &i : most_frequent)
+    {
+        if(i.second > max_freq)
+        {
+            max_freq = i.second;
+            most_freq_val = i.first;
+        }
+    }
+    return most_freq_val;
+}
+
+int Google_read::find_recommend_complex_book(int user_id) {
+    vector<int> checked_users_id{};
+    vector<int> follow_edge = find_user_follow_edge(checked_users_id, user_id);
+    vector<int> best_books_ids;
+    for(int i : checked_users_id) {
+        vector<int> three_books = find_3_best_books_of_user(i);
+        best_books_ids.insert(best_books_ids.end(), three_books.begin(), three_books.end());
+    }
+    int best_book_id = find_most_common_element_in_vector(best_books_ids);
+    return best_book_id;
+}
+
+vector<int> Google_read::find_reviews_by_book_id(int book_id) {
+    vector<int> book_reviews_ids{};
+    for (auto review : reviews) {
+        if (book_id == review.get_book_id()) {
+            book_reviews_ids.push_back(review.get_id());
+        }
+    }
+    return book_reviews_ids;
 }

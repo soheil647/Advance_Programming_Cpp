@@ -3,4 +3,4 @@ project(ObjecrOrientedDesign)
 
 set(CMAKE_CXX_STANDARD 11)
 
-add_executable(ObjecrOrientedDesign main.cpp Books.cpp Books.h Authors.cpp Authors.h Reviews.cpp Reviews.h User.cpp User.h Google_read.cpp Google_read.h)
+add_executable(ObjecrOrientedDesign Source/main.cpp Source/Books.cpp Header/Books.h Source/Authors.cpp Header/Authors.h Source/Reviews.cpp Header/Reviews.h Source/User.cpp Header/User.h Source/Google_read.cpp Header/Google_read.h Source/Follow_edges.cpp Header/Follow_edges.h)

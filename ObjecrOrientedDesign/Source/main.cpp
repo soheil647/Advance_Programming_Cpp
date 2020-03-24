@@ -1,4 +1,4 @@
-#include "Google_read.h"
+#include "../Header/Google_read.h"
 
 using namespace std;
 
@@ -7,7 +7,8 @@ vector<string> parse_input_command(const string& line);
 int main(int argv, char *argc[]) {
     string assets_address = "./" + string(argc[1]);
     Google_read all_data = Google_read(assets_address + "/authors.csv", assets_address + "/books.csv",
-                                       assets_address + "/users.csv", assets_address + "/reviews.csv");
+                                       assets_address + "/users.csv", assets_address + "/reviews.csv",
+                                       assets_address + "/follow_edges.csv");
     string line;
     while(getline(cin, line)) {
         vector<string> command = parse_input_command(line);
@@ -22,6 +23,8 @@ int main(int argv, char *argc[]) {
         if (command[0] == "best_reviewer")
             all_data.show_best_reviewer();
         if (command[0] == "recommend_first_approach")
+            all_data.show_recommended_books(stoi(command[1]));
+        if (command[0] == "recommend_second_approach")
             all_data.show_recommended_books(stoi(command[1]));
     }
 }
