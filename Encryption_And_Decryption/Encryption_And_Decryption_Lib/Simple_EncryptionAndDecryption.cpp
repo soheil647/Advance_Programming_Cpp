@@ -1,23 +1,20 @@
 # include "Simple_EncryptionAndDecryption.h"
 
-vector<int> convertStringToASCII (const string& s)
+vector<int> convert_string_to_ascii(const string& input_string)
 {
-    vector <int> vals;
-    int ascChar;
-    for (char i : s)
+    vector <int> ascii_values;
+    for (char letter : input_string)
     {
-        ascChar = i;
-        vals.push_back(ascChar);
+        ascii_values.push_back((int)letter);
     }
-    return vals;
+    return ascii_values;
 }
 
-string Repeat_Key(string s, int n)
+string repeat_key_n_times(string key_to_repeat, int number_of_repeat)
 {
-    string s1 = s;
-    for (int i = 1; i < n; i++)
-        s += s1;
-    return s;
+    for (int i = 0; i < number_of_repeat; i++)
+        repeated_key += key_to_repeat;
+    return repeated_key;
 }
 
 vector<int> SumASCIIValues(vector<int> Val1, vector<int> Val2)

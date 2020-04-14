@@ -4,227 +4,229 @@
 # include <numeric>
 # include <algorithm>
 # include <fstream>
+# include <sstream>
+
+#define MAX_RANDOM_RANGE 11
+#define ENCRYPT_TYPE_NAME "encrypt"
+#define DECRYPT_TYPE_NAME "decrypt"
+#define SIMPLE_KIND_NAME "simple"
+#define COMPLICATED_KIND_NAME "complicated"
+#define CIPHER_BLOCK_DELIMITER '\n'
 
 using namespace std;
 
-// Simple Encryption Part Functions
-vector<int> convertStringToASCII (const string& s);
-string Repeat_Key(string s, int n);
-vector<int> SumASCIIValues(vector<int> Val1, vector<int> Val2);
-vector<int> Simple_Encryption(const string& Password, const string& GivenLine);
+enum method_type {
+    Encryption, Decryption
+};
+enum method_kind {
+    Simple, Complicated
+};
+struct Method {
+    method_type type;
+    method_kind kind;
+};
 
-// Simple Decryption Part Functions
-string Simple_Decryption(const string& Password, const vector<int>& GivenAscii);
-string ConvertASCIIToString(const vector<int>& ASCII);
-vector<int> MinesASCIIValues(vector<int> Val1, vector<int> Val2);
+struct IO {
+    string input_file_path;
+    string output_file_path;
+};
 
-// Complex Encryption Part Functions
-vector <int> CreateRandomFromPasswordSeed(const string& Password, int n);
-vector<int> Complex_Encryption(const string& Password, const string& GivenLine);
+vector<int> convert_string_to_ascii(const string &input_string);
 
-// Complex Decryption Part Function
-string Complex_Decryption(const string& Password, const vector<int>& GivenAscii);
+string repeat_key_n_times(const string &key_to_repeat, int number_of_repeat);
 
-//Other Functions
-void Do_Action(const string& InputPath, const string& OutputPath, const string& Action, const string& Key, const string& Kind);
-void Get_InputFile(string& InputPath, string& OutputPath, string& Action, string& Key, string& Kind);
+vector<int> simple_encryption(const string &password, const string &decoded_string);
 
-int main(){
-    string Action, Kind, Key, InputPath, OutputPath;
-    Get_InputFile(InputPath, OutputPath, Action, Key, Kind);
-    Do_Action(InputPath, OutputPath, Action,  Key, Kind);
+string simple_decryption(const string &password, const vector<int> &encoded_ascii);
+
+string convert_ascii_to_string(const vector<int> &ASCII);
+
+vector<int> create_random_from_password_seed(const string &Password, int n);
+
+vector<int> complex_encryption(const string &password, const string &decoded_string);
+
+string complex_decryption(const string &password, const vector<int> &encoded_ascii);
+
+Method get_method();
+
+string get_key();
+
+IO get_IO();
+
+string read_input_file(const string &file_path);
+
+void writeOutput(const string &output, const string &file_path);
+
+string decrypt(const vector<int> &input_numbers, const string &key, method_kind kind);
+
+vector<int> encrypt(const string &input_string, const string &key, method_kind kind);
+
+string get_cipher_text(const vector<int> &cipher);
+
+vector<int> get_cipher_numbers(const string &cipher_text);
+
+string process_method(const string &input_text, const Method &method, const string &key);
+
+string process_output(const Method &method, const string &key, const IO &io);
+
+int main() {
+    Method method = get_method();
+    string key = get_key();
+    IO io = get_IO();
+    string output = process_output(method, key, io);
+    writeOutput(output, io.output_file_path);
     return 0;
 }
 
-vector<int> convertStringToASCII (const string& s)
-{
-    vector <int> vals;
-    int ascChar;
-    for (char i : s)
-    {
-        ascChar = i;
-        vals.push_back(ascChar);
+Method get_method() {
+    string method_type_name, method_kind_name;
+    cin >> method_type_name >> method_kind_name;
+    Method method{};
+    method.type = method_type_name == ENCRYPT_TYPE_NAME ? Encryption : Decryption;
+    method.kind = method_kind_name == SIMPLE_KIND_NAME ? Simple : Complicated;
+    return method;
+}
+
+string get_key() {
+    string key;
+    cin >> key;
+    return key;
+}
+
+IO get_IO() {
+    IO io;
+    cin >> io.input_file_path >> io.output_file_path;
+    return io;
+}
+
+vector<int> convert_string_to_ascii(const string &input_string) {
+    vector<int> ascii_values;
+    for (char letter : input_string) {
+        ascii_values.push_back((int) letter);
     }
-    return vals;
+    return ascii_values;
 }
 
-string Repeat_Key(string s, int n)
-{
-    string s1 = s;
-    for (int i = 1; i < n; i++)
-        s += s1;
-    return s;
+string convert_ascii_to_string(const vector<int> &ascii_int_vector) {
+    string converted_string;
+    for (int char_value : ascii_int_vector)
+        converted_string += (char) char_value;
+    return converted_string;
 }
 
-vector<int> SumASCIIValues(vector<int> Val1, vector<int> Val2)
-{
-    vector<int> SumOfPassAndInput;
-    for ( int i = 0; i < Val1.size(); i++)
-    {
-        int Sum = Val1[i] + Val2[i];
-        SumOfPassAndInput.push_back(Sum);
-    }
-    return SumOfPassAndInput;
+string repeat_key_n_times(const string &key_to_repeat, int number_of_repeat) {
+    string repeated_key;
+    for (int i = 0; i < number_of_repeat; i++)
+        repeated_key += key_to_repeat;
+    return repeated_key;
 }
 
-vector<int> MinesASCIIValues(vector<int> Val1, vector<int> Val2)
-{
-    vector<int> MinesOfPassAndInput;
-    for ( int i = 0; i < Val1.size(); i++)
-    {
-        int Mines = Val1[i] - Val2[i];
-        MinesOfPassAndInput.push_back(Mines);
-    }
-    return MinesOfPassAndInput;
-}
-
-vector <int> CreateRandomFromPasswordSeed(const string& Password, int n)
-{
-    vector <int> AsciiPassword;
-    vector <int> RandomVector;
-
-    AsciiPassword = convertStringToASCII(Password);
-    srand(accumulate(AsciiPassword.begin(),AsciiPassword.end(),0));
-    RandomVector.reserve(n);
+vector<int> create_random_from_password_seed(const string &password, int n) {
+    vector<int> ascii_password = convert_string_to_ascii(password);
+    srand(accumulate(ascii_password.begin(), ascii_password.end(), 0));
+    vector<int> random_vector;
+    random_vector.reserve(n);
     for (int i = 0; i < n; i++)
-        RandomVector.push_back(rand() % 11);
-
-    return RandomVector;
+        random_vector.push_back(rand() % MAX_RANDOM_RANGE);
+    return random_vector;
 }
 
-string ConvertASCIIToString(const vector<int>& ASCII)
-{
-    string MyWord;
-    for (auto i : ASCII) {
-        MyWord += static_cast<char>(i);
+
+vector<int> simple_encryption(const string &password, const string &decoded_string) {
+    vector<int> ascii_value_of_input = convert_string_to_ascii(decoded_string);
+    string concatenated_password = repeat_key_n_times(password, decoded_string.size());
+    vector<int> ascii_value_of_password = convert_string_to_ascii(concatenated_password);
+    std::transform(ascii_value_of_input.begin(), ascii_value_of_input.end(), ascii_value_of_password.begin(),
+                   ascii_value_of_input.begin(), std::plus<int>());
+    return ascii_value_of_input;
+}
+
+vector<int> complex_encryption(const string &password, const string &decoded_string) {
+    vector<int> ascii_value_of_input = convert_string_to_ascii(decoded_string);
+    vector<int> ascii_value_of_password = create_random_from_password_seed(password, decoded_string.size());
+    std::transform(ascii_value_of_input.begin(), ascii_value_of_input.end(), ascii_value_of_password.begin(),
+                   ascii_value_of_input.begin(), plus<int>());
+    return ascii_value_of_input;
+}
+
+vector<int> encrypt(const string &input_string, const string &key, method_kind kind) {
+    switch (kind) {
+        case Simple:
+            return simple_encryption(key, input_string);
+        case Complicated:
+            return complex_encryption(key, input_string);
     }
-    return MyWord;
 }
 
-
-vector<int> Simple_Encryption(const string& Password, const string& GivenLine)
-{
-    vector<int> ASCIIValueOfInput;
-    vector<int> ASCIIValueOfPassword;
-    vector<int> ASCIIValueOfSum;
-
-    string ConcatPassword;
-
-    ASCIIValueOfInput = convertStringToASCII(GivenLine);
-    ConcatPassword = Repeat_Key(Password, GivenLine.size());
-    ASCIIValueOfPassword = convertStringToASCII(ConcatPassword);
-    ASCIIValueOfSum = SumASCIIValues(ASCIIValueOfInput, ASCIIValueOfPassword);
-
-    return ASCIIValueOfSum;
+string simple_decryption(const string &password, const vector<int> &encoded_ascii) {
+    string concatenated = repeat_key_n_times(password, encoded_ascii.size());
+    vector<int> ascii_value_of_password = convert_string_to_ascii(concatenated);
+    vector<int> result = encoded_ascii;
+    std::transform(result.begin(), result.end(), ascii_value_of_password.begin(),
+                   result.begin(), minus<int>());
+    return convert_ascii_to_string(result);
 }
 
-vector<int> Complex_Encryption(const string& Password, const string& GivenLine)
-{
-    vector<int> ASCIIValueOfInput;
-    vector<int> ASCIIValueOfPassword;
-    vector<int> ASCIIValueOfSum;
-
-    string ConcatPassword;
-
-    ASCIIValueOfInput = convertStringToASCII(GivenLine);
-    ASCIIValueOfPassword = CreateRandomFromPasswordSeed(Password, GivenLine.size());
-    ASCIIValueOfSum = SumASCIIValues(ASCIIValueOfInput, ASCIIValueOfPassword);
-
-    return ASCIIValueOfSum;
+string complex_decryption(const string &password, const vector<int> &encoded_ascii) {
+    vector<int> ascii_value_of_password = create_random_from_password_seed(password, encoded_ascii.size());
+    std::transform(ascii_value_of_password.begin(), ascii_value_of_password.end(), encoded_ascii.begin(),
+                   ascii_value_of_password.begin(), minus<int>());
+    return convert_ascii_to_string(ascii_value_of_password);
 }
 
-string Simple_Decryption(const string& Password, const vector<int>& GivenAscii)
-{
-    vector<int> ASCIIValueOfPassword;
-    vector<int> ASCIIValueOfMines;
-
-    string ConcatPassword;
-    string Output;
-
-    ConcatPassword = Repeat_Key(Password, GivenAscii.size());
-    ASCIIValueOfPassword = convertStringToASCII(ConcatPassword);
-    ASCIIValueOfMines = MinesASCIIValues(GivenAscii, ASCIIValueOfPassword);
-    Output = ConvertASCIIToString(ASCIIValueOfMines);
-
-    return Output;
+string decrypt(const vector<int> &input_numbers, const string &key, method_kind kind) {
+    switch (kind) {
+        case Simple:
+            return simple_decryption(key, input_numbers);
+        case Complicated:
+            return complex_decryption(key, input_numbers);
+    }
 }
 
-string Complex_Decryption(const string& Password, const vector<int>& GivenAscii)
-{
-    vector<int> ASCIIValueOfPassword;
-    vector<int> ASCIIValueOfMines;
+string process_output(const Method &method, const string &key, const IO &io) {
 
-    string ConcatPassword;
-    string Output;
-
-    ASCIIValueOfPassword = CreateRandomFromPasswordSeed(Password, GivenAscii.size());
-    ASCIIValueOfMines = MinesASCIIValues(GivenAscii, ASCIIValueOfPassword);
-    Output = ConvertASCIIToString(ASCIIValueOfMines);
-
-    return Output;
-
+    string input_text = read_input_file(io.input_file_path);
+    string output = process_method(input_text, method, key);
+    return output;
 }
 
-void Do_Action(const string& InputPath, const string& OutputPath, const string& Action, const string& Key, const string& Kind){
-    vector<int> ASCIICode;
-    string StringCode;
+string read_input_file(const string &file_path) {
+    ifstream file(file_path);
+    stringstream text_buffer;
+    text_buffer << file.rdbuf();
+    return text_buffer.str();
+}
+
+void writeOutput(const string &output, const string &file_path) {
+    ofstream file(file_path);
+    stringstream buffer(output);
+    buffer >> file.rdbuf();
+}
+
+string process_method(const string &input_text, const Method &method, const string &key) {
+    vector<int> cipher;
+    switch (method.type) {
+        case Encryption:
+            cipher = encrypt(input_text, key, method.kind);
+            return (string) get_cipher_text(cipher);
+        case Decryption:
+            cipher = get_cipher_numbers(input_text);
+            return (string) decrypt(cipher, key, method.kind);
+    }
+}
+
+string get_cipher_text(const vector<int> &cipher) {
+    string cipher_text;
+    for (int cipher_number : cipher)
+        cipher_text += to_string(cipher_number) + CIPHER_BLOCK_DELIMITER;
+    return cipher_text;
+}
+
+vector<int> get_cipher_numbers(const string &cipher_text) {
     string line;
-
-    ifstream InputFile(InputPath);
-    if(InputFile.fail()){
-        cerr << "Error Opening the file" << endl;
-        InputFile.close();
-        exit(1);
-    }
-
-    ofstream OutFile;
-    OutFile.open(OutputPath);
-    if(OutFile.fail()){
-        cerr << "Error Opening the file" << endl;
-        OutFile.close();
-        exit(1);
-    }
-    if(Action == "encrypt"){
-        getline(InputFile, line);
-        if(Kind == "simple")
-            ASCIICode = Simple_Encryption(Key, line);
-        else if(Kind == "complicated")
-            ASCIICode = Complex_Encryption(Key, line);
-
-        for(int i : ASCIICode)
-            OutFile << i << endl;
-    }
-    else if(Action == "decrypt"){
-        while (getline(InputFile, line))
-        {
-            if(Action == "decrypt")
-                ASCIICode.push_back(stoi(line));
-        }
-        if(Kind == "simple")
-            StringCode = Simple_Decryption(Key, ASCIICode);
-        else if(Kind == "complicated")
-            StringCode = Complex_Decryption(Key, ASCIICode);
-
-        OutFile << StringCode;
-    }
-    InputFile.close();
-    OutFile.close();
-}
-
-void Get_InputFile(string& InputPath, string& OutputPath, string& Action, string& Key, string& Kind) {
-    string line;
-    int i = 0;
-    while (cin >> line) {
-        if (i == 0)
-            Action = line;
-        if (i == 1)
-            Kind = line;
-        if (i == 2)
-            Key = line;
-        if (i == 3)
-            InputPath = line;
-        if (i == 4)
-            OutputPath = line;
-        i++;
-    }
+    stringstream cipherTextStream(cipher_text);
+    vector<int> cipher;
+    while (getline(cipherTextStream, line, CIPHER_BLOCK_DELIMITER))
+        cipher.push_back(stoi(line));
+    return cipher;
 }

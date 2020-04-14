@@ -1,0 +1,3 @@
+/home/sspc/Desktop/AP_Projects/FeildsRunner/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/sspc/Desktop/AP_Projects/FeildsRunner/cmake-build-debug/CMakeFiles/FeildsRunner.dir
+/home/sspc/Desktop/AP_Projects/FeildsRunner/cmake-build-debug/CMakeFiles/edit_cache.dir

@@ -1,5 +1,5 @@
-encrypt
-complex
-PASSWORD
+decrypt
+simple
+FARZAD
 ./input.txt
 ./output.txt

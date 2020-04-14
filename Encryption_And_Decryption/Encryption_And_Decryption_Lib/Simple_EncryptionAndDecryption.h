@@ -13,7 +13,7 @@ using namespace std;
 #endif //ENCRYPTION_AND_DECRYPTION_ENCRYPTION_DECRYPTION_H
 
 // Simple Encryption Part Functions
-vector<int> convertStringToASCII (const string& s);
+vector<int> convert_string_to_ascii(const string& input_string);
 string Repeat_Key(string s, int n);
 vector<int> SumASCIIValues(vector<int> Val1, vector<int> Val2);
 vector<int> Simple_Encryption(const string& Password, const string& GivenLine);
@@ -34,27 +34,3 @@ string Complex_Decryption(const string& Password, const vector<int>& GivenAscii)
 void Do_Action(const string& InputPath, const string& OutputPath, const string& Action, const string& Key, const string& Kind);
 void Get_InputFile(string& InputPath, string& OutputPath, string& Action, string& Key, string& Kind);
 
-//For Reading file from PC
-/*    ifstream FileInitial("./InitialFile.txt");
-    if(FileInitial.fail()){
-        cerr << "Error Opening the file" << endl;
-        FileInitial.close();
-        exit(1);
-    }
-    else {
-        string line;
-        for (int i = 0; i < 5; i++) {
-            getline(FileInitial, line);
-            if (i == 0)
-                Action = line;
-            if (i == 1)
-                Kind = line;
-            if (i == 2)
-                Key = line;
-            if (i == 3)
-                InputPath = line;
-            if (i == 4)
-                OutputPath = line;
-        }
-    }
-    FileInitial.close();*/
