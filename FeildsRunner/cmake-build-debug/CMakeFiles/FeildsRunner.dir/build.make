@@ -96,22 +96,9 @@ CMakeFiles/FeildsRunner.dir/source/Tower.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/FeildsRunner.dir/source/Tower.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sspc/Desktop/AP_Projects/FeildsRunner/source/Tower.cpp -o CMakeFiles/FeildsRunner.dir/source/Tower.cpp.s
 
-CMakeFiles/FeildsRunner.dir/source/Bullet.cpp.o: CMakeFiles/FeildsRunner.dir/flags.make
-CMakeFiles/FeildsRunner.dir/source/Bullet.cpp.o: ../source/Bullet.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sspc/Desktop/AP_Projects/FeildsRunner/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/FeildsRunner.dir/source/Bullet.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/FeildsRunner.dir/source/Bullet.cpp.o -c /home/sspc/Desktop/AP_Projects/FeildsRunner/source/Bullet.cpp
-
-CMakeFiles/FeildsRunner.dir/source/Bullet.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/FeildsRunner.dir/source/Bullet.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/sspc/Desktop/AP_Projects/FeildsRunner/source/Bullet.cpp > CMakeFiles/FeildsRunner.dir/source/Bullet.cpp.i
-
-CMakeFiles/FeildsRunner.dir/source/Bullet.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/FeildsRunner.dir/source/Bullet.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sspc/Desktop/AP_Projects/FeildsRunner/source/Bullet.cpp -o CMakeFiles/FeildsRunner.dir/source/Bullet.cpp.s
-
 CMakeFiles/FeildsRunner.dir/source/Gattling.cpp.o: CMakeFiles/FeildsRunner.dir/flags.make
 CMakeFiles/FeildsRunner.dir/source/Gattling.cpp.o: ../source/Gattling.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sspc/Desktop/AP_Projects/FeildsRunner/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/FeildsRunner.dir/source/Gattling.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sspc/Desktop/AP_Projects/FeildsRunner/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/FeildsRunner.dir/source/Gattling.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/FeildsRunner.dir/source/Gattling.cpp.o -c /home/sspc/Desktop/AP_Projects/FeildsRunner/source/Gattling.cpp
 
 CMakeFiles/FeildsRunner.dir/source/Gattling.cpp.i: cmake_force
@@ -122,13 +109,110 @@ CMakeFiles/FeildsRunner.dir/source/Gattling.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/FeildsRunner.dir/source/Gattling.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sspc/Desktop/AP_Projects/FeildsRunner/source/Gattling.cpp -o CMakeFiles/FeildsRunner.dir/source/Gattling.cpp.s
 
+CMakeFiles/FeildsRunner.dir/source/Glue.cpp.o: CMakeFiles/FeildsRunner.dir/flags.make
+CMakeFiles/FeildsRunner.dir/source/Glue.cpp.o: ../source/Glue.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sspc/Desktop/AP_Projects/FeildsRunner/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/FeildsRunner.dir/source/Glue.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/FeildsRunner.dir/source/Glue.cpp.o -c /home/sspc/Desktop/AP_Projects/FeildsRunner/source/Glue.cpp
+
+CMakeFiles/FeildsRunner.dir/source/Glue.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/FeildsRunner.dir/source/Glue.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/sspc/Desktop/AP_Projects/FeildsRunner/source/Glue.cpp > CMakeFiles/FeildsRunner.dir/source/Glue.cpp.i
+
+CMakeFiles/FeildsRunner.dir/source/Glue.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/FeildsRunner.dir/source/Glue.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sspc/Desktop/AP_Projects/FeildsRunner/source/Glue.cpp -o CMakeFiles/FeildsRunner.dir/source/Glue.cpp.s
+
+CMakeFiles/FeildsRunner.dir/source/Tesla.cpp.o: CMakeFiles/FeildsRunner.dir/flags.make
+CMakeFiles/FeildsRunner.dir/source/Tesla.cpp.o: ../source/Tesla.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sspc/Desktop/AP_Projects/FeildsRunner/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/FeildsRunner.dir/source/Tesla.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/FeildsRunner.dir/source/Tesla.cpp.o -c /home/sspc/Desktop/AP_Projects/FeildsRunner/source/Tesla.cpp
+
+CMakeFiles/FeildsRunner.dir/source/Tesla.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/FeildsRunner.dir/source/Tesla.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/sspc/Desktop/AP_Projects/FeildsRunner/source/Tesla.cpp > CMakeFiles/FeildsRunner.dir/source/Tesla.cpp.i
+
+CMakeFiles/FeildsRunner.dir/source/Tesla.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/FeildsRunner.dir/source/Tesla.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sspc/Desktop/AP_Projects/FeildsRunner/source/Tesla.cpp -o CMakeFiles/FeildsRunner.dir/source/Tesla.cpp.s
+
+CMakeFiles/FeildsRunner.dir/source/Missile.cpp.o: CMakeFiles/FeildsRunner.dir/flags.make
+CMakeFiles/FeildsRunner.dir/source/Missile.cpp.o: ../source/Missile.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sspc/Desktop/AP_Projects/FeildsRunner/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/FeildsRunner.dir/source/Missile.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/FeildsRunner.dir/source/Missile.cpp.o -c /home/sspc/Desktop/AP_Projects/FeildsRunner/source/Missile.cpp
+
+CMakeFiles/FeildsRunner.dir/source/Missile.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/FeildsRunner.dir/source/Missile.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/sspc/Desktop/AP_Projects/FeildsRunner/source/Missile.cpp > CMakeFiles/FeildsRunner.dir/source/Missile.cpp.i
+
+CMakeFiles/FeildsRunner.dir/source/Missile.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/FeildsRunner.dir/source/Missile.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sspc/Desktop/AP_Projects/FeildsRunner/source/Missile.cpp -o CMakeFiles/FeildsRunner.dir/source/Missile.cpp.s
+
+CMakeFiles/FeildsRunner.dir/source/Enemies.cpp.o: CMakeFiles/FeildsRunner.dir/flags.make
+CMakeFiles/FeildsRunner.dir/source/Enemies.cpp.o: ../source/Enemies.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sspc/Desktop/AP_Projects/FeildsRunner/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/FeildsRunner.dir/source/Enemies.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/FeildsRunner.dir/source/Enemies.cpp.o -c /home/sspc/Desktop/AP_Projects/FeildsRunner/source/Enemies.cpp
+
+CMakeFiles/FeildsRunner.dir/source/Enemies.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/FeildsRunner.dir/source/Enemies.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/sspc/Desktop/AP_Projects/FeildsRunner/source/Enemies.cpp > CMakeFiles/FeildsRunner.dir/source/Enemies.cpp.i
+
+CMakeFiles/FeildsRunner.dir/source/Enemies.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/FeildsRunner.dir/source/Enemies.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sspc/Desktop/AP_Projects/FeildsRunner/source/Enemies.cpp -o CMakeFiles/FeildsRunner.dir/source/Enemies.cpp.s
+
+CMakeFiles/FeildsRunner.dir/source/Runner.cpp.o: CMakeFiles/FeildsRunner.dir/flags.make
+CMakeFiles/FeildsRunner.dir/source/Runner.cpp.o: ../source/Runner.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sspc/Desktop/AP_Projects/FeildsRunner/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/FeildsRunner.dir/source/Runner.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/FeildsRunner.dir/source/Runner.cpp.o -c /home/sspc/Desktop/AP_Projects/FeildsRunner/source/Runner.cpp
+
+CMakeFiles/FeildsRunner.dir/source/Runner.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/FeildsRunner.dir/source/Runner.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/sspc/Desktop/AP_Projects/FeildsRunner/source/Runner.cpp > CMakeFiles/FeildsRunner.dir/source/Runner.cpp.i
+
+CMakeFiles/FeildsRunner.dir/source/Runner.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/FeildsRunner.dir/source/Runner.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sspc/Desktop/AP_Projects/FeildsRunner/source/Runner.cpp -o CMakeFiles/FeildsRunner.dir/source/Runner.cpp.s
+
+CMakeFiles/FeildsRunner.dir/source/Map.cpp.o: CMakeFiles/FeildsRunner.dir/flags.make
+CMakeFiles/FeildsRunner.dir/source/Map.cpp.o: ../source/Map.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sspc/Desktop/AP_Projects/FeildsRunner/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/FeildsRunner.dir/source/Map.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/FeildsRunner.dir/source/Map.cpp.o -c /home/sspc/Desktop/AP_Projects/FeildsRunner/source/Map.cpp
+
+CMakeFiles/FeildsRunner.dir/source/Map.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/FeildsRunner.dir/source/Map.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/sspc/Desktop/AP_Projects/FeildsRunner/source/Map.cpp > CMakeFiles/FeildsRunner.dir/source/Map.cpp.i
+
+CMakeFiles/FeildsRunner.dir/source/Map.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/FeildsRunner.dir/source/Map.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sspc/Desktop/AP_Projects/FeildsRunner/source/Map.cpp -o CMakeFiles/FeildsRunner.dir/source/Map.cpp.s
+
+CMakeFiles/FeildsRunner.dir/source/MapExceptions.cpp.o: CMakeFiles/FeildsRunner.dir/flags.make
+CMakeFiles/FeildsRunner.dir/source/MapExceptions.cpp.o: ../source/MapExceptions.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sspc/Desktop/AP_Projects/FeildsRunner/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/FeildsRunner.dir/source/MapExceptions.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/FeildsRunner.dir/source/MapExceptions.cpp.o -c /home/sspc/Desktop/AP_Projects/FeildsRunner/source/MapExceptions.cpp
+
+CMakeFiles/FeildsRunner.dir/source/MapExceptions.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/FeildsRunner.dir/source/MapExceptions.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/sspc/Desktop/AP_Projects/FeildsRunner/source/MapExceptions.cpp > CMakeFiles/FeildsRunner.dir/source/MapExceptions.cpp.i
+
+CMakeFiles/FeildsRunner.dir/source/MapExceptions.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/FeildsRunner.dir/source/MapExceptions.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sspc/Desktop/AP_Projects/FeildsRunner/source/MapExceptions.cpp -o CMakeFiles/FeildsRunner.dir/source/MapExceptions.cpp.s
+
 # Object files for target FeildsRunner
 FeildsRunner_OBJECTS = \
 "CMakeFiles/FeildsRunner.dir/source/main.cpp.o" \
 "CMakeFiles/FeildsRunner.dir/RSDL/src/rsdl.cpp.o" \
 "CMakeFiles/FeildsRunner.dir/source/Tower.cpp.o" \
-"CMakeFiles/FeildsRunner.dir/source/Bullet.cpp.o" \
-"CMakeFiles/FeildsRunner.dir/source/Gattling.cpp.o"
+"CMakeFiles/FeildsRunner.dir/source/Gattling.cpp.o" \
+"CMakeFiles/FeildsRunner.dir/source/Glue.cpp.o" \
+"CMakeFiles/FeildsRunner.dir/source/Tesla.cpp.o" \
+"CMakeFiles/FeildsRunner.dir/source/Missile.cpp.o" \
+"CMakeFiles/FeildsRunner.dir/source/Enemies.cpp.o" \
+"CMakeFiles/FeildsRunner.dir/source/Runner.cpp.o" \
+"CMakeFiles/FeildsRunner.dir/source/Map.cpp.o" \
+"CMakeFiles/FeildsRunner.dir/source/MapExceptions.cpp.o"
 
 # External object files for target FeildsRunner
 FeildsRunner_EXTERNAL_OBJECTS =
@@ -136,11 +220,17 @@ FeildsRunner_EXTERNAL_OBJECTS =
 FeildsRunner: CMakeFiles/FeildsRunner.dir/source/main.cpp.o
 FeildsRunner: CMakeFiles/FeildsRunner.dir/RSDL/src/rsdl.cpp.o
 FeildsRunner: CMakeFiles/FeildsRunner.dir/source/Tower.cpp.o
-FeildsRunner: CMakeFiles/FeildsRunner.dir/source/Bullet.cpp.o
 FeildsRunner: CMakeFiles/FeildsRunner.dir/source/Gattling.cpp.o
+FeildsRunner: CMakeFiles/FeildsRunner.dir/source/Glue.cpp.o
+FeildsRunner: CMakeFiles/FeildsRunner.dir/source/Tesla.cpp.o
+FeildsRunner: CMakeFiles/FeildsRunner.dir/source/Missile.cpp.o
+FeildsRunner: CMakeFiles/FeildsRunner.dir/source/Enemies.cpp.o
+FeildsRunner: CMakeFiles/FeildsRunner.dir/source/Runner.cpp.o
+FeildsRunner: CMakeFiles/FeildsRunner.dir/source/Map.cpp.o
+FeildsRunner: CMakeFiles/FeildsRunner.dir/source/MapExceptions.cpp.o
 FeildsRunner: CMakeFiles/FeildsRunner.dir/build.make
 FeildsRunner: CMakeFiles/FeildsRunner.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/sspc/Desktop/AP_Projects/FeildsRunner/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable FeildsRunner"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/sspc/Desktop/AP_Projects/FeildsRunner/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Linking CXX executable FeildsRunner"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/FeildsRunner.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

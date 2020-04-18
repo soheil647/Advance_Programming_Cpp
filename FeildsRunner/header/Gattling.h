@@ -2,18 +2,23 @@
 #define FEILDSRUNNER_GATTLING_H
 
 
+#include "MapExceptions.h"
 #include "Tower.h"
-#include "Bullet.h"
 #include "../RSDL/src/rsdl.hpp"
+#include <utility>
+#include <iostream>
+
+#define GATTLING_PICTURE_LEVEL1 "./Assets/towers/gattling1.png"
+#define GATTLING_PICTURE_LEVEL2 "./Assets/towers/gattling2.png"
+#define GATTLING_PICTURE_LEVEL3 "./Assets/towers/gattling3.png"
 
 class Gattling : public Tower {
-private:
 
 public:
-    Gattling(std::string _name, Point _position, Point _size, std::string _tower_picture, int _cost, int bullet_speed,
-             std::string bullet_picture, int _fire_rate);
-//    void update()
-
+    Gattling(Point _position, const std::string& _tower_picture = GATTLING_PICTURE_LEVEL1 , int _cost = 55, Point _size = Point(100, 100),
+             int bullet_damage = 35, int bullet_speed = 40,
+             const std::string& bullet_picture = "", int _fire_rate = 1000);
+    void update();
 };
 
 

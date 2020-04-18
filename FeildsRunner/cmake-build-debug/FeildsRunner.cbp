@@ -90,19 +90,55 @@
 		<Unit filename="/home/sspc/Desktop/AP_Projects/FeildsRunner/RSDL/src/rsdl.hpp">
 			<Option target="FeildsRunner"/>
 		</Unit>
-		<Unit filename="/home/sspc/Desktop/AP_Projects/FeildsRunner/header/Bullet.h">
+		<Unit filename="/home/sspc/Desktop/AP_Projects/FeildsRunner/header/Enemies.h">
 			<Option target="FeildsRunner"/>
 		</Unit>
 		<Unit filename="/home/sspc/Desktop/AP_Projects/FeildsRunner/header/Gattling.h">
 			<Option target="FeildsRunner"/>
 		</Unit>
+		<Unit filename="/home/sspc/Desktop/AP_Projects/FeildsRunner/header/Glue.h">
+			<Option target="FeildsRunner"/>
+		</Unit>
+		<Unit filename="/home/sspc/Desktop/AP_Projects/FeildsRunner/header/Map.h">
+			<Option target="FeildsRunner"/>
+		</Unit>
+		<Unit filename="/home/sspc/Desktop/AP_Projects/FeildsRunner/header/MapExceptions.h">
+			<Option target="FeildsRunner"/>
+		</Unit>
+		<Unit filename="/home/sspc/Desktop/AP_Projects/FeildsRunner/header/Missile.h">
+			<Option target="FeildsRunner"/>
+		</Unit>
+		<Unit filename="/home/sspc/Desktop/AP_Projects/FeildsRunner/header/Runner.h">
+			<Option target="FeildsRunner"/>
+		</Unit>
+		<Unit filename="/home/sspc/Desktop/AP_Projects/FeildsRunner/header/Tesla.h">
+			<Option target="FeildsRunner"/>
+		</Unit>
 		<Unit filename="/home/sspc/Desktop/AP_Projects/FeildsRunner/header/Tower.h">
 			<Option target="FeildsRunner"/>
 		</Unit>
-		<Unit filename="/home/sspc/Desktop/AP_Projects/FeildsRunner/source/Bullet.cpp">
+		<Unit filename="/home/sspc/Desktop/AP_Projects/FeildsRunner/source/Enemies.cpp">
 			<Option target="FeildsRunner"/>
 		</Unit>
 		<Unit filename="/home/sspc/Desktop/AP_Projects/FeildsRunner/source/Gattling.cpp">
+			<Option target="FeildsRunner"/>
+		</Unit>
+		<Unit filename="/home/sspc/Desktop/AP_Projects/FeildsRunner/source/Glue.cpp">
+			<Option target="FeildsRunner"/>
+		</Unit>
+		<Unit filename="/home/sspc/Desktop/AP_Projects/FeildsRunner/source/Map.cpp">
+			<Option target="FeildsRunner"/>
+		</Unit>
+		<Unit filename="/home/sspc/Desktop/AP_Projects/FeildsRunner/source/MapExceptions.cpp">
+			<Option target="FeildsRunner"/>
+		</Unit>
+		<Unit filename="/home/sspc/Desktop/AP_Projects/FeildsRunner/source/Missile.cpp">
+			<Option target="FeildsRunner"/>
+		</Unit>
+		<Unit filename="/home/sspc/Desktop/AP_Projects/FeildsRunner/source/Runner.cpp">
+			<Option target="FeildsRunner"/>
+		</Unit>
+		<Unit filename="/home/sspc/Desktop/AP_Projects/FeildsRunner/source/Tesla.cpp">
 			<Option target="FeildsRunner"/>
 		</Unit>
 		<Unit filename="/home/sspc/Desktop/AP_Projects/FeildsRunner/source/Tower.cpp">

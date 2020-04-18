@@ -12,191 +12,109 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3ac83281-c1d5-4356-ba7b-a4ac04f4149f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../Encryption_And_Decryption/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Encryption_And_Decryption/Encryption_And_Decryption_Lib/Simple_EncryptionAndDecryption.h.gch" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/FeildsRunner.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/sspc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/OpenSans.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/background.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/enemies/runner.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/enemies/scrambler.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/enemies/stubborn-runner.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/enemies/supertrooper.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/towers/gattling1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/towers/gattling2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/towers/gattling3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/towers/glue1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/towers/glue2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/towers/glue3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/towers/missile1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/towers/missile2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/towers/missile3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/towers/tesla1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/towers/tesla2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/towers/tesla3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Description.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/RSDL/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/RSDL/.travis.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/RSDL/LICENSE" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/RSDL/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/RSDL/example/assets/Athenian.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/RSDL/example/assets/Ghune.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/RSDL/example/assets/OpenSans.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/RSDL/example/assets/Spartiate.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/RSDL/example/assets/back.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/RSDL/example/assets/cursor.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/RSDL/example/assets/sound.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/RSDL/example/assets/ut.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/RSDL/example/example.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/RSDL/example/main.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/RSDL/example/myString.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/RSDL/example/myString.hpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/RSDL/example/textInput.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/RSDL/example/textInput.hpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/RSDL/makefile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/RSDL/src/rsdl.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/RSDL/src/rsdl.hpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/a.out" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.15.3/CMakeCCompiler.cmake" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.15.3/CMakeCXXCompiler.cmake" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.15.3/CMakeDetermineCompilerABI_C.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.15.3/CMakeDetermineCompilerABI_CXX.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.15.3/CMakeSystem.cmake" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.15.3/CompilerIdC/CMakeCCompilerId.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.15.3/CompilerIdC/a.out" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.15.3/CompilerIdCXX/CMakeCXXCompilerId.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.15.3/CompilerIdCXX/a.out" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeOutput.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/FeildsRunner.dir/DependInfo.cmake" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/FeildsRunner.dir/build.make" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/FeildsRunner.dir/cmake_clean.cmake" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/FeildsRunner.dir/depend.make" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/FeildsRunner.dir/flags.make" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/FeildsRunner.dir/link.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/FeildsRunner.dir/progress.make" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TargetDirectories.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-environment.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cmake.check_cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progress.marks" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cmake-build-debug/FeildsRunner.cbp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cmake-build-debug/Makefile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cmake-build-debug/cmake_install.cmake" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/extra/biker.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/extra/heavyrunner.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/extra/icerunner.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/extra/runner.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/extra/tower_gatling_00000.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/extra/tower_gatling_00001.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/extra/tower_gatling_00002.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/extra/tower_goo_00000.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/extra/tower_goo_00001.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/extra/tower_lightning_00000.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/extra/tower_missile_00000.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/extra/unit_bike_00000.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/extra/unit_heavy_soldier_00000.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/extra/unit_heavy_soldier_00001.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/extra/unit_heavy_soldier_00002.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/extra/unit_heavy_soldier_00003.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/extra/unit_icerunner_00000.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/extra/unit_icerunner_00001.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/extra/unit_icerunner_00002.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/extra/unit_light_soldier_00000.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/extra/unit_light_soldier_00001.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/header/Bullet.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/header/Gattling.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/header/Tower.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/source/Bullet.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/source/Gattling.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/source/Tower.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/source/main.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../FeildsRunner_game/.idea/FeildsRunner_game.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../FeildsRunner_game/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../FeildsRunner_game/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../FeildsRunner_game/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../FeildsRunner_game/Assets/OpenSans.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../FeildsRunner_game/Assets/background.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../FeildsRunner_game/Assets/enemies/runner.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../FeildsRunner_game/Assets/enemies/scrambler.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../FeildsRunner_game/Assets/enemies/stubborn-runner.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../FeildsRunner_game/Assets/enemies/supertrooper.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../FeildsRunner_game/Assets/towers/gattling1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../FeildsRunner_game/Assets/towers/gattling2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../FeildsRunner_game/Assets/towers/gattling3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../FeildsRunner_game/Assets/towers/glue1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../FeildsRunner_game/Assets/towers/glue2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../FeildsRunner_game/Assets/towers/glue3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../FeildsRunner_game/Assets/towers/missile1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../FeildsRunner_game/Assets/towers/missile2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../FeildsRunner_game/Assets/towers/missile3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../FeildsRunner_game/Assets/towers/tesla1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../FeildsRunner_game/Assets/towers/tesla2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../FeildsRunner_game/Assets/towers/tesla3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../FeildsRunner_game/Description.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../FeildsRunner_game/RSDL/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../FeildsRunner_game/RSDL/.travis.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../FeildsRunner_game/RSDL/LICENSE" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../FeildsRunner_game/RSDL/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../FeildsRunner_game/RSDL/example/assets/Athenian.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../FeildsRunner_game/RSDL/example/assets/Ghune.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../FeildsRunner_game/RSDL/example/assets/OpenSans.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../FeildsRunner_game/RSDL/example/assets/Spartiate.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../FeildsRunner_game/RSDL/example/assets/back.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../FeildsRunner_game/RSDL/example/assets/cursor.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../FeildsRunner_game/RSDL/example/assets/sound.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../FeildsRunner_game/RSDL/example/assets/ut.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../FeildsRunner_game/RSDL/example/example.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../FeildsRunner_game/RSDL/example/main.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../FeildsRunner_game/RSDL/example/myString.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../FeildsRunner_game/RSDL/example/myString.hpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../FeildsRunner_game/RSDL/example/textInput.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../FeildsRunner_game/RSDL/example/textInput.hpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../FeildsRunner_game/RSDL/makefile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../FeildsRunner_game/RSDL/src/rsdl.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../FeildsRunner_game/RSDL/src/rsdl.hpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../FeildsRunner_game/Tower.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../FeildsRunner_game/Tower.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../FeildsRunner_game/a.out" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../FeildsRunner_game/extra/biker.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../FeildsRunner_game/extra/heavyrunner.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../FeildsRunner_game/extra/icerunner.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../FeildsRunner_game/extra/runner.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../FeildsRunner_game/extra/tower_gatling_00000.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../FeildsRunner_game/extra/tower_gatling_00001.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../FeildsRunner_game/extra/tower_gatling_00002.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../FeildsRunner_game/extra/tower_goo_00000.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../FeildsRunner_game/extra/tower_goo_00001.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../FeildsRunner_game/extra/tower_lightning_00000.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../FeildsRunner_game/extra/tower_missile_00000.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../FeildsRunner_game/extra/unit_bike_00000.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../FeildsRunner_game/extra/unit_heavy_soldier_00000.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../FeildsRunner_game/extra/unit_heavy_soldier_00001.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../FeildsRunner_game/extra/unit_heavy_soldier_00002.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../FeildsRunner_game/extra/unit_heavy_soldier_00003.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../FeildsRunner_game/extra/unit_icerunner_00000.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../FeildsRunner_game/extra/unit_icerunner_00001.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../FeildsRunner_game/extra/unit_icerunner_00002.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../FeildsRunner_game/extra/unit_light_soldier_00000.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../FeildsRunner_game/extra/unit_light_soldier_00001.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../FeildsRunner_game/main.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Encryption_And_Decryption/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../Encryption_And_Decryption/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Encryption_And_Decryption/Encryption_And_Decryption_Lib/Simple_EncryptionAndDecryption.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../Encryption_And_Decryption/Encryption_And_Decryption_Lib/Simple_EncryptionAndDecryption.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Encryption_And_Decryption/Encryption_And_Decryption_Lib/Simple_EncryptionAndDecryption.h" beforeDir="false" afterPath="$PROJECT_DIR$/../Encryption_And_Decryption/Encryption_And_Decryption_Lib/Simple_EncryptionAndDecryption.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Encryption_And_Decryption/InitialFile.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../Encryption_And_Decryption/InitialFile.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Encryption_And_Decryption/a.out" beforeDir="false" afterPath="$PROJECT_DIR$/../Encryption_And_Decryption/a.out" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Encryption_And_Decryption/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../Encryption_And_Decryption/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Encryption_And_Decryption/input.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../Encryption_And_Decryption/input.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Encryption_And_Decryption/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../Encryption_And_Decryption/main.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Encryption_And_Decryption/output.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../Encryption_And_Decryption/output.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/header/Enemies.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/header/Glue.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/header/Map.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/header/MapExceptions.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/header/Missile.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/header/Runner.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/header/Tesla.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/source/Enemies.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/source/Glue.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/source/Map.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/source/MapExceptions.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/source/Missile.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/source/Runner.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/source/Tesla.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/a.out" beforeDir="false" afterPath="$PROJECT_DIR$/a.out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/FeildsRunner.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/FeildsRunner.dir/DependInfo.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/FeildsRunner.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/FeildsRunner.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/FeildsRunner.dir/cmake_clean.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/FeildsRunner.dir/cmake_clean.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/FeildsRunner.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/FeildsRunner.dir/link.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/FeildsRunner.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/FeildsRunner.dir/progress.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progress.marks" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progress.marks" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/FeildsRunner.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/FeildsRunner.cbp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/header/Bullet.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/header/Gattling.h" beforeDir="false" afterPath="$PROJECT_DIR$/header/Gattling.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/header/Tower.h" beforeDir="false" afterPath="$PROJECT_DIR$/header/Tower.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/Bullet.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/Gattling.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/source/Gattling.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/Tower.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/source/Tower.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/source/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FeildsRunner_game/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FeildsRunner_game/.idea/FeildsRunner_game.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FeildsRunner_game/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FeildsRunner_game/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FeildsRunner_game/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FeildsRunner_game/Assets/OpenSans.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FeildsRunner_game/Assets/background.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FeildsRunner_game/Assets/enemies/runner.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FeildsRunner_game/Assets/enemies/scrambler.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FeildsRunner_game/Assets/enemies/stubborn-runner.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FeildsRunner_game/Assets/enemies/supertrooper.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FeildsRunner_game/Assets/towers/gattling1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FeildsRunner_game/Assets/towers/gattling2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FeildsRunner_game/Assets/towers/gattling3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FeildsRunner_game/Assets/towers/glue1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FeildsRunner_game/Assets/towers/glue2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FeildsRunner_game/Assets/towers/glue3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FeildsRunner_game/Assets/towers/missile1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FeildsRunner_game/Assets/towers/missile2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FeildsRunner_game/Assets/towers/missile3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FeildsRunner_game/Assets/towers/tesla1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FeildsRunner_game/Assets/towers/tesla2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FeildsRunner_game/Assets/towers/tesla3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FeildsRunner_game/Description.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FeildsRunner_game/RSDL/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FeildsRunner_game/RSDL/.travis.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FeildsRunner_game/RSDL/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FeildsRunner_game/RSDL/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FeildsRunner_game/RSDL/example/assets/Athenian.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FeildsRunner_game/RSDL/example/assets/Ghune.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FeildsRunner_game/RSDL/example/assets/OpenSans.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FeildsRunner_game/RSDL/example/assets/Spartiate.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FeildsRunner_game/RSDL/example/assets/back.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FeildsRunner_game/RSDL/example/assets/cursor.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FeildsRunner_game/RSDL/example/assets/sound.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FeildsRunner_game/RSDL/example/assets/ut.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FeildsRunner_game/RSDL/example/example.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FeildsRunner_game/RSDL/example/main.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FeildsRunner_game/RSDL/example/myString.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FeildsRunner_game/RSDL/example/myString.hpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FeildsRunner_game/RSDL/example/textInput.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FeildsRunner_game/RSDL/example/textInput.hpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FeildsRunner_game/RSDL/makefile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FeildsRunner_game/RSDL/src/rsdl.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FeildsRunner_game/RSDL/src/rsdl.hpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FeildsRunner_game/Tower.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FeildsRunner_game/Tower.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FeildsRunner_game/a.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FeildsRunner_game/extra/biker.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FeildsRunner_game/extra/heavyrunner.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FeildsRunner_game/extra/icerunner.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FeildsRunner_game/extra/runner.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FeildsRunner_game/extra/tower_gatling_00000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FeildsRunner_game/extra/tower_gatling_00001.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FeildsRunner_game/extra/tower_gatling_00002.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FeildsRunner_game/extra/tower_goo_00000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FeildsRunner_game/extra/tower_goo_00001.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FeildsRunner_game/extra/tower_lightning_00000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FeildsRunner_game/extra/tower_missile_00000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FeildsRunner_game/extra/unit_bike_00000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FeildsRunner_game/extra/unit_heavy_soldier_00000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FeildsRunner_game/extra/unit_heavy_soldier_00001.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FeildsRunner_game/extra/unit_heavy_soldier_00002.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FeildsRunner_game/extra/unit_heavy_soldier_00003.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FeildsRunner_game/extra/unit_icerunner_00000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FeildsRunner_game/extra/unit_icerunner_00001.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FeildsRunner_game/extra/unit_icerunner_00002.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FeildsRunner_game/extra/unit_light_soldier_00000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FeildsRunner_game/extra/unit_light_soldier_00001.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FeildsRunner_game/main.cpp" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -206,12 +124,28 @@
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
   </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="ProjectId" id="1aWh2PIOmUUGPTCRmmCzM5iH13o" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -225,8 +159,8 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/header" />
       <recent name="$PROJECT_DIR$/source" />
+      <recent name="$PROJECT_DIR$/header" />
     </key>
   </component>
   <component name="RunManager">
@@ -254,6 +188,50 @@
       <workItem from="1586875503666" duration="1795000" />
       <workItem from="1586879057574" duration="599000" />
       <workItem from="1586884953501" duration="1796000" />
+      <workItem from="1586936684266" duration="1759000" />
+      <workItem from="1586938458135" duration="1176000" />
+      <workItem from="1586941027067" duration="1891000" />
+      <workItem from="1586943539356" duration="1273000" />
+      <workItem from="1586947789403" duration="1750000" />
+      <workItem from="1586949557169" duration="1797000" />
+      <workItem from="1586951369625" duration="1429000" />
+      <workItem from="1586953051240" duration="1960000" />
+      <workItem from="1586956150191" duration="397000" />
+      <workItem from="1586958675015" duration="18000" />
+      <workItem from="1586971931988" duration="1406000" />
+      <workItem from="1587014724477" duration="1286000" />
+      <workItem from="1587016033578" duration="1779000" />
+      <workItem from="1587019147207" duration="2190000" />
+      <workItem from="1587023138847" duration="1795000" />
+      <workItem from="1587024946952" duration="549000" />
+      <workItem from="1587025510040" duration="1884000" />
+      <workItem from="1587027418177" duration="961000" />
+      <workItem from="1587031588548" duration="1794000" />
+      <workItem from="1587033400173" duration="716000" />
+      <workItem from="1587035838837" duration="1736000" />
+      <workItem from="1587038658074" duration="601000" />
+      <workItem from="1587040541940" duration="1794000" />
+      <workItem from="1587042354796" duration="1530000" />
+      <workItem from="1587048960434" duration="2154000" />
+      <workItem from="1587106434991" duration="2201000" />
+      <workItem from="1587109525026" duration="1795000" />
+      <workItem from="1587114229714" duration="1797000" />
+      <workItem from="1587116040527" duration="1497000" />
+      <workItem from="1587117938688" duration="1795000" />
+      <workItem from="1587119771025" duration="790000" />
+      <workItem from="1587123734531" duration="1751000" />
+      <workItem from="1587125514972" duration="399000" />
+      <workItem from="1587125948927" duration="373000" />
+      <workItem from="1587126536662" duration="154000" />
+      <workItem from="1587126709651" duration="1800000" />
+      <workItem from="1587128540228" duration="1796000" />
+      <workItem from="1587130351744" duration="1796000" />
+      <workItem from="1587132165927" duration="1414000" />
+      <workItem from="1587192110164" duration="1762000" />
+      <workItem from="1587193884277" duration="1792000" />
+      <workItem from="1587195700012" duration="1178000" />
+      <workItem from="1587204330625" duration="1794000" />
+      <workItem from="1587206138056" duration="1362000" />
     </task>
     <servers />
   </component>
@@ -261,9 +239,25 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="649" y="380" key="com.intellij.ide.util.TipDialog" timestamp="1586884955862">
+    <state x="726" y="301" width="524" height="502" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1586952569080">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="649" y="380" key="com.intellij.ide.util.TipDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1586884955862" />
+    <state x="726" y="301" width="524" height="502" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1586952569080" />
+    <state x="167" y="125" width="1653" height="855" key="DiffContextDialog" timestamp="1587035960801">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state x="167" y="125" width="1653" height="855" key="DiffContextDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1587035960801" />
+    <state x="776" y="310" width="424" height="484" key="FileChooserDialogImpl" timestamp="1587035934988">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state x="776" y="310" width="424" height="484" key="FileChooserDialogImpl/67.27.1853.1053@67.27.1853.1053" timestamp="1587035934988" />
+    <state x="649" y="380" key="com.intellij.ide.util.TipDialog" timestamp="1587206137998">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state x="649" y="380" key="com.intellij.ide.util.TipDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1587206137997" />
+    <state x="656" y="257" width="672" height="678" key="search.everywhere.popup" timestamp="1587126877820">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state x="656" y="257" width="672" height="678" key="search.everywhere.popup/67.27.1853.1053@67.27.1853.1053" timestamp="1587126877820" />
   </component>
 </project>

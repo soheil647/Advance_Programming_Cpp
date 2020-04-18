@@ -74,12 +74,12 @@ preinstall:
 CMakeFiles/FeildsRunner.dir/all:
 	$(MAKE) -f CMakeFiles/FeildsRunner.dir/build.make CMakeFiles/FeildsRunner.dir/depend
 	$(MAKE) -f CMakeFiles/FeildsRunner.dir/build.make CMakeFiles/FeildsRunner.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sspc/Desktop/AP_Projects/FeildsRunner/cmake-build-debug/CMakeFiles --progress-num=1,2,3,4,5,6 "Built target FeildsRunner"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sspc/Desktop/AP_Projects/FeildsRunner/cmake-build-debug/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12 "Built target FeildsRunner"
 .PHONY : CMakeFiles/FeildsRunner.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/FeildsRunner.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/sspc/Desktop/AP_Projects/FeildsRunner/cmake-build-debug/CMakeFiles 6
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sspc/Desktop/AP_Projects/FeildsRunner/cmake-build-debug/CMakeFiles 12
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/FeildsRunner.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/sspc/Desktop/AP_Projects/FeildsRunner/cmake-build-debug/CMakeFiles 0
 .PHONY : CMakeFiles/FeildsRunner.dir/rule
