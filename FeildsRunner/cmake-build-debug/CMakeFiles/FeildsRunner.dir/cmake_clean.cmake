@@ -1,13 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/FeildsRunner.dir/RSDL/src/rsdl.cpp.o"
   "CMakeFiles/FeildsRunner.dir/source/Enemies.cpp.o"
-  "CMakeFiles/FeildsRunner.dir/source/Gattling.cpp.o"
-  "CMakeFiles/FeildsRunner.dir/source/Glue.cpp.o"
   "CMakeFiles/FeildsRunner.dir/source/Map.cpp.o"
   "CMakeFiles/FeildsRunner.dir/source/MapExceptions.cpp.o"
-  "CMakeFiles/FeildsRunner.dir/source/Missile.cpp.o"
-  "CMakeFiles/FeildsRunner.dir/source/Runner.cpp.o"
-  "CMakeFiles/FeildsRunner.dir/source/Tesla.cpp.o"
   "CMakeFiles/FeildsRunner.dir/source/Tower.cpp.o"
   "CMakeFiles/FeildsRunner.dir/source/main.cpp.o"
   "FeildsRunner"

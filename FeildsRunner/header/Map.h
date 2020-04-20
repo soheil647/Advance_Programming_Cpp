@@ -12,15 +12,8 @@
 #include <time.h>
 
 #include "../source/MapExceptions.cpp"
-
 #include "../source/Tower.cpp"
-#include "../source/Gattling.cpp"
-#include "../source/Tesla.cpp"
-#include "../source/Missile.cpp"
-#include "../source/Glue.cpp"
-
 #include "../source/Enemies.cpp"
-#include "../source/Runner.cpp"
 
 #define RENDER_TIME 10
 
@@ -29,7 +22,7 @@
 #define FIRST_SQUARE_X 120
 #define FIRST_SQUARE_Y 180
 
-#define INITIAL_GOLD 100
+#define INITIAL_GOLD 200
 #define INITIAL_HEALTH 100
 
 
@@ -45,10 +38,6 @@
 
 #define BUILD_NEW_TOWER_SOUND "./RSDL/example/assets/sound.wav"
 #define UPDATE_TOWER_SOUND "./RSDL/example/assets/sound.wav"
-
-#define THREE_SECOND 3000000000
-#define HALF_SECOND 500000000
-#define ONE_TENTH_SECOND 14000000
 
 #define NUMBER_OF_ENEMIES_TYPE 4
 #define RUNNER_PARAMETER 250, 50, 6, 1, "./Assets/enemies/runner.png"
@@ -71,6 +60,7 @@ private:
     std::vector<std::vector<int>> enemies_count;
     std::vector<vector<Enemies>> enemies_each_round;
     int passed_time;
+    int respawned_enemie;
 
     void read_input_file();
 
@@ -90,15 +80,15 @@ private:
     void process_wave();
     bool is_three_second_passed();
     bool is_time_in_second_passed(int time);
-    void process_wave_time();
-    void process_wave_health();
 
 
 public:
-    Map(const std::vector<Tower *> &_towers, const std::vector<Enemies *> &_enemies, Window *_map_window);
+    Map(Window *_map_window);
 
-    bool process_event(chrono::time_point<chrono::system_clock, chrono::duration<long, ratio<1, 1000000000>>> point);
+    bool process_event();
     void render();
+
+    bool count_remaining_enemies();
 };
 
 

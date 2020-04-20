@@ -3,16 +3,18 @@
 
 using namespace std;
 
-Map::Map(const std::vector<Tower *> &_towers, const std::vector<Enemies *> &_enemies, Window *_map_window) {
+Map::Map(Window *_map_window) {
     read_input_file();
-    towers = _towers;
-    enemies = _enemies;
+    towers = {};
+    enemies = {};
     map_window = _map_window;
     gold = INITIAL_GOLD;
     health = INITIAL_HEALTH;
     wave_number = 0;
     wave_finished = false;
     passed_time = 0;
+    respawned_enemie = 0;
+    map_window->play_music("./Assets/Broke_For_Free_-_09_-_Add_And.mp3");
     map_squares_to_middle_points();
     find_enemies_for_each_round();
     shuffle_enemies_of_each_round();
@@ -31,14 +33,14 @@ Point Map::find_square_middle_point(Point location) {
 
 bool Map::find_square_emptiness(Point location_middle_square) {
     for (auto tower : towers) {
-        if (location_middle_square.x == tower->position.x && location_middle_square.y == tower->position.y)
+        if (location_middle_square.x == tower->get_position().x && location_middle_square.y == tower->get_position().y)
             return false;
     }
     return true;
 }
 
 bool
-Map::process_event(chrono::time_point<chrono::system_clock, chrono::duration<long, ratio<1, 1000000000>>> start_time) {
+Map::process_event() {
     auto now_time = std::chrono::system_clock::now();
 
     Event event = map_window->poll_for_event();
@@ -66,31 +68,32 @@ Map::process_event(chrono::time_point<chrono::system_clock, chrono::duration<lon
 
 void Map::render() {
     map_window->clear();
-    map_window->draw_img("./Assets/background.png");
-    for (int i = 2; i <= 20; i++) {
-        for (int j = 3; j <= 13; j++) {
-            map_window->draw_rect(Rectangle(Point(i * 60, j * 60), Point(i * 60 + 60, j * 60 + 60)), WHITE);
+    if(health <= 0)
+        map_window->draw_img("./Assets/lose.png", Rectangle(Point(0, 0), Point(1365, 1024)));
+    else if(health > 0 && wave_number >= enemies_each_round.size())
+        map_window->draw_img("./Assets/win.jpeg", Rectangle(Point(0, 0), Point(1365, 1024)));
+    else {
+        map_window->draw_img("./Assets/background.png");
+        for (const auto &tower : towers) {
+            tower->fire(enemies, map_window, passed_time);
+            tower->draw(map_window);
         }
+        for (const auto &enemie : enemies) {
+            health = enemie->move(map_window, path, passed_time, health, gold);
+        }
+        map_window->show_text("Gold: " + to_string(gold), Point(200, 220), RGB(20, 50, 100), FONT_TEXT_SANSSERIF, 50);
+        map_window->show_text("HP: " + to_string(health), Point(1000, 220), RGB(20, 50, 100), FONT_TEXT_SANSSERIF, 50);
+        map_window->draw_img("./RSDL/example/assets/cursor.png",
+                             Rectangle(get_current_mouse_position() - Point(15, 15), 30, 30));
+        passed_time += 1;
     }
-    for (const auto &tower : towers) {
-        map_window->draw_img(tower->tower_picture,
-                             Rectangle(tower->position - tower->size / 2, tower->position + tower->size / 2));
-    }
-    for (const auto &enemie : enemies) {
-        enemie->move(map_window, path, passed_time);
-    }
-    map_window->show_text("Gold: " + to_string(gold), Point(200, 220), RGB(20, 50, 100), FONT_TEXT_SANSSERIF, 50);
-    map_window->show_text("HP: " + to_string(health), Point(1000, 220), RGB(20, 50, 100), FONT_TEXT_SANSSERIF, 50);
-    map_window->draw_img("./RSDL/example/assets/cursor.png",
-                         Rectangle(get_current_mouse_position() - Point(15, 15), 30, 30));
     map_window->update_screen();
-    passed_time += 1;
     delay(RENDER_TIME);
 }
 
 Tower *Map::find_tower_from_location(Point location) {
     for (const auto &tower : towers) {
-        if (tower->position.x == location.x && tower->position.y == location.y) {
+        if (tower->get_position().x == location.x && tower->get_position().y == location.y) {
             return tower;
         }
     }
@@ -112,20 +115,13 @@ void Map::process_left_click_event(Point mouse_position) {
 
 bool Map::build_tower(char pressed_key, Point mouse_clicked_location) {
     if (find_square_emptiness(mouse_clicked_location)) {
-        Tower *new_tower = nullptr;
-        if (pressed_key == BUILD_GATTLING_KEY)
-            new_tower = new Gattling(mouse_clicked_location);
-        else if (pressed_key == BUILD_MISSILE_KEY)
-            new_tower = new Missile(mouse_clicked_location);
-        else if (pressed_key == BUILD_TESLA_KEY)
-            new_tower = new Tesla(mouse_clicked_location);
-        else if (pressed_key == BUILD_GLUE_KEY)
-            new_tower = new Glue(mouse_clicked_location);
-        else throw MapExceptions(BUILD_TOWER_ERROR_CODE);
-        gold -= new_tower->cost;
-        towers.push_back(new_tower);
-        map_window->play_sound_effect(BUILD_NEW_TOWER_SOUND);
-        return true;
+            Tower * new_tower = new_tower -> build(gold, pressed_key, mouse_clicked_location);
+            if(new_tower == nullptr){
+                throw MapExceptions(BUILD_TOWER_ERROR_CODE);
+            }
+            towers.push_back(new_tower);
+            map_window->play_sound_effect(BUILD_NEW_TOWER_SOUND);
+            return true;
     } else throw MapExceptions(LOCATION_FOR_TOWER_FULL_CODE);
 }
 
@@ -133,8 +129,7 @@ bool Map::update_tower(Point mouse_location) {
     Tower *clicked_tower = find_tower_from_location(mouse_location);
     if (clicked_tower == nullptr)
         throw MapExceptions(UPDATE_TOWER_ERROR_CODE);
-    clicked_tower->update();
-    gold -= clicked_tower->cost;
+    gold = clicked_tower->update(gold);
     map_window->play_sound_effect(UPDATE_TOWER_SOUND);
     return true;
 }
@@ -148,28 +143,29 @@ bool Map::process_pressed_key_command(char pressed_key, Point mouse_clicked_loca
     } else return build_tower(pressed_key, mouse_clicked_location);
 }
 
-int i = 0;
-
 void Map::process_wave() {
     auto now_time = std::chrono::system_clock::now();
-    if (is_three_second_passed()) {
-        if (is_time_in_second_passed(50)) {
-            int number_of_enemies = 0;
-            for (int enemie_number = 0; enemie_number < NUMBER_OF_ENEMIES_TYPE; enemie_number++)
-                number_of_enemies += enemies_count[wave_number][enemie_number];
+    if(!wave_finished) {
+        if (is_three_second_passed()) {
+            if (is_time_in_second_passed(50)) {
+                int number_of_enemies = 0;
+                for (int enemie_number = 0; enemie_number < NUMBER_OF_ENEMIES_TYPE; enemie_number++)
+                    number_of_enemies += enemies_count[wave_number][enemie_number];
 
-            if (i != number_of_enemies) {
-                enemies.push_back(&enemies_each_round[wave_number][i]);
-                i++;
+                if (respawned_enemie != number_of_enemies) {
+                    enemies.push_back(&enemies_each_round[wave_number][respawned_enemie]);
+                    respawned_enemie++;
+                }
+                wave_finished = count_remaining_enemies();
             }
         }
     }
-}
-
-void Map::process_wave_time() {
-    auto now_time = std::chrono::system_clock::now();
-    if (!wave_finished) {
-
+    else{
+        enemies.clear();
+        wave_number++;
+        passed_time = 0;
+        respawned_enemie = 0;
+        wave_finished = false;
     }
 }
 
@@ -234,7 +230,8 @@ void Map::find_enemies_for_each_round() {
 
 void Map::shuffle_enemies_of_each_round() {
     unsigned seed = std::chrono::system_clock::now().time_since_epoch().count();
-    shuffle(enemies_each_round[0].begin(), enemies_each_round[0].end(), std::default_random_engine(seed));
+    for(auto & i : enemies_each_round)
+        shuffle(i.begin(), i.end(), std::default_random_engine(seed));
 }
 
 bool Map::is_three_second_passed() {
@@ -242,4 +239,13 @@ bool Map::is_three_second_passed() {
 }
 bool Map::is_time_in_second_passed(int time) {
     return passed_time % time == 0;
+}
+
+bool Map::count_remaining_enemies(){
+    int count = 0;
+    for(const auto& enemie: enemies){
+        if((enemie->get_location().x == 0 && enemie->get_location().y == 0) || (enemie->get_location().x == 1 && enemie->get_location().y == 0))
+            count++;
+    }
+    return count == respawned_enemie;
 }

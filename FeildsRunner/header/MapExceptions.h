@@ -24,6 +24,9 @@
 #define LOCATION_FOR_TOWER_FULL_SOUND "./RSDL/example/assets/sound.wav"
 #define LOCATION_FOR_TOWER_FULL_CODE 6
 
+#define NO_GOLD_SOUND "./RSDL/example/assets/sound.wav"
+#define NO_GOLD_CODE 7
+
 class MapExceptions : public std::exception {
 private:
     int error_code;

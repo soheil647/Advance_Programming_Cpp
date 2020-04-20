@@ -38,5 +38,9 @@ void MapExceptions::handle_exception_sound(Window *window) {
         cout << "Location is full" << endl;
     }
 
+    if(error_code == NO_GOLD_CODE){
+        window->play_sound_effect(NO_GOLD_SOUND);
+        cout << "No Gold" << endl;
+    }
 }
 
