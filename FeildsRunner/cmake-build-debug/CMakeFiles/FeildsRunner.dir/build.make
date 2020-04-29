@@ -70,18 +70,18 @@ CMakeFiles/FeildsRunner.dir/source/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/FeildsRunner.dir/source/main.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sspc/Desktop/AP_Projects/FeildsRunner/source/main.cpp -o CMakeFiles/FeildsRunner.dir/source/main.cpp.s
 
-CMakeFiles/FeildsRunner.dir/RSDL/src/rsdl.cpp.o: CMakeFiles/FeildsRunner.dir/flags.make
-CMakeFiles/FeildsRunner.dir/RSDL/src/rsdl.cpp.o: ../RSDL/src/rsdl.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sspc/Desktop/AP_Projects/FeildsRunner/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/FeildsRunner.dir/RSDL/src/rsdl.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/FeildsRunner.dir/RSDL/src/rsdl.cpp.o -c /home/sspc/Desktop/AP_Projects/FeildsRunner/RSDL/src/rsdl.cpp
+CMakeFiles/FeildsRunner.dir/source/rsdl.cpp.o: CMakeFiles/FeildsRunner.dir/flags.make
+CMakeFiles/FeildsRunner.dir/source/rsdl.cpp.o: ../source/rsdl.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sspc/Desktop/AP_Projects/FeildsRunner/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/FeildsRunner.dir/source/rsdl.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/FeildsRunner.dir/source/rsdl.cpp.o -c /home/sspc/Desktop/AP_Projects/FeildsRunner/source/rsdl.cpp
 
-CMakeFiles/FeildsRunner.dir/RSDL/src/rsdl.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/FeildsRunner.dir/RSDL/src/rsdl.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/sspc/Desktop/AP_Projects/FeildsRunner/RSDL/src/rsdl.cpp > CMakeFiles/FeildsRunner.dir/RSDL/src/rsdl.cpp.i
+CMakeFiles/FeildsRunner.dir/source/rsdl.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/FeildsRunner.dir/source/rsdl.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/sspc/Desktop/AP_Projects/FeildsRunner/source/rsdl.cpp > CMakeFiles/FeildsRunner.dir/source/rsdl.cpp.i
 
-CMakeFiles/FeildsRunner.dir/RSDL/src/rsdl.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/FeildsRunner.dir/RSDL/src/rsdl.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sspc/Desktop/AP_Projects/FeildsRunner/RSDL/src/rsdl.cpp -o CMakeFiles/FeildsRunner.dir/RSDL/src/rsdl.cpp.s
+CMakeFiles/FeildsRunner.dir/source/rsdl.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/FeildsRunner.dir/source/rsdl.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sspc/Desktop/AP_Projects/FeildsRunner/source/rsdl.cpp -o CMakeFiles/FeildsRunner.dir/source/rsdl.cpp.s
 
 CMakeFiles/FeildsRunner.dir/source/Tower.cpp.o: CMakeFiles/FeildsRunner.dir/flags.make
 CMakeFiles/FeildsRunner.dir/source/Tower.cpp.o: ../source/Tower.cpp
@@ -138,7 +138,7 @@ CMakeFiles/FeildsRunner.dir/source/MapExceptions.cpp.s: cmake_force
 # Object files for target FeildsRunner
 FeildsRunner_OBJECTS = \
 "CMakeFiles/FeildsRunner.dir/source/main.cpp.o" \
-"CMakeFiles/FeildsRunner.dir/RSDL/src/rsdl.cpp.o" \
+"CMakeFiles/FeildsRunner.dir/source/rsdl.cpp.o" \
 "CMakeFiles/FeildsRunner.dir/source/Tower.cpp.o" \
 "CMakeFiles/FeildsRunner.dir/source/Enemies.cpp.o" \
 "CMakeFiles/FeildsRunner.dir/source/Map.cpp.o" \
@@ -148,7 +148,7 @@ FeildsRunner_OBJECTS = \
 FeildsRunner_EXTERNAL_OBJECTS =
 
 FeildsRunner: CMakeFiles/FeildsRunner.dir/source/main.cpp.o
-FeildsRunner: CMakeFiles/FeildsRunner.dir/RSDL/src/rsdl.cpp.o
+FeildsRunner: CMakeFiles/FeildsRunner.dir/source/rsdl.cpp.o
 FeildsRunner: CMakeFiles/FeildsRunner.dir/source/Tower.cpp.o
 FeildsRunner: CMakeFiles/FeildsRunner.dir/source/Enemies.cpp.o
 FeildsRunner: CMakeFiles/FeildsRunner.dir/source/Map.cpp.o

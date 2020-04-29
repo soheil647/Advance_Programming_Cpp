@@ -14,7 +14,8 @@ Map::Map(Window *_map_window) {
     wave_finished = false;
     passed_time = 0;
     respawned_enemie = 0;
-    map_window->play_music("./Assets/Broke_For_Free_-_09_-_Add_And.mp3");
+    map_window->play_music(BACKGROUND_SONG);
+    complete_path_sequence();
     map_squares_to_middle_points();
     find_enemies_for_each_round();
     shuffle_enemies_of_each_round();
@@ -41,8 +42,6 @@ bool Map::find_square_emptiness(Point location_middle_square) {
 
 bool
 Map::process_event() {
-    auto now_time = std::chrono::system_clock::now();
-
     Event event = map_window->poll_for_event();
     process_wave();
     switch (event.get_type()) {
@@ -58,7 +57,7 @@ Map::process_event() {
             }
         }
         case Event::KEY_RELEASE:
-            if (event.get_pressed_key() == 'q') {
+            if (event.get_pressed_key() == EXIT) {
                 return false;
             }
         default:;
@@ -68,20 +67,28 @@ Map::process_event() {
 
 void Map::render() {
     map_window->clear();
-    if(health <= 0)
-        map_window->draw_img("./Assets/lose.png", Rectangle(Point(0, 0), Point(1365, 1024)));
-    else if(health > 0 && wave_number >= enemies_each_round.size())
-        map_window->draw_img("./Assets/win.jpeg", Rectangle(Point(0, 0), Point(1365, 1024)));
+    if (health <= 0) {
+        map_window->stop_music();
+        map_window->play_sound_effect(LOSE_SOUND);
+        map_window->draw_img(LOSE_PICTURE, Rectangle(Point(0, 0), Point(1365, 1024)));
+    }
+    else if (health > 0 && wave_number >= enemies_each_round.size()) {
+        map_window->stop_music();
+        map_window->play_sound_effect(WIN_SOUND);
+        map_window->draw_img(WIN_PICTURE, Rectangle(Point(0, 0), Point(1365, 1024)));
+    }
     else {
-        map_window->draw_img("./Assets/background.png");
+        map_window->draw_img(BACKGROUND_PICTURE);
+        show_enemies_path();
         for (const auto &tower : towers) {
-            tower->fire(enemies, map_window, passed_time);
-            tower->draw(map_window);
+            tower->fire(enemies, map_window);
         }
         for (const auto &enemie : enemies) {
             health = enemie->move(map_window, path, passed_time, health, gold);
         }
         map_window->show_text("Gold: " + to_string(gold), Point(200, 220), RGB(20, 50, 100), FONT_TEXT_SANSSERIF, 50);
+        map_window->draw_img("./Assets/heart-health-5-7.jpg",
+                             Rectangle(Point(200, 220), Point(200, 220) + Point(30, 30)));
         map_window->show_text("HP: " + to_string(health), Point(1000, 220), RGB(20, 50, 100), FONT_TEXT_SANSSERIF, 50);
         map_window->draw_img("./RSDL/example/assets/cursor.png",
                              Rectangle(get_current_mouse_position() - Point(15, 15), 30, 30));
@@ -105,8 +112,9 @@ void Map::process_left_click_event(Point mouse_position) {
     auto start = std::chrono::system_clock::now();
     while (!finish) {
         auto end = std::chrono::system_clock::now();
-        if ((end - start).count() >= 1000000000)
+        if ((end - start).count() >= 1500000000)
             throw MapExceptions(NO_KEY_PRESS_CODE);
+        cout << (end - start).count() << endl;
         Event event1 = map_window->poll_for_event();
         if (event1.get_pressed_key() != -1)
             finish = process_pressed_key_command(event1.get_pressed_key(), mouse_position);
@@ -114,14 +122,14 @@ void Map::process_left_click_event(Point mouse_position) {
 }
 
 bool Map::build_tower(char pressed_key, Point mouse_clicked_location) {
-    if (find_square_emptiness(mouse_clicked_location)) {
-            Tower * new_tower = new_tower -> build(gold, pressed_key, mouse_clicked_location);
-            if(new_tower == nullptr){
-                throw MapExceptions(BUILD_TOWER_ERROR_CODE);
-            }
-            towers.push_back(new_tower);
-            map_window->play_sound_effect(BUILD_NEW_TOWER_SOUND);
-            return true;
+    if (find_square_emptiness(mouse_clicked_location) && check_path_build(mouse_clicked_location)) {
+        Tower *new_tower = Tower::build(gold, pressed_key, mouse_clicked_location);
+        if (new_tower == nullptr) {
+            throw MapExceptions(BUILD_TOWER_ERROR_CODE);
+        }
+        towers.push_back(new_tower);
+        map_window->play_sound_effect(BUILD_NEW_TOWER_SOUND);
+        return true;
     } else throw MapExceptions(LOCATION_FOR_TOWER_FULL_CODE);
 }
 
@@ -131,6 +139,14 @@ bool Map::update_tower(Point mouse_location) {
         throw MapExceptions(UPDATE_TOWER_ERROR_CODE);
     gold = clicked_tower->update(gold);
     map_window->play_sound_effect(UPDATE_TOWER_SOUND);
+    return true;
+}
+
+bool Map::check_path_build(Point mouse_clicked_location){
+    for(Point middle : path){
+        if(mouse_clicked_location.x == middle.x && mouse_clicked_location.y == middle.y)
+            return false;
+    }
     return true;
 }
 
@@ -145,7 +161,7 @@ bool Map::process_pressed_key_command(char pressed_key, Point mouse_clicked_loca
 
 void Map::process_wave() {
     auto now_time = std::chrono::system_clock::now();
-    if(!wave_finished) {
+    if (!wave_finished) {
         if (is_three_second_passed()) {
             if (is_time_in_second_passed(50)) {
                 int number_of_enemies = 0;
@@ -159,8 +175,7 @@ void Map::process_wave() {
                 wave_finished = count_remaining_enemies();
             }
         }
-    }
-    else{
+    } else {
         enemies.clear();
         wave_number++;
         passed_time = 0;
@@ -206,6 +221,20 @@ void Map::map_squares_to_middle_points() {
                   m.y * SQUARE_LENGTH + FIRST_SQUARE_Y + HALF_SQUARE_LENGTH);
 }
 
+void Map::complete_path_sequence() {
+    vector<Point> new_path = path;
+    for (int i = 0; i < new_path.size(); i++) {
+        Point temp_diff = (new_path[i + 1] - new_path[i]);
+        if (temp_diff.y == 0 && temp_diff.x > 1)
+            new_path.insert(new_path.begin() + i + 1, new_path[i] + Point(1, 0));
+        if (temp_diff.y > 1 && temp_diff.x == 0)
+            new_path.insert(new_path.begin() + i + 1, new_path[i] + Point(0, 1));
+        if (temp_diff.y < -1 && temp_diff.x == 0)
+            new_path.insert(new_path.begin() + i + 1, new_path[i] + Point(0, -1));
+    }
+    path = new_path;
+}
+
 
 void Map::find_enemies_for_each_round() {
     for (const vector<int> &each_round: enemies_count) {
@@ -230,22 +259,43 @@ void Map::find_enemies_for_each_round() {
 
 void Map::shuffle_enemies_of_each_round() {
     unsigned seed = std::chrono::system_clock::now().time_since_epoch().count();
-    for(auto & i : enemies_each_round)
+    for (auto &i : enemies_each_round)
         shuffle(i.begin(), i.end(), std::default_random_engine(seed));
 }
 
 bool Map::is_three_second_passed() {
     return passed_time >= 300;
 }
+
 bool Map::is_time_in_second_passed(int time) {
     return passed_time % time == 0;
 }
 
-bool Map::count_remaining_enemies(){
+bool Map::count_remaining_enemies() {
     int count = 0;
-    for(const auto& enemie: enemies){
-        if((enemie->get_location().x == 0 && enemie->get_location().y == 0) || (enemie->get_location().x == 1 && enemie->get_location().y == 0))
+    for (const auto &enemie: enemies) {
+        if ((enemie->get_location().x == 0 && enemie->get_location().y == 0) ||
+            (enemie->get_location().x == 1 && enemie->get_location().y == 0))
             count++;
     }
     return count == respawned_enemie;
+}
+
+void Map::show_enemies_path() {
+    for (int i = 0; i < path.size() - 1; i++) {
+        Point temp_diff = (path[i] - path[i + 1]);
+        if (temp_diff.x == 0) {
+            if (temp_diff.y > 0)
+                map_window->draw_img(UP_PATH,
+                                     Rectangle(path[i] - Point(30, 30), path[i] + Point(30, 30)));
+            if (temp_diff.y < 0)
+                map_window->draw_img(DOWN_PATH,
+                                     Rectangle(path[i] - Point(30, 30), path[i] + Point(30, 30)));
+        }
+        if (temp_diff.x != 0)
+            map_window->draw_img(RIGHT_PATH,
+                                 Rectangle(path[i] - Point(30, 30), path[i] + Point(30, 30)));
+    }
+    map_window->draw_img(END_PATH,
+                         Rectangle(path[path.size() - 1] - Point(30, 30), path[path.size() - 1] + Point(30, 30)));
 }

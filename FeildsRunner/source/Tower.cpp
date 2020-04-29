@@ -3,15 +3,14 @@
 
 using namespace std;
 
-Tower::Tower(Point _position, const std::string &_tower_picture_level1, const std::string &_tower_picture_level2,
-             const std::string &_tower_picture_level3, int _cost, int _update_cost, int _bullet_damage,int _bullet_area,
+Tower::Tower(Point _position, const std::string &_tower_picture_file, int _cost, int _update_cost, int _bullet_damage,
+             int _bullet_area,
              int _bullet_update_damage, int _bullet_speed,
-             const std::string &_bullet_picture, int _fire_rate) {
+             const std::string &_bullet_picture, int _fire_rate, const string& _name, int _slow_duration, int _slow_upgrade_duration) {
 
+    name = _name;
     position = _position;
-    tower_picture_level2 = _tower_picture_level2;
-    tower_picture_level3 = _tower_picture_level3;
-    tower_picture = _tower_picture_level1;
+    tower_picture_file = _tower_picture_file;
     cost = _cost;
     update_cost = _update_cost;
     bullet_damage = _bullet_damage;
@@ -21,18 +20,18 @@ Tower::Tower(Point _position, const std::string &_tower_picture_level1, const st
     bullet_picture = _bullet_picture;
     fire_rate = _fire_rate;
     level = 1;
-    fire_time = 0 ;
+    fire_time = 0;
+    previous_target = nullptr;
+    slow_duration = _slow_duration;
+    slow_upgrade_duration = _slow_upgrade_duration;
+    tower_picture = tower_picture_file + to_string(level);
 }
 
 int Tower::update(int gold) {
-    if(gold >= this->update_cost) {
+    if (gold >= this->update_cost) {
         if (level != 3) {
-            if (level == 1)
-                this->tower_picture = tower_picture_level2;
-            if (level == 2)
-                this->tower_picture = tower_picture_level3;
-
             this->bullet_damage += bullet_update_damage;
+            this->slow_duration += this->slow_upgrade_duration;
             this->cost = update_cost;
             level++;
             return gold - this->cost;
@@ -41,17 +40,17 @@ int Tower::update(int gold) {
 }
 
 Tower *Tower::build(int &gold, char pressed_key, Point mouse_clicked_location) {
-    auto *new_tower = new Tower(mouse_clicked_location, GATTLING_PARAMETER);
+    auto *new_tower = new Tower(mouse_clicked_location, GATTLING_PARAMETER, SLOW_PARAMETER);
     if (pressed_key == BUILD_GATTLING_KEY)
-        new_tower = new Tower(mouse_clicked_location, GATTLING_PARAMETER);
+        new_tower = new Tower(mouse_clicked_location, GATTLING_PARAMETER, SLOW_PARAMETER);
     else if (pressed_key == BUILD_MISSILE_KEY)
-        new_tower = new Tower(mouse_clicked_location, MISSILE_PARAMETER);
+        new_tower = new Tower(mouse_clicked_location, MISSILE_PARAMETER, SLOW_PARAMETER);
     else if (pressed_key == BUILD_TESLA_KEY)
-        new_tower = new Tower(mouse_clicked_location, TESLA_PARAMETER);
+        new_tower = new Tower(mouse_clicked_location, TESLA_PARAMETER, SLOW_PARAMETER);
     else if (pressed_key == BUILD_GLUE_KEY)
-        new_tower = new Tower(mouse_clicked_location, GLUE_PARAMETER);
+        new_tower = new Tower(mouse_clicked_location, GLUE_PARAMETER, GLUE_SLOW_PARAMETER);
     else throw MapExceptions(BUILD_TOWER_ERROR_CODE);
-    if(gold < new_tower->cost ) throw MapExceptions(NO_GOLD_CODE);
+    if (gold < new_tower->cost) throw MapExceptions(NO_GOLD_CODE);
     gold -= new_tower->cost;
     return new_tower;
 }
@@ -61,58 +60,59 @@ void Tower::draw(Window *map_window) {
                          Rectangle(this->position - TOWER_SIZE / 2, this->position + TOWER_SIZE / 2));
 }
 
-void Tower::fire(const vector<Enemies *> &enemies, Window* map_window, int passed_time) {
+void Tower::fire(const vector<Enemies *> &enemies, Window *map_window) {
     fire_time++;
-    if (fire_time == fire_rate/RENDER_TIME) {
+    if (fire_time == fire_rate / RENDER_TIME) {
         fire_time = 0;
         Enemies *target_enemie = find_enemie_in_range(enemies);
         if (target_enemie != nullptr) {
+            play_fire_sound(map_window);
             if (this->bullet_area != 0) {
-                for (auto enemie : this->find_enemies_in_area(this->position)) {
-                    cout << enemie->get_location().x;
-                    enemie->lose_health(this->bullet_damage);
-                    map_window->draw_img(this->bullet_picture, Rectangle(target_enemie->get_location()-Point(20,20), 30, 30));
-                }
-            } else{
+                vector<Enemies *> targeted_enemies = this->find_enemies_in_area(target_enemie->get_location(), enemies);
+                if(slow_duration != 0)
+                    do_area_slow(targeted_enemies, map_window);
+                else
+                    do_area_damage(targeted_enemies, map_window);
+            } else if(!(target_enemie->get_name() == STUBBORN && this->name == GATLING)){
                 target_enemie->lose_health(this->bullet_damage);
-                map_window->draw_img(this->bullet_picture, Rectangle(target_enemie->get_location()-Point(20,20), 30, 30));
+                map_window->draw_img(this->bullet_picture,
+                                     Rectangle(target_enemie->get_location() - Point(20, 20), 30, 30));
             }
         }
     }
+    if(fire_time <= 2 * RENDER_TIME && find_enemie_in_range(enemies) != nullptr)
+        this->tower_picture = this->tower_picture_file + FIRE + to_string(level) + ".png";
+    else
+        this->tower_picture = this->tower_picture_file + to_string(level) + ".png";
+    this->draw(map_window);
 }
-vector<Enemies*> Tower::find_enemies_in_area(Point location){
-    vector<Enemies*> enemies;
-    for (int i = 0; i < this->bullet_area; i++) {
-        for (int j = 0; j < this->bullet_area; j++) {
+
+vector<Enemies *> Tower::find_enemies_in_area(Point enemie_location, const std::vector<Enemies *> &enemies) {
+    vector<Enemies *> enemies_in_area;
+    for (int i = -this->bullet_area / 2; i < this->bullet_area / 2; i++) {
+        for (int j = -this->bullet_area / 2; j < this->bullet_area / 2; j++) {
             for (auto enemie : enemies) {
-                if ((enemie->get_location().x == location.x + i &&
-                     enemie->get_location().y == location.y + j) ||
-                    (enemie->get_location().x == location.x + i &&
-                     enemie->get_location().y == location.y - j) ||
-                    (enemie->get_location().x == location.x - i &&
-                     enemie->get_location().y == location.y + j) ||
-                    (enemie->get_location().x == location.x - i &&
-                     enemie->get_location().y == location.y - j))
-                    enemies.push_back(enemie);
+                if ((enemie->get_location().x == enemie_location.x + i &&
+                     enemie->get_location().y == enemie_location.y + j)) {
+                    enemies_in_area.push_back(enemie);
+                }
             }
         }
     }
-    return enemies;
+    return enemies_in_area;
 }
 
 Enemies *Tower::find_enemie_in_range(const vector<Enemies *> &enemies) {
-    for (int i = 0; i < TOWER_RANGE; i++) {
-        for (int j = 0; j < TOWER_RANGE; j++) {
+    if(this->previous_target != nullptr && previous_target_in_range())
+        return previous_target;
+    for (int i = -TOWER_RANGE / 2; i < TOWER_RANGE / 2; i++) {
+        for (int j = -TOWER_RANGE / 2; j < TOWER_RANGE / 2; j++) {
             for (auto enemie : enemies) {
                 if ((enemie->get_location().x == this->position.x + i &&
-                    enemie->get_location().y == this->position.y + j) ||
-                    (enemie->get_location().x == this->position.x + i &&
-                    enemie->get_location().y == this->position.y - j) ||
-                    (enemie->get_location().x == this->position.x - i &&
-                    enemie->get_location().y == this->position.y + j) ||
-                    (enemie->get_location().x == this->position.x - i &&
-                    enemie->get_location().y == this->position.y - j))
+                     enemie->get_location().y == this->position.y + j)) {
+                    previous_target = enemie;
                     return enemie;
+                }
             }
         }
     }
@@ -121,4 +121,44 @@ Enemies *Tower::find_enemie_in_range(const vector<Enemies *> &enemies) {
 
 Point Tower::get_position() {
     return this->position;
+}
+
+bool Tower::previous_target_in_range() {
+    for (int i = -TOWER_RANGE / 2; i < TOWER_RANGE / 2; i++) {
+        for (int j = -TOWER_RANGE / 2; j < TOWER_RANGE / 2; j++) {
+            if ((this->previous_target->get_location().x == this->position.x + i &&
+                    this->previous_target->get_location().y == this->position.y + j)) {
+                return true;
+            }
+        }
+    }
+    return false;
+}
+
+void Tower::do_area_damage(const vector<Enemies*> &target_enemies, Window* map_window){
+    for (auto enemie : target_enemies) {
+        enemie->lose_health(this->bullet_damage);
+        map_window->draw_img(this->bullet_picture,
+                             Rectangle(enemie->get_location() - Point(20, 20), 30, 30));
+    }
+}
+
+
+void Tower::do_area_slow(const vector<Enemies*> &target_enemies, Window* map_window){
+    for (auto enemie : target_enemies) {
+        enemie->lose_speed(this->bullet_damage, this->slow_duration);
+        map_window->draw_img(this->bullet_picture,
+                             Rectangle(enemie->get_location() - Point(20, 20), 30, 30));
+    }
+}
+
+void Tower::play_fire_sound(Window* map_window){
+    if(this->name == GATLING)
+        map_window->play_sound_effect(GATLING_FIRE_SOUND);
+    if(this->name == MISSILE)
+        map_window->play_sound_effect(MISSILE_FIRE_SOUND);
+    if(this->name == TESLA)
+        map_window->play_sound_effect(TESLA_FIRE_SOUND);
+    if(this->name == GLUE)
+        map_window->play_sound_effect(GLUE_FIRE_SOUND);
 }

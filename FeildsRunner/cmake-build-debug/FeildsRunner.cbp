@@ -84,12 +84,6 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/sspc/Desktop/AP_Projects/FeildsRunner/RSDL/src/rsdl.cpp">
-			<Option target="FeildsRunner"/>
-		</Unit>
-		<Unit filename="/home/sspc/Desktop/AP_Projects/FeildsRunner/RSDL/src/rsdl.hpp">
-			<Option target="FeildsRunner"/>
-		</Unit>
 		<Unit filename="/home/sspc/Desktop/AP_Projects/FeildsRunner/header/Enemies.h">
 			<Option target="FeildsRunner"/>
 		</Unit>
@@ -100,6 +94,9 @@
 			<Option target="FeildsRunner"/>
 		</Unit>
 		<Unit filename="/home/sspc/Desktop/AP_Projects/FeildsRunner/header/Tower.h">
+			<Option target="FeildsRunner"/>
+		</Unit>
+		<Unit filename="/home/sspc/Desktop/AP_Projects/FeildsRunner/header/rsdl.hpp">
 			<Option target="FeildsRunner"/>
 		</Unit>
 		<Unit filename="/home/sspc/Desktop/AP_Projects/FeildsRunner/source/Enemies.cpp">
@@ -115,6 +112,9 @@
 			<Option target="FeildsRunner"/>
 		</Unit>
 		<Unit filename="/home/sspc/Desktop/AP_Projects/FeildsRunner/source/main.cpp">
+			<Option target="FeildsRunner"/>
+		</Unit>
+		<Unit filename="/home/sspc/Desktop/AP_Projects/FeildsRunner/source/rsdl.cpp">
 			<Option target="FeildsRunner"/>
 		</Unit>
 		<Unit filename="/home/sspc/Desktop/AP_Projects/FeildsRunner/CMakeLists.txt">

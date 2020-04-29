@@ -4,27 +4,27 @@
 
 #include <exception>
 #include <string>
-#include "../RSDL/src/rsdl.hpp"
+#include "rsdl.hpp"
 
-#define BUILD_TOWER_ERROR_SOUND "./RSDL/example/assets/sound.wav"
+#define BUILD_TOWER_ERROR_SOUND "./Assets/song/error1.wav"
 #define BUILD_TOWER_ERROR_CODE 1
 
-#define UPDATE_TOWER_ERROR_SOUND "./RSDL/example/assets/sound.wav"
+#define UPDATE_TOWER_ERROR_SOUND "./Assets/song/error1.wav"
 #define UPDATE_TOWER_ERROR_CODE 2
 
-#define NO_KEY_PRESS_SOUND "./RSDL/example/assets/sound.wav"
+#define NO_KEY_PRESS_SOUND "./Assets/song/error2.wav"
 #define NO_KEY_PRESS_CODE 3
 
-#define WRONG_KEY_PRESS_SOUND "./RSDL/example/assets/sound.wav"
+#define WRONG_KEY_PRESS_SOUND "./Assets/song/error2.wav"
 #define WRONG_KEY_PRESS_CODE 4
 
-#define TOWER_MAX_LEVEL_SOUND "./RSDL/example/assets/sound.wav"
+#define TOWER_MAX_LEVEL_SOUND "./Assets/song/error1.wav"
 #define TOWER_MAX_LEVEL_CODE 5
 
-#define LOCATION_FOR_TOWER_FULL_SOUND "./RSDL/example/assets/sound.wav"
+#define LOCATION_FOR_TOWER_FULL_SOUND "./Assets/song/error1.wav"
 #define LOCATION_FOR_TOWER_FULL_CODE 6
 
-#define NO_GOLD_SOUND "./RSDL/example/assets/sound.wav"
+#define NO_GOLD_SOUND "./Assets/song/error2.wav"
 #define NO_GOLD_CODE 7
 
 class MapExceptions : public std::exception {

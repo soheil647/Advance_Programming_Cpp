@@ -2,7 +2,7 @@
 #define FEILDSRUNNER_MAP_H
 
 
-#include "../RSDL/src/rsdl.hpp"
+#include "rsdl.hpp"
 #include <cstdlib>
 #include <iostream>
 #include <vector>
@@ -28,6 +28,7 @@
 
 #define FONT_TEXT_SANSSERIF "./Assets/OpenSans.ttf"
 
+#define EXIT 'q'
 #define BUILD_GATTLING_KEY 'g'
 #define BUILD_MISSILE_KEY 'm'
 #define BUILD_TESLA_KEY 't'
@@ -36,16 +37,28 @@
 #define KEY_BINDING vector<char>
 #define KEYS BUILD_GATTLING_KEY, BUILD_MISSILE_KEY, BUILD_TESLA_KEY, BUILD_GLUE_KEY, UPDATE_TOWER_KEY
 
-#define BUILD_NEW_TOWER_SOUND "./RSDL/example/assets/sound.wav"
-#define UPDATE_TOWER_SOUND "./RSDL/example/assets/sound.wav"
+#define BUILD_NEW_TOWER_SOUND "./Assets/song/build.wav"
+#define UPDATE_TOWER_SOUND "./Assets/song/build.wav"
+#define BACKGROUND_SONG "./Assets/song/background.mp3"
 
+#define HEALTH_PLUS_ROUND (0.9 + 0.1 * wave_number)
 #define NUMBER_OF_ENEMIES_TYPE 4
-#define RUNNER_PARAMETER 250, 50, 6, 1, "./Assets/enemies/runner.png"
-#define STUBBORN_RUNNER_PARAMETER 400, 30, 10, 4, "./Assets/enemies/stubborn-runner.png"
-#define SUPPERTROOPER 500, 25, 8, 4, "./Assets/enemies/supertrooper.png"
-#define SCRAMBLER 100, 90, 4, 2, "./Assets/enemies/scrambler.png"
+#define RUNNER_PARAMETER HEALTH_PLUS_ROUND * 250, 50, 6, 1, "./Assets/enemies/runner/", "runner"
+#define STUBBORN_RUNNER_PARAMETER HEALTH_PLUS_ROUND * 400, 30, 10, 4, "./Assets/enemies/stubborn-runner/", "stubborn"
+#define SUPPERTROOPER HEALTH_PLUS_ROUND * 500, 25, 8, 4, "./Assets/enemies/supertrooper/", "super"
+#define SCRAMBLER HEALTH_PLUS_ROUND * 100, 90, 4, 2, "./Assets/enemies/scrambler/", "scrambler"
 
+#define WIN_SOUND "./Assets/song/win.wav"
+#define WIN_PICTURE "./Assets/win.jpeg"
+#define LOSE_SOUND "./Assets/song/lose.wav"
+#define LOSE_PICTURE "./Assets/lose.png"
 
+#define BACKGROUND_PICTURE "./Assets/background.png"
+
+#define UP_PATH "./Assets/path/up.png"
+#define DOWN_PATH "./Assets/path/down.png"
+#define RIGHT_PATH "./Assets/path/right.png"
+#define END_PATH "./Assets/path/end.png"
 
 class Map {
 private:
@@ -80,6 +93,10 @@ private:
     void process_wave();
     bool is_three_second_passed();
     bool is_time_in_second_passed(int time);
+    bool count_remaining_enemies();
+    void show_enemies_path();
+    void complete_path_sequence();
+    bool check_path_build(Point mouse_clicked_location);
 
 
 public:
@@ -87,8 +104,6 @@ public:
 
     bool process_event();
     void render();
-
-    bool count_remaining_enemies();
 };
 
 

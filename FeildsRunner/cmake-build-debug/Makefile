@@ -123,33 +123,6 @@ FeildsRunner/fast:
 	$(MAKE) -f CMakeFiles/FeildsRunner.dir/build.make CMakeFiles/FeildsRunner.dir/build
 .PHONY : FeildsRunner/fast
 
-RSDL/src/rsdl.o: RSDL/src/rsdl.cpp.o
-
-.PHONY : RSDL/src/rsdl.o
-
-# target to build an object file
-RSDL/src/rsdl.cpp.o:
-	$(MAKE) -f CMakeFiles/FeildsRunner.dir/build.make CMakeFiles/FeildsRunner.dir/RSDL/src/rsdl.cpp.o
-.PHONY : RSDL/src/rsdl.cpp.o
-
-RSDL/src/rsdl.i: RSDL/src/rsdl.cpp.i
-
-.PHONY : RSDL/src/rsdl.i
-
-# target to preprocess a source file
-RSDL/src/rsdl.cpp.i:
-	$(MAKE) -f CMakeFiles/FeildsRunner.dir/build.make CMakeFiles/FeildsRunner.dir/RSDL/src/rsdl.cpp.i
-.PHONY : RSDL/src/rsdl.cpp.i
-
-RSDL/src/rsdl.s: RSDL/src/rsdl.cpp.s
-
-.PHONY : RSDL/src/rsdl.s
-
-# target to generate assembly for a file
-RSDL/src/rsdl.cpp.s:
-	$(MAKE) -f CMakeFiles/FeildsRunner.dir/build.make CMakeFiles/FeildsRunner.dir/RSDL/src/rsdl.cpp.s
-.PHONY : RSDL/src/rsdl.cpp.s
-
 source/Enemies.o: source/Enemies.cpp.o
 
 .PHONY : source/Enemies.o
@@ -285,6 +258,33 @@ source/main.cpp.s:
 	$(MAKE) -f CMakeFiles/FeildsRunner.dir/build.make CMakeFiles/FeildsRunner.dir/source/main.cpp.s
 .PHONY : source/main.cpp.s
 
+source/rsdl.o: source/rsdl.cpp.o
+
+.PHONY : source/rsdl.o
+
+# target to build an object file
+source/rsdl.cpp.o:
+	$(MAKE) -f CMakeFiles/FeildsRunner.dir/build.make CMakeFiles/FeildsRunner.dir/source/rsdl.cpp.o
+.PHONY : source/rsdl.cpp.o
+
+source/rsdl.i: source/rsdl.cpp.i
+
+.PHONY : source/rsdl.i
+
+# target to preprocess a source file
+source/rsdl.cpp.i:
+	$(MAKE) -f CMakeFiles/FeildsRunner.dir/build.make CMakeFiles/FeildsRunner.dir/source/rsdl.cpp.i
+.PHONY : source/rsdl.cpp.i
+
+source/rsdl.s: source/rsdl.cpp.s
+
+.PHONY : source/rsdl.s
+
+# target to generate assembly for a file
+source/rsdl.cpp.s:
+	$(MAKE) -f CMakeFiles/FeildsRunner.dir/build.make CMakeFiles/FeildsRunner.dir/source/rsdl.cpp.s
+.PHONY : source/rsdl.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -294,9 +294,6 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... FeildsRunner"
 	@echo "... edit_cache"
-	@echo "... RSDL/src/rsdl.o"
-	@echo "... RSDL/src/rsdl.i"
-	@echo "... RSDL/src/rsdl.s"
 	@echo "... source/Enemies.o"
 	@echo "... source/Enemies.i"
 	@echo "... source/Enemies.s"
@@ -312,6 +309,9 @@ help:
 	@echo "... source/main.o"
 	@echo "... source/main.i"
 	@echo "... source/main.s"
+	@echo "... source/rsdl.o"
+	@echo "... source/rsdl.i"
+	@echo "... source/rsdl.s"
 .PHONY : help
 
 

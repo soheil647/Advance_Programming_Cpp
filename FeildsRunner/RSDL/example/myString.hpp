@@ -1,6 +1,6 @@
 #ifndef __MY_STRING__
 #define __MY_STRING__
-#include "../src/rsdl.hpp"
+#include "../../header/rsdl.hpp"
 #include <string>
 
 using namespace std;

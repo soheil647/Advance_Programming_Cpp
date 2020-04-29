@@ -1,4 +1,4 @@
-#include "../src/rsdl.hpp"
+#include "../../header/rsdl.hpp"
 #include <cstdlib>
 #include <ctime>
 #include <iostream>
