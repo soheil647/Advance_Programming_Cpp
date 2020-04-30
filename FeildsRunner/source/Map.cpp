@@ -1,4 +1,3 @@
-#include <random>
 #include "../header/Map.h"
 
 using namespace std;

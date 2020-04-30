@@ -1,8 +1,6 @@
 #ifndef FEILDSRUNNER_MAP_H
 #define FEILDSRUNNER_MAP_H
 
-
-#include "rsdl.hpp"
 #include <cstdlib>
 #include <iostream>
 #include <vector>
@@ -10,10 +8,9 @@
 #include <algorithm>
 #include <sstream>
 #include <time.h>
+#include <random>
 
-#include "../source/MapExceptions.cpp"
-#include "../source/Tower.cpp"
-#include "../source/Enemies.cpp"
+#include "Tower.h"
 
 #define RENDER_TIME 10
 
@@ -71,7 +68,7 @@ private:
     bool wave_finished;
     std::vector<Point> path;
     std::vector<std::vector<int>> enemies_count;
-    std::vector<vector<Enemies>> enemies_each_round;
+    std::vector<std::vector<Enemies>> enemies_each_round;
     int passed_time;
     int respawned_enemie;
 

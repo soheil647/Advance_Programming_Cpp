@@ -1,7 +1,4 @@
 #include "../header/rsdl.hpp"
-#include <exception>
-#include <iostream>
-#include <sstream>
 
 using namespace std;
 

@@ -2,7 +2,6 @@
 #define FEILDSRUNNER_GAME_TOWER_H
 
 #include <string>
-#include "rsdl.hpp"
 #include <utility>
 #include "MapExceptions.h"
 #include "Enemies.h"
@@ -56,14 +55,17 @@ private:
     int bullet_damage;
     std::string bullet_picture;
     int update_cost;
+    bool bullet_fired;
+    Point bullet_position;
 
     bool previous_target_in_range();
     Enemies *find_enemie_in_range(const std::vector<Enemies *> &enemies);
     std::vector<Enemies *> find_enemies_in_area(Point enemie_location, const std::vector<Enemies*>& enemies);
-    void do_area_damage(const std::vector<Enemies *> &target_enemies, Window *map_window);
-    void do_area_slow(const std::vector<Enemies *> &target_enemies, Window *map_window);
+    void do_area_damage(const std::vector<Enemies *> &target_enemies);
+    void do_area_slow(const std::vector<Enemies *> &target_enemies);
     void draw(Window* map_window);
     void play_fire_sound(Window *map_window);
+    void fire_bullet(Window *map_window);
 public:
     Tower(Point _position, const std::string& _tower_picture_file, int _cost, int _update_Cost, int _bullet_damage, int _bullet_area, int _bullet_update_damage,
           int _bullet_speed, const std::string& _bullet_picture, int _fire_rate, const std::string& _name, int _slow_duration, int _slow_upgrade_duration);

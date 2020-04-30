@@ -1,5 +1,4 @@
 #include "../header/Tower.h"
-#include "../header/Enemies.h"
 
 using namespace std;
 
@@ -25,6 +24,8 @@ Tower::Tower(Point _position, const std::string &_tower_picture_file, int _cost,
     slow_duration = _slow_duration;
     slow_upgrade_duration = _slow_upgrade_duration;
     tower_picture = tower_picture_file + to_string(level);
+    bullet_fired = false;
+    bullet_position = this->position;
 }
 
 int Tower::update(int gold) {
@@ -70,16 +71,18 @@ void Tower::fire(const vector<Enemies *> &enemies, Window *map_window) {
             if (this->bullet_area != 0) {
                 vector<Enemies *> targeted_enemies = this->find_enemies_in_area(target_enemie->get_location(), enemies);
                 if(slow_duration != 0)
-                    do_area_slow(targeted_enemies, map_window);
+                    do_area_slow(targeted_enemies);
                 else
-                    do_area_damage(targeted_enemies, map_window);
+                    do_area_damage(targeted_enemies);
             } else if(!(target_enemie->get_name() == STUBBORN && this->name == GATLING)){
                 target_enemie->lose_health(this->bullet_damage);
                 map_window->draw_img(this->bullet_picture,
                                      Rectangle(target_enemie->get_location() - Point(20, 20), 30, 30));
             }
+            this->bullet_fired = true;
         }
     }
+    fire_bullet(map_window);
     if(fire_time <= 2 * RENDER_TIME && find_enemie_in_range(enemies) != nullptr)
         this->tower_picture = this->tower_picture_file + FIRE + to_string(level) + ".png";
     else
@@ -135,20 +138,16 @@ bool Tower::previous_target_in_range() {
     return false;
 }
 
-void Tower::do_area_damage(const vector<Enemies*> &target_enemies, Window* map_window){
+void Tower::do_area_damage(const vector<Enemies*> &target_enemies){
     for (auto enemie : target_enemies) {
         enemie->lose_health(this->bullet_damage);
-        map_window->draw_img(this->bullet_picture,
-                             Rectangle(enemie->get_location() - Point(20, 20), 30, 30));
     }
 }
 
 
-void Tower::do_area_slow(const vector<Enemies*> &target_enemies, Window* map_window){
+void Tower::do_area_slow(const vector<Enemies*> &target_enemies){
     for (auto enemie : target_enemies) {
         enemie->lose_speed(this->bullet_damage, this->slow_duration);
-        map_window->draw_img(this->bullet_picture,
-                             Rectangle(enemie->get_location() - Point(20, 20), 30, 30));
     }
 }
 
@@ -161,4 +160,22 @@ void Tower::play_fire_sound(Window* map_window){
         map_window->play_sound_effect(TESLA_FIRE_SOUND);
     if(this->name == GLUE)
         map_window->play_sound_effect(GLUE_FIRE_SOUND);
+}
+
+void Tower::fire_bullet(Window* map_window){
+    if(bullet_fired) {
+        Point previous_target_position = previous_target->get_location();
+        if(bullet_position.x == previous_target_position.x && bullet_position.y == previous_target_position.y)
+            bullet_fired = false;
+        if(bullet_position.x < previous_target_position.x )
+            bullet_position.x += 1;
+        else if(bullet_position.x > previous_target_position.x )
+            bullet_position.x -= 1;
+        else if(bullet_position.y < previous_target_position.y )
+            bullet_position.y += 1;
+        else if(bullet_position.y > previous_target_position.y )
+            bullet_position.y -= 1;
+        map_window->draw_img(this->bullet_picture,
+                             Rectangle(bullet_position - Point(20, 20), 30, 30));
+    }
 }

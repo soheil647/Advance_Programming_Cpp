@@ -11,6 +11,8 @@
 #include <map>
 #include <stdexcept>
 #include <string>
+#include <exception>
+#include <sstream>
 
 struct Point {
   Point(int x, int y);

@@ -1,4 +1,4 @@
-#include "Map.cpp"
+#include "../header/Map.h"
 
 using namespace std;
 
