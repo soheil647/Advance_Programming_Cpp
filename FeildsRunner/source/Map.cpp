@@ -66,16 +66,10 @@ Map::process_event() {
 
 void Map::render() {
     map_window->clear();
-    if (health <= 0) {
-        map_window->stop_music();
-        map_window->play_sound_effect(LOSE_SOUND);
-        map_window->draw_img(LOSE_PICTURE, Rectangle(Point(0, 0), Point(1365, 1024)));
-    }
-    else if (health > 0 && wave_number >= enemies_each_round.size()) {
-        map_window->stop_music();
-        map_window->play_sound_effect(WIN_SOUND);
-        map_window->draw_img(WIN_PICTURE, Rectangle(Point(0, 0), Point(1365, 1024)));
-    }
+    if (health <= 0)
+        render_lose();
+    else if (health > 0 && wave_number >= enemies_each_round.size())
+        render_win();
     else {
         map_window->draw_img(BACKGROUND_PICTURE);
         show_enemies_path();
@@ -85,12 +79,7 @@ void Map::render() {
         for (const auto &enemie : enemies) {
             health = enemie->move(map_window, path, passed_time, health, gold);
         }
-        map_window->show_text("Gold: " + to_string(gold), Point(200, 220), RGB(20, 50, 100), FONT_TEXT_SANSSERIF, 50);
-        map_window->draw_img("./Assets/heart-health-5-7.jpg",
-                             Rectangle(Point(200, 220), Point(200, 220) + Point(30, 30)));
-        map_window->show_text("HP: " + to_string(health), Point(1000, 220), RGB(20, 50, 100), FONT_TEXT_SANSSERIF, 50);
-        map_window->draw_img("./RSDL/example/assets/cursor.png",
-                             Rectangle(get_current_mouse_position() - Point(15, 15), 30, 30));
+        render_goods();
         passed_time += 1;
     }
     map_window->update_screen();
@@ -113,7 +102,6 @@ void Map::process_left_click_event(Point mouse_position) {
         auto end = std::chrono::system_clock::now();
         if ((end - start).count() >= 1500000000)
             throw MapExceptions(NO_KEY_PRESS_CODE);
-        cout << (end - start).count() << endl;
         Event event1 = map_window->poll_for_event();
         if (event1.get_pressed_key() != -1)
             finish = process_pressed_key_command(event1.get_pressed_key(), mouse_position);
@@ -141,9 +129,9 @@ bool Map::update_tower(Point mouse_location) {
     return true;
 }
 
-bool Map::check_path_build(Point mouse_clicked_location){
-    for(Point middle : path){
-        if(mouse_clicked_location.x == middle.x && mouse_clicked_location.y == middle.y)
+bool Map::check_path_build(Point mouse_clicked_location) {
+    for (Point middle : path) {
+        if (mouse_clicked_location.x == middle.x && mouse_clicked_location.y == middle.y)
             return false;
     }
     return true;
@@ -174,13 +162,15 @@ void Map::process_wave() {
                 wave_finished = count_remaining_enemies();
             }
         }
-    } else {
-        enemies.clear();
-        wave_number++;
-        passed_time = 0;
-        respawned_enemie = 0;
-        wave_finished = false;
-    }
+    } else reset_wave();
+}
+
+void Map::reset_wave() {
+    enemies.clear();
+    wave_number++;
+    passed_time = 0;
+    respawned_enemie = 0;
+    wave_finished = false;
 }
 
 void Map::read_input_file() {
@@ -297,4 +287,27 @@ void Map::show_enemies_path() {
     }
     map_window->draw_img(END_PATH,
                          Rectangle(path[path.size() - 1] - Point(30, 30), path[path.size() - 1] + Point(30, 30)));
+}
+
+void Map::render_lose() {
+    map_window->stop_music();
+    map_window->play_sound_effect(LOSE_SOUND);
+    map_window->draw_img(LOSE_PICTURE, Rectangle(Point(0, 0), Point(1365, 1024)));
+}
+
+void Map::render_win() {
+    map_window->stop_music();
+    map_window->play_sound_effect(WIN_SOUND);
+    map_window->draw_img(WIN_PICTURE, Rectangle(Point(0, 0), Point(1365, 1024)));
+}
+
+void Map::render_goods() {
+    map_window->show_text(": " + to_string(gold), Point(490, 220), RGB(20, 50, 100), FONT_TEXT_SANSSERIF, 50);
+    map_window->draw_img(GOLD_PICTURE,
+                         Rectangle(Point(400, 220), Point(400, 220) + Point(90, 90)));
+    map_window->show_text(": " + to_string(health), Point(870, 220), RGB(20, 50, 100), FONT_TEXT_SANSSERIF, 50);
+    map_window->draw_img(HEALTH_PICTURE,
+                         Rectangle(Point(800, 200), Point(800, 200) + Point(90, 90)));
+    map_window->draw_img(CURSOR_PICTURE,
+                         Rectangle(get_current_mouse_position() - Point(15, 15), 30, 30));
 }

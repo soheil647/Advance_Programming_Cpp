@@ -56,7 +56,7 @@ private:
     std::string bullet_picture;
     int update_cost;
     bool bullet_fired;
-    Point bullet_position;
+    Point bullet_position{};
 
     bool previous_target_in_range();
     Enemies *find_enemie_in_range(const std::vector<Enemies *> &enemies);

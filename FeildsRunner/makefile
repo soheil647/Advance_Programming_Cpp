@@ -8,10 +8,10 @@ _SDL= -l SDL2 -l SDL2_image -l SDL2_ttf -l SDL2_mixer
 
 _CC=${_CC_EXEC} ${CC_FLAGS}
 
-all:‫‪FieldRunners.out
+all:FieldRunners.out
 
-‫‪FieldRunners.out: ${_BUILD_DIR}/main.o  ${_BUILD_DIR}/Map.o ${_BUILD_DIR}/MapExceptions.o  ${_BUILD_DIR}/Tower.o  ${_BUILD_DIR}/Enemies.o ${_BUILD_DIR}/rsdl.o
-	${_CC_EXEC} ${_BUILD_DIR}/main.o  ${_BUILD_DIR}/Map.o ${_BUILD_DIR}/MapExceptions.o  ${_BUILD_DIR}/Tower.o  ${_BUILD_DIR}/Enemies.o ${_BUILD_DIR}/rsdl.o ${_SDL} -o ‫‪FieldRunners.out
+FieldRunners.out: ${_BUILD_DIR}/main.o  ${_BUILD_DIR}/Map.o ${_BUILD_DIR}/MapExceptions.o  ${_BUILD_DIR}/Tower.o  ${_BUILD_DIR}/Enemies.o ${_BUILD_DIR}/rsdl.o
+	${_CC_EXEC} ${_BUILD_DIR}/main.o  ${_BUILD_DIR}/Map.o ${_BUILD_DIR}/MapExceptions.o  ${_BUILD_DIR}/Tower.o  ${_BUILD_DIR}/Enemies.o ${_BUILD_DIR}/rsdl.o ${_SDL} -o FieldRunners.out
 
 ${_BUILD_DIR}/main.o: ${_SOURCE_DIR}/main.cpp ${_BUILD_DIR}/Map.o
 	${_CC} ${_SOURCE_DIR}/main.cpp -o ${_BUILD_DIR}/main.o

@@ -20,8 +20,10 @@
 #define FIRST_SQUARE_Y 180
 
 #define INITIAL_GOLD 200
+#define GOLD_PICTURE "./Assets/gold.png"
 #define INITIAL_HEALTH 100
-
+#define HEALTH_PICTURE "./Assets/health.png"
+#define CURSOR_PICTURE "./Assets/cursor.png"
 
 #define FONT_TEXT_SANSSERIF "./Assets/OpenSans.ttf"
 
@@ -94,6 +96,11 @@ private:
     void show_enemies_path();
     void complete_path_sequence();
     bool check_path_build(Point mouse_clicked_location);
+
+    void render_lose();
+    void render_win();
+    void render_goods();
+    void reset_wave();
 
 
 public:
