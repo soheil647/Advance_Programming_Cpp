@@ -1,0 +1,3 @@
+/home/sspc/Desktop/AP_Projects/Inheritance_Polymorphism_Json/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/sspc/Desktop/AP_Projects/Inheritance_Polymorphism_Json/cmake-build-debug/CMakeFiles/Inheritance_Polymorphism_Json1.dir
+/home/sspc/Desktop/AP_Projects/Inheritance_Polymorphism_Json/cmake-build-debug/CMakeFiles/edit_cache.dir
