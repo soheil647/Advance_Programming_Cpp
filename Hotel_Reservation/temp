@@ -1,0 +1,23 @@
+POST signup ? email ss password ff username dd
+POST wallet ? amount 100
+POST wallet ? amount 50
+GET wallet ? count 5
+POST comments ? hotel ba7b9e7b9073e745d38122d74045be00 comment WHAT_A_BEAUTY
+POST comments ? hotel ba7b9e7b9073e745d38122d74045be00 comment NICEEEEEEEE
+GET comments ? hotel ba7b9e7b9073e745d38122d74045be00
+POST comments ? hotel 7607f483e7afde0ac8c9b37e0db3662d comment HAHA
+POST comments ? hotel 7607f483e7afde0ac8c9b37e0db3662d comment WTF
+POST comments ? hotel 7607f483e7afde0ac8c9b37e0db3662d comment EAZY
+GET comments ? hotel 7607f483e7afde0ac8c9b37e0db3662d
+POST logout
+POST signup ? email yy password uu username ii
+POST comments ? hotel 7607f483e7afde0ac8c9b37e0db3662d comment mmmmmm
+POST comments ? hotel 7607f483e7afde0ac8c9b37e0db3662d comment llllllll
+GET comments ? hotel 7607f483e7afde0ac8c9b37e0db3662d
+POST login ? email ss password ff
+POST ratings ? hotel ba7b9e7b9073e745d38122d74045be00 location 3.22 cleanliness 4.2 staff 5 facilities 2 value_for_money 4 overall_rating 4.3
+GET ratings? hotel ba7b9e7b9073e745d38122d74045be00
+POST ratings ? hotel ba7b9e7b9073e745d38122d74045be00 location 1 cleanliness 0 staff 5 facilities 2 value_for_money 4 overall_rating 4.3
+POST ratings ? hotel ba7b9e7b9073e745d38122d74045be00 location 10 cleanliness 4.2 staff 5 facilities 2 value_for_money 4 overall_rating 4.3
+POST ratings ? hotel ba7b9e7b9073e745d38122d74045be00 location 1 cleanliness 1.1 staff 1.2 facilities 1.3 value_for_money 1.4 overall_rating 1.5
+GET ratings? hotel ba7b9e7b9073e745d38122d74045be00

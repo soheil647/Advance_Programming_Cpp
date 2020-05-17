@@ -1,0 +1,38 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/sspc/Desktop/AP_Projects/Hotel_Reservation/header/hotel.hpp
+string
+-
+vector
+-
+algorithm
+-
+iostream
+-
+fstream
+-
+sstream
+-
+
+/home/sspc/Desktop/AP_Projects/Hotel_Reservation/header/reservationSystem.hpp
+hotel.hpp
+/home/sspc/Desktop/AP_Projects/Hotel_Reservation/header/hotel.hpp
+
+/home/sspc/Desktop/AP_Projects/Hotel_Reservation/main.cpp
+./header/reservationSystem.hpp
+/home/sspc/Desktop/AP_Projects/Hotel_Reservation/header/reservationSystem.hpp
+
+/home/sspc/Desktop/AP_Projects/Hotel_Reservation/source/hotel.cpp
+../header/hotel.hpp
+/home/sspc/Desktop/AP_Projects/Hotel_Reservation/header/hotel.hpp
+
+/home/sspc/Desktop/AP_Projects/Hotel_Reservation/source/reservationSystem.cpp
+../header/reservationSystem.hpp
+/home/sspc/Desktop/AP_Projects/Hotel_Reservation/header/reservationSystem.hpp
+

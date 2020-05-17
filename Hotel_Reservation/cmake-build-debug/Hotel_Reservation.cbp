@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="Hotel_Reservation"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/home/sspc/Desktop/AP_Projects/Hotel_Reservation/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/sspc/Desktop/AP_Projects/Hotel_Reservation/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/sspc/Desktop/AP_Projects/Hotel_Reservation/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/sspc/Desktop/AP_Projects/Hotel_Reservation/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/sspc/Desktop/AP_Projects/Hotel_Reservation/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/home/sspc/Desktop/AP_Projects/Hotel_Reservation/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/sspc/Desktop/AP_Projects/Hotel_Reservation/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/sspc/Desktop/AP_Projects/Hotel_Reservation/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/sspc/Desktop/AP_Projects/Hotel_Reservation/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/sspc/Desktop/AP_Projects/Hotel_Reservation/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Hotel_Reservation">
+				<Option output="/home/sspc/Desktop/AP_Projects/Hotel_Reservation/cmake-build-debug/Hotel_Reservation" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/sspc/Desktop/AP_Projects/Hotel_Reservation/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/sspc/Desktop/AP_Projects/Hotel_Reservation/cmake-build-debug/Makefile&quot;  VERBOSE=1 Hotel_Reservation"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/sspc/Desktop/AP_Projects/Hotel_Reservation/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/sspc/Desktop/AP_Projects/Hotel_Reservation/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/sspc/Desktop/AP_Projects/Hotel_Reservation/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Hotel_Reservation/fast">
+				<Option output="/home/sspc/Desktop/AP_Projects/Hotel_Reservation/cmake-build-debug/Hotel_Reservation" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/sspc/Desktop/AP_Projects/Hotel_Reservation/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/sspc/Desktop/AP_Projects/Hotel_Reservation/cmake-build-debug/Makefile&quot;  VERBOSE=1 Hotel_Reservation/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/sspc/Desktop/AP_Projects/Hotel_Reservation/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/sspc/Desktop/AP_Projects/Hotel_Reservation/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/sspc/Desktop/AP_Projects/Hotel_Reservation/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/home/sspc/Desktop/AP_Projects/Hotel_Reservation/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/sspc/Desktop/AP_Projects/Hotel_Reservation/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/sspc/Desktop/AP_Projects/Hotel_Reservation/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/sspc/Desktop/AP_Projects/Hotel_Reservation/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/sspc/Desktop/AP_Projects/Hotel_Reservation/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/home/sspc/Desktop/AP_Projects/Hotel_Reservation/header/hotel.hpp">
+			<Option target="Hotel_Reservation"/>
+		</Unit>
+		<Unit filename="/home/sspc/Desktop/AP_Projects/Hotel_Reservation/header/hotelExceptions.hpp">
+			<Option target="Hotel_Reservation"/>
+		</Unit>
+		<Unit filename="/home/sspc/Desktop/AP_Projects/Hotel_Reservation/header/reservationSystem.hpp">
+			<Option target="Hotel_Reservation"/>
+		</Unit>
+		<Unit filename="/home/sspc/Desktop/AP_Projects/Hotel_Reservation/header/user.hpp">
+			<Option target="Hotel_Reservation"/>
+		</Unit>
+		<Unit filename="/home/sspc/Desktop/AP_Projects/Hotel_Reservation/main.cpp">
+			<Option target="Hotel_Reservation"/>
+		</Unit>
+		<Unit filename="/home/sspc/Desktop/AP_Projects/Hotel_Reservation/source/hotel.cpp">
+			<Option target="Hotel_Reservation"/>
+		</Unit>
+		<Unit filename="/home/sspc/Desktop/AP_Projects/Hotel_Reservation/source/hotelExceptions.cpp">
+			<Option target="Hotel_Reservation"/>
+		</Unit>
+		<Unit filename="/home/sspc/Desktop/AP_Projects/Hotel_Reservation/source/reservationSystem.cpp">
+			<Option target="Hotel_Reservation"/>
+		</Unit>
+		<Unit filename="/home/sspc/Desktop/AP_Projects/Hotel_Reservation/source/user.cpp">
+			<Option target="Hotel_Reservation"/>
+		</Unit>
+		<Unit filename="/home/sspc/Desktop/AP_Projects/Hotel_Reservation/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>
