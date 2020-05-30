@@ -65,8 +65,8 @@ void ReservationSystem::find_command_action(stringstream& arg, const string& met
                     return post_wallet(arg);
 //                case filters:
 //                    return post_filters(arg);
-//                case reserves:
-//                    return post_reserves(arg);
+                case reserves:
+                    return post_reserves(arg);
                 case comments:
                     return post_comments(arg);
                 case ratings:
@@ -261,10 +261,10 @@ void ReservationSystem::post_rating(std::stringstream &arg) {
     if(logged_user == nullptr)
         throw Hotel_Exceptions(PERMISSION_DENIED);
     for(int i = 0; i < args.size(); i += 2) {
-        if((stof(args[i+1]) < 1 || stof(args[i+1]) > 5) && args[i] != "hotel")
-            throw Hotel_Exceptions(BAD_REQUEST);
-        else if(args[i] == "hotel")
+        if(args[i] == "hotel")
             hotel = args[i+1];
+        else if((stof(args[i+1]) < 1 || stof(args[i+1]) > 5))
+            throw Hotel_Exceptions(BAD_REQUEST);
         else if(args[i] == "location")
             location = stof(args[i+1]);
         else if(args[i] == "cleanliness")
@@ -295,4 +295,28 @@ void ReservationSystem::get_ratings(std::stringstream &arg) {
     }
     find_hotel_by_id(hotel)->show_ratings();
     cout << "OK" << endl;
+}
+
+void ReservationSystem::post_reserves(std::stringstream &arg) {
+    vector<string> args = resolve_arguments(arg);
+    int quantity = 0, check_in = 0, check_out = 0;
+    string hotel, type;
+    if(logged_user == nullptr)
+        throw Hotel_Exceptions(PERMISSION_DENIED);
+    for(int i = 0; i < args.size(); i += 2) {
+        if (args[i] == "hotel")
+            hotel = args[i + 1];
+        else if (args[i] == "type")
+            type = args[i + 1];
+        else if (args[i] == "quantity")
+            quantity = stoi(args[i + 1]);
+        else if (args[i] == "check_in")
+            check_in = stoi(args[i + 1]);
+        else if (args[i] == "check_out")
+            check_out = stoi(args[i + 1]);
+        else
+            throw Hotel_Exceptions(BAD_REQUEST);
+    }
+//    if()
+    find_hotel_by_id(hotel)->reserve_rooms(type, quantity, check_in, check_out);
 }

@@ -18,7 +18,7 @@ ${_BUILD_DIR}/main.o: main.cpp ${_BUILD_DIR}/reservationSystem.o
 ${_BUILD_DIR}/reservationSystem.o: ${_SOURCE_DIR}/reservationSystem.cpp ${_BUILD_DIR}/hotel.o ${_BUILD_DIR}/hotelExceptions.o ${_BUILD_DIR}/user.o
 	${_CC} ${_SOURCE_DIR}/reservationSystem.cpp -o ${_BUILD_DIR}/reservationSystem.o
 
-${_BUILD_DIR}/hotel.o: ${_SOURCE_DIR}/hotel.cpp ${_BUILD_DIR}/hotelExceptions.o
+${_BUILD_DIR}/hotel.o: ${_SOURCE_DIR}/hotel.cpp ${_BUILD_DIR}/hotelExceptions.o ${_BUILD_DIR}/room.o
 	${_CC} ${_SOURCE_DIR}/hotel.cpp -o ${_BUILD_DIR}/hotel.o
 
 ${_BUILD_DIR}/user.o: ${_SOURCE_DIR}/user.cpp
@@ -26,6 +26,9 @@ ${_BUILD_DIR}/user.o: ${_SOURCE_DIR}/user.cpp
 
 ${_BUILD_DIR}/hotelExceptions.o: ${_SOURCE_DIR}/hotelExceptions.cpp
 	${_CC} ${_SOURCE_DIR}/hotelExceptions.cpp -o ${_BUILD_DIR}/hotelExceptions.o
+
+${_BUILD_DIR}/room.o: ${_SOURCE_DIR}/room.cpp
+	${_CC} ${_SOURCE_DIR}/room.cpp -o ${_BUILD_DIR}/room.o
 clean:
 	rm ${_BUILD_DIR}/*.o
 	rm utrip.out

@@ -93,6 +93,9 @@
 		<Unit filename="/home/sspc/Desktop/AP_Projects/Hotel_Reservation/header/reservationSystem.hpp">
 			<Option target="Hotel_Reservation"/>
 		</Unit>
+		<Unit filename="/home/sspc/Desktop/AP_Projects/Hotel_Reservation/header/room.hpp">
+			<Option target="Hotel_Reservation"/>
+		</Unit>
 		<Unit filename="/home/sspc/Desktop/AP_Projects/Hotel_Reservation/header/user.hpp">
 			<Option target="Hotel_Reservation"/>
 		</Unit>
@@ -106,6 +109,9 @@
 			<Option target="Hotel_Reservation"/>
 		</Unit>
 		<Unit filename="/home/sspc/Desktop/AP_Projects/Hotel_Reservation/source/reservationSystem.cpp">
+			<Option target="Hotel_Reservation"/>
+		</Unit>
+		<Unit filename="/home/sspc/Desktop/AP_Projects/Hotel_Reservation/source/room.cpp">
 			<Option target="Hotel_Reservation"/>
 		</Unit>
 		<Unit filename="/home/sspc/Desktop/AP_Projects/Hotel_Reservation/source/user.cpp">

@@ -11,6 +11,8 @@
 #define PERMISSION_DENIED "Permission Denied"
 #define EMPTY "Empty"
 #define NO_RATING "No Rating"
+#define NOT_ENOUGH_CREDIT "Not Enough Credit"
+#define NOT_ENOUGH_ROOM "Not Enough Room"
 
 class Hotel_Exceptions : public std::exception {
 private:

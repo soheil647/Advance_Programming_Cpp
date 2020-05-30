@@ -7,10 +7,6 @@
 #IncludeRegexTransform: 
 
 /home/sspc/Desktop/AP_Projects/Hotel_Reservation/header/hotel.hpp
-string
--
-vector
--
 algorithm
 -
 iostream
@@ -19,10 +15,44 @@ fstream
 -
 sstream
 -
+map
+-
+iomanip
+-
+hotelExceptions.hpp
+/home/sspc/Desktop/AP_Projects/Hotel_Reservation/header/hotelExceptions.hpp
+room.hpp
+/home/sspc/Desktop/AP_Projects/Hotel_Reservation/header/room.hpp
+
+/home/sspc/Desktop/AP_Projects/Hotel_Reservation/header/hotelExceptions.hpp
+exception
+-
+string
+-
+iostream
+-
+bits/stdc++.h
+-
 
 /home/sspc/Desktop/AP_Projects/Hotel_Reservation/header/reservationSystem.hpp
 hotel.hpp
 /home/sspc/Desktop/AP_Projects/Hotel_Reservation/header/hotel.hpp
+user.hpp
+/home/sspc/Desktop/AP_Projects/Hotel_Reservation/header/user.hpp
+hotelExceptions.hpp
+/home/sspc/Desktop/AP_Projects/Hotel_Reservation/header/hotelExceptions.hpp
+
+/home/sspc/Desktop/AP_Projects/Hotel_Reservation/header/room.hpp
+string
+-
+
+/home/sspc/Desktop/AP_Projects/Hotel_Reservation/header/user.hpp
+string
+-
+vector
+-
+iostream
+-
 
 /home/sspc/Desktop/AP_Projects/Hotel_Reservation/main.cpp
 ./header/reservationSystem.hpp
@@ -32,7 +62,21 @@ hotel.hpp
 ../header/hotel.hpp
 /home/sspc/Desktop/AP_Projects/Hotel_Reservation/header/hotel.hpp
 
+/home/sspc/Desktop/AP_Projects/Hotel_Reservation/source/hotelExceptions.cpp
+../header/hotelExceptions.hpp
+/home/sspc/Desktop/AP_Projects/Hotel_Reservation/header/hotelExceptions.hpp
+
 /home/sspc/Desktop/AP_Projects/Hotel_Reservation/source/reservationSystem.cpp
 ../header/reservationSystem.hpp
 /home/sspc/Desktop/AP_Projects/Hotel_Reservation/header/reservationSystem.hpp
+
+/home/sspc/Desktop/AP_Projects/Hotel_Reservation/source/room.cpp
+../header/room.hpp
+/home/sspc/Desktop/AP_Projects/Hotel_Reservation/header/room.hpp
+
+/home/sspc/Desktop/AP_Projects/Hotel_Reservation/source/user.cpp
+algorithm
+-
+../header/user.hpp
+/home/sspc/Desktop/AP_Projects/Hotel_Reservation/header/user.hpp
 

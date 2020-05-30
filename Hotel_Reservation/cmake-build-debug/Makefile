@@ -231,6 +231,33 @@ source/reservationSystem.cpp.s:
 	$(MAKE) -f CMakeFiles/Hotel_Reservation.dir/build.make CMakeFiles/Hotel_Reservation.dir/source/reservationSystem.cpp.s
 .PHONY : source/reservationSystem.cpp.s
 
+source/room.o: source/room.cpp.o
+
+.PHONY : source/room.o
+
+# target to build an object file
+source/room.cpp.o:
+	$(MAKE) -f CMakeFiles/Hotel_Reservation.dir/build.make CMakeFiles/Hotel_Reservation.dir/source/room.cpp.o
+.PHONY : source/room.cpp.o
+
+source/room.i: source/room.cpp.i
+
+.PHONY : source/room.i
+
+# target to preprocess a source file
+source/room.cpp.i:
+	$(MAKE) -f CMakeFiles/Hotel_Reservation.dir/build.make CMakeFiles/Hotel_Reservation.dir/source/room.cpp.i
+.PHONY : source/room.cpp.i
+
+source/room.s: source/room.cpp.s
+
+.PHONY : source/room.s
+
+# target to generate assembly for a file
+source/room.cpp.s:
+	$(MAKE) -f CMakeFiles/Hotel_Reservation.dir/build.make CMakeFiles/Hotel_Reservation.dir/source/room.cpp.s
+.PHONY : source/room.cpp.s
+
 source/user.o: source/user.cpp.o
 
 .PHONY : source/user.o
@@ -279,6 +306,9 @@ help:
 	@echo "... source/reservationSystem.o"
 	@echo "... source/reservationSystem.i"
 	@echo "... source/reservationSystem.s"
+	@echo "... source/room.o"
+	@echo "... source/room.i"
+	@echo "... source/room.s"
 	@echo "... source/user.o"
 	@echo "... source/user.i"
 	@echo "... source/user.s"

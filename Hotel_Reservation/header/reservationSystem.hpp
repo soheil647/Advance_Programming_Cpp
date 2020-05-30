@@ -33,6 +33,8 @@ public:
     void parse_command(std::stringstream& input_line);
 
     void post_rating(std::stringstream &arg);
+
+    void post_reserves(std::stringstream &arg);
 };
 
 

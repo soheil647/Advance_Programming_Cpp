@@ -3,6 +3,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/Hotel_Reservation.dir/source/hotel.cpp.o"
   "CMakeFiles/Hotel_Reservation.dir/source/hotelExceptions.cpp.o"
   "CMakeFiles/Hotel_Reservation.dir/source/reservationSystem.cpp.o"
+  "CMakeFiles/Hotel_Reservation.dir/source/room.cpp.o"
   "CMakeFiles/Hotel_Reservation.dir/source/user.cpp.o"
   "Hotel_Reservation"
   "Hotel_Reservation.pdb"
