@@ -1,0 +1,16 @@
+{
+    "color": "red",
+    "diameter": 25,
+    "courses": [
+        "AP",
+        "DM",
+        5
+    ],
+    "grades": [
+        20
+    ],
+    "info": {
+        "name": "hosna",
+        "email": "hsazarmsa@gmail.com"
+    }
+}

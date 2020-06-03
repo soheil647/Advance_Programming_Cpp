@@ -99,6 +99,9 @@
 		<Unit filename="/home/sspc/Desktop/AP_Projects/Hotel_Reservation/header/user.hpp">
 			<Option target="Hotel_Reservation"/>
 		</Unit>
+		<Unit filename="/home/sspc/Desktop/AP_Projects/Hotel_Reservation/header/userReservation.hpp">
+			<Option target="Hotel_Reservation"/>
+		</Unit>
 		<Unit filename="/home/sspc/Desktop/AP_Projects/Hotel_Reservation/main.cpp">
 			<Option target="Hotel_Reservation"/>
 		</Unit>
@@ -115,6 +118,9 @@
 			<Option target="Hotel_Reservation"/>
 		</Unit>
 		<Unit filename="/home/sspc/Desktop/AP_Projects/Hotel_Reservation/source/user.cpp">
+			<Option target="Hotel_Reservation"/>
+		</Unit>
+		<Unit filename="/home/sspc/Desktop/AP_Projects/Hotel_Reservation/source/userReservation.cpp">
 			<Option target="Hotel_Reservation"/>
 		</Unit>
 		<Unit filename="/home/sspc/Desktop/AP_Projects/Hotel_Reservation/CMakeLists.txt">

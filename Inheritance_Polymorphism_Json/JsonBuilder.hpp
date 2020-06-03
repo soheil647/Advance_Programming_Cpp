@@ -6,15 +6,15 @@
 #include <iostream>
 #include <map>
 
-#include "JsonElement.hpp"
-#include "JsonString.hpp"
-#include "JsonInt.hpp"
-#include "JsonObject.hpp"
-#include "JsonArray.hpp"
+#include "header/JsonElement.hpp"
+#include "header/JsonString.hpp"
+#include "header/JsonInt.hpp"
+#include "header/JsonObject.hpp"
+#include "header/JsonArray.hpp"
 
-#include "duplicateKey.hpp"
-#include "idException.hpp"
-#include "undefinedType.hpp"
+#include "header/duplicateKey.hpp"
+#include "header/idException.hpp"
+#include "header/undefinedType.hpp"
 
 class JsonBuilder
 {

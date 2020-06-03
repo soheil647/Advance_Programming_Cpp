@@ -1,0 +1,12 @@
+add_channel base
+add_bot logger base.txt
+add_channel other
+add_bot logger all.txt
+add_bot echo other base
+add_bot fred base
+add_bot librarian base
+tell other Hi
+tell other How are you
+tell base I'm fine thank you, and you?
+tell other Great
+tell base Oops

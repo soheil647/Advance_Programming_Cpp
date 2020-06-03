@@ -43,6 +43,8 @@ private:
     void assign_rooms_ids();
     enum RoomType {standard, deluxe, luxury, premium, invalid_type};
     static RoomType resolve_room_type(const std::string& room_type);
+    static std::vector<std::string> print_reserved_rooms(const std::vector<Room *>& reserved_rooms);
+    static void reset_reserved_rooms(const std::vector<Room *>& reserved_rooms);
 public:
     Hotel(const std::vector<std::string> &information_path);
     std::string get_id();
@@ -51,11 +53,8 @@ public:
     void get_new_rating(float location, float cleanliness, float staff, float facilities, float value_for_money, float overall_Rating);
     void show_comments();
     void show_ratings();
-    void reserve_rooms(const std::string& room_type, int room_quantity, int check_in, int check_out);
-
-    static void print_reserved_rooms(const std::vector<Room *>& reserved_rooms);
-
-    static void reset_reserved_rooms(const std::vector<Room *>& reserved_rooms);
+    int reserve_rooms(const std::string& room_type, int room_quantity, int check_in, int check_out);
+    int get_room_price(const std::string &room_type);
 };
 
 

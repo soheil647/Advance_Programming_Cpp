@@ -12,8 +12,7 @@ private:
     bool reserved;
 public:
     Room(const std::string &_id, int _price);
-    int reserve_room(int time_in, int time_out);
-    void get_reserve();
+    bool reserve_room(int time_in, int time_out);
     std::string get_id();
     void reset_room_reservation();
 };

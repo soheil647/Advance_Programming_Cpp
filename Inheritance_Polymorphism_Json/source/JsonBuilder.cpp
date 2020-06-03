@@ -1,10 +1,10 @@
-#include "../header/JsonBuilder.hpp"
+#include "../JsonBuilder.hpp"
 
 using namespace std;
 
 
 void JsonBuilder::print(int id) {
-    checkParentId(id);
+//    checkParentId(id);
     cout << "{" << endl;
     for (JsonElement *element : this->elements) {
         if (element->get_id() == id) {
@@ -42,7 +42,6 @@ int JsonBuilder::addContainerToObject(int parentId, const std::string &key, cons
 
     checkParentId(parentId);
     checkDuplicateKey(key);
-
     if (type == "object") {
         auto *new_element = new JsonObject(parentId, key);
         this->elements.push_back(new_element);
@@ -92,9 +91,12 @@ int JsonBuilder::addContainerToArray(int parentId, const std::string& type){
 }
 
 void JsonBuilder::checkParentId(int parentId){
+    if(elements.empty())
+        return;
     for(JsonElement* element : this->elements)
-        if(element->get_id() == parentId)
+        if (element->get_id() == parentId)
             return;
+
     throw idException();
 }
 

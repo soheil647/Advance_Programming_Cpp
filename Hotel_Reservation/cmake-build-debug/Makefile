@@ -285,6 +285,33 @@ source/user.cpp.s:
 	$(MAKE) -f CMakeFiles/Hotel_Reservation.dir/build.make CMakeFiles/Hotel_Reservation.dir/source/user.cpp.s
 .PHONY : source/user.cpp.s
 
+source/userReservation.o: source/userReservation.cpp.o
+
+.PHONY : source/userReservation.o
+
+# target to build an object file
+source/userReservation.cpp.o:
+	$(MAKE) -f CMakeFiles/Hotel_Reservation.dir/build.make CMakeFiles/Hotel_Reservation.dir/source/userReservation.cpp.o
+.PHONY : source/userReservation.cpp.o
+
+source/userReservation.i: source/userReservation.cpp.i
+
+.PHONY : source/userReservation.i
+
+# target to preprocess a source file
+source/userReservation.cpp.i:
+	$(MAKE) -f CMakeFiles/Hotel_Reservation.dir/build.make CMakeFiles/Hotel_Reservation.dir/source/userReservation.cpp.i
+.PHONY : source/userReservation.cpp.i
+
+source/userReservation.s: source/userReservation.cpp.s
+
+.PHONY : source/userReservation.s
+
+# target to generate assembly for a file
+source/userReservation.cpp.s:
+	$(MAKE) -f CMakeFiles/Hotel_Reservation.dir/build.make CMakeFiles/Hotel_Reservation.dir/source/userReservation.cpp.s
+.PHONY : source/userReservation.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -312,6 +339,9 @@ help:
 	@echo "... source/user.o"
 	@echo "... source/user.i"
 	@echo "... source/user.s"
+	@echo "... source/userReservation.o"
+	@echo "... source/userReservation.i"
+	@echo "... source/userReservation.s"
 .PHONY : help
 
 

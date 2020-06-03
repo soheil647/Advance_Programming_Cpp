@@ -35,6 +35,10 @@ public:
     void post_rating(std::stringstream &arg);
 
     void post_reserves(std::stringstream &arg);
+
+    void delete_reserve(std::stringstream &arg);
+
+    void get_reserves(std::stringstream &arg);
 };
 
 

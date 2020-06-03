@@ -10,7 +10,7 @@ JsonInt::JsonInt(int _id, const std::string &_key, int _value) : JsonElement(_id
 void JsonInt::print(int baseTab) {
     string tabs;
     for(int i = 0; i < baseTab; i++)
-        tabs += "\t";
+        tabs += "    ";
     cout << tabs << "\"" << key << "\"" << ": " << value << "," << endl;
 }
 

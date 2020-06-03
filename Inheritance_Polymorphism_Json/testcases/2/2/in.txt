@@ -1,0 +1,5 @@
+add_channel what
+add_channel what
+add_bot logger all.txt
+add_bot echo what what
+tell base Oops

@@ -9,8 +9,8 @@ _CC=${_CC_EXEC} ${CC_FLAGS}
 
 all:utrip.out
 
-utrip.out: ${_BUILD_DIR}/main.o  ${_BUILD_DIR}/reservationSystem.o ${_BUILD_DIR}/hotel.o ${_BUILD_DIR}/hotelExceptions.o ${_BUILD_DIR}/user.o
-	${_CC_EXEC} ${_BUILD_DIR}/main.o  ${_BUILD_DIR}/reservationSystem.o ${_BUILD_DIR}/hotelExceptions.o ${_BUILD_DIR}/user.o ${_BUILD_DIR}/hotel.o -o utrip.out
+utrip.out: ${_BUILD_DIR}/main.o  ${_BUILD_DIR}/reservationSystem.o ${_BUILD_DIR}/hotel.o ${_BUILD_DIR}/hotelExceptions.o ${_BUILD_DIR}/user.o ${_BUILD_DIR}/room.o ${_BUILD_DIR}/userReservation.o
+	${_CC_EXEC} ${_BUILD_DIR}/main.o  ${_BUILD_DIR}/reservationSystem.o ${_BUILD_DIR}/hotelExceptions.o ${_BUILD_DIR}/user.o ${_BUILD_DIR}/hotel.o ${_BUILD_DIR}/room.o ${_BUILD_DIR}/userReservation.o -o utrip.out
 
 ${_BUILD_DIR}/main.o: main.cpp ${_BUILD_DIR}/reservationSystem.o
 	${_CC} main.cpp -o ${_BUILD_DIR}/main.o
@@ -21,7 +21,7 @@ ${_BUILD_DIR}/reservationSystem.o: ${_SOURCE_DIR}/reservationSystem.cpp ${_BUILD
 ${_BUILD_DIR}/hotel.o: ${_SOURCE_DIR}/hotel.cpp ${_BUILD_DIR}/hotelExceptions.o ${_BUILD_DIR}/room.o
 	${_CC} ${_SOURCE_DIR}/hotel.cpp -o ${_BUILD_DIR}/hotel.o
 
-${_BUILD_DIR}/user.o: ${_SOURCE_DIR}/user.cpp
+${_BUILD_DIR}/user.o: ${_SOURCE_DIR}/user.cpp ${_BUILD_DIR}/userReservation.o
 	${_CC} ${_SOURCE_DIR}/user.cpp -o ${_BUILD_DIR}/user.o
 
 ${_BUILD_DIR}/hotelExceptions.o: ${_SOURCE_DIR}/hotelExceptions.cpp
@@ -29,6 +29,10 @@ ${_BUILD_DIR}/hotelExceptions.o: ${_SOURCE_DIR}/hotelExceptions.cpp
 
 ${_BUILD_DIR}/room.o: ${_SOURCE_DIR}/room.cpp
 	${_CC} ${_SOURCE_DIR}/room.cpp -o ${_BUILD_DIR}/room.o
+
+${_BUILD_DIR}/userReservation.o: ${_SOURCE_DIR}/userReservation.cpp
+	${_CC} ${_SOURCE_DIR}/userReservation.cpp -o ${_BUILD_DIR}/userReservation.o
+
 clean:
 	rm ${_BUILD_DIR}/*.o
 	rm utrip.out

@@ -13,11 +13,15 @@ JsonObject::JsonObject(int _id, const std::string &_key) :JsonElement(_id, nextI
 void JsonObject::print(int baseTab) {
     string tabs;
     for(int i = 0; i < baseTab; i++)
-        tabs += "\t";
-    cout << tabs << "\"" << key << "\"" << ": " << "{" << endl;
-    for(JsonElement* element : elements) {
+        tabs += "    ";
+    if(!key.empty())
+        cout << tabs << "\"" << key << "\"" << ": " << "{" << endl;
+    else
+        cout << tabs << "{" << endl;
+    for (JsonElement *element : elements) {
         element->print(baseTab + 1);
     }
+
     cout << tabs << "}" << endl;
 }
 

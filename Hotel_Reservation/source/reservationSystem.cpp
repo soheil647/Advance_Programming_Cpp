@@ -81,8 +81,8 @@ void ReservationSystem::find_command_action(stringstream& arg, const string& met
                     return get_wallet(arg);
 //                case show_hotels:
 //                    return get_hotels(arg);
-//                case reserves:
-//                    return get_reserves(arg);
+                case reserves:
+                    return get_reserves(arg);
                 case comments:
                     return get_comments(arg);
                 case ratings:
@@ -95,8 +95,8 @@ void ReservationSystem::find_command_action(stringstream& arg, const string& met
             switch(resolve_command(command)) {
 //                case filters:
 //                    return delete_filters(arg);
-//                case reserves:
-//                    return delete_reserve(arg);
+                case reserves:
+                    return delete_reserve(arg);
                 default:
                     throw Hotel_Exceptions(NOT_FOUND);
             }
@@ -317,6 +317,30 @@ void ReservationSystem::post_reserves(std::stringstream &arg) {
         else
             throw Hotel_Exceptions(BAD_REQUEST);
     }
-//    if()
-    find_hotel_by_id(hotel)->reserve_rooms(type, quantity, check_in, check_out);
+    if(logged_user->get_wallet() < float(quantity * find_hotel_by_id(hotel)->get_room_price(type)))
+        throw Hotel_Exceptions(NOT_ENOUGH_CREDIT);
+    int price = find_hotel_by_id(hotel)->reserve_rooms(type, quantity, check_in, check_out);
+    logged_user->reserve_rooms(hotel, type, quantity, price, check_in, check_out);
+    logged_user->decreasing_wallet(float(quantity * price));
+}
+
+void ReservationSystem::get_reserves(std::stringstream &arg) {
+    if(logged_user == nullptr)
+        throw Hotel_Exceptions(PERMISSION_DENIED);
+    return logged_user->show_reserves();
+}
+
+void ReservationSystem::delete_reserve(std::stringstream &arg) {
+    vector<string> args = resolve_arguments(arg);
+    int id = 0;
+    if(logged_user == nullptr)
+        throw Hotel_Exceptions(PERMISSION_DENIED);
+    for(int i = 0; i < args.size(); i += 2) {
+        if (args[i] == "id")
+            id = stoi(args[i + 1]);
+        else
+            throw Hotel_Exceptions(BAD_REQUEST);
+    }
+     userReservation* reserve =  logged_user->delete_reserve(id);
+    find_hotel_by_id(reserve->get_hotel())->reset_reserve();
 }

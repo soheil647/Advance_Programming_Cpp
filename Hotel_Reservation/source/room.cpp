@@ -8,13 +8,13 @@ Room::Room(const std::string& _id, int _price) {
     reserved = false;
 }
 
-int Room::reserve_room(int time_in, int time_out) {
+bool Room::reserve_room(int time_in, int time_out) {
     if(time_in > time_out || check_in < time_in < check_out || check_in < time_out < check_out || reserved)
-        return 0;
+        return false;
     check_in = time_in;
     check_out = time_out;
     reserved = true;
-    return 1;
+    return true;
 }
 
 std::string Room::get_id() {

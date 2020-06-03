@@ -11,7 +11,6 @@ struct Hotel::Rating {
     float overall_rating;
 };
 
-
 Hotel::Hotel(const vector<string> &information_path) {
     parse_hotel_information(information_path);
     assign_rooms_ids();
@@ -70,13 +69,13 @@ void Hotel::parse_properties(const string &properties) {
 }
 
 void Hotel::assign_rooms_ids() {
-    for (int room_number = 0; room_number < number_standard_room; room_number++)
+    for (int room_number = 1; room_number <= number_standard_room; room_number++)
         standard_rooms.push_back(new Room("s" + to_string(room_number), standard_room_price));
-    for (int room_number = 0; room_number < number_deluxe_room; room_number++)
+    for (int room_number = 1; room_number <= number_deluxe_room; room_number++)
         deluxe_rooms.push_back(new Room("d" + to_string(room_number), deluxe_room_price));
-    for (int room_number = 0; room_number < number_luxury_room; room_number++)
+    for (int room_number = 1; room_number <= number_luxury_room; room_number++)
         luxury_rooms.push_back(new Room("l" + to_string(room_number), luxury_room_price));
-    for (int room_number = 0; room_number < number_premium_room; room_number++)
+    for (int room_number = 1; room_number <= number_premium_room; room_number++)
         premium_rooms.push_back(new Room("p" + to_string(room_number), premium_room_price));
 }
 
@@ -125,37 +124,76 @@ void Hotel::show_ratings() {
     average_staff = ((sum_staff)/float(number_of_ratings));
     average_value_for_money = ((sum_value_for_money)/float(number_of_ratings));
     average_overall_rating = ((sum_overall_rating)/float(number_of_ratings));
-
-    cout << "location: " << setprecision(2) << average_location << endl;
-    cout << "cleanliness: " << setprecision(2) << average_cleanliness << endl;
-    cout << "staff: " << setprecision(2) << average_staff << endl;
-    cout << "facilities: " << setprecision(2) << average_facilities << endl;
-    cout << "value for money: " << setprecision(2) << average_value_for_money << endl;
-    cout << "overall rating: " << setprecision(2) << average_overall_rating << endl;
+    cout << setprecision(2) << fixed;
+    cout << "location: " << average_location << endl;
+    cout << "cleanliness: " << average_cleanliness << endl;
+    cout << "staff: " << average_staff << endl;
+    cout << "facilities: " << average_facilities << endl;
+    cout << "value for money: " <<  average_value_for_money << endl;
+    cout << "overall rating: " <<  average_overall_rating << endl;
 }
 
-void Hotel::reserve_rooms(const std::string& room_type, int room_quantity, int check_in, int check_out) {
+int Hotel::reserve_rooms(const std::string& room_type, int room_quantity, int check_in, int check_out) {
     vector<Room*> wanted_rooms;
+    vector<string> rooms_id;
     switch (resolve_room_type(room_type)){
         case standard: {
             if(room_quantity > number_standard_room)
                 throw Hotel_Exceptions(NOT_ENOUGH_ROOM);
             int reserved = 0;
             for(int i = 0; i < number_standard_room; i++) {
-                reserved += standard_rooms[i]->reserve_room(check_in, check_out);
-                if(reserved == 1)
+                if(standard_rooms[i]->reserve_room(check_in, check_out)) {
                     wanted_rooms.push_back(standard_rooms[i]);
+                    reserved += 1;
+                }
                 if(reserved == room_quantity)
-                    return print_reserved_rooms(wanted_rooms);
+                    return print_reserved_rooms(wanted_rooms, standard_room_price);
             }
             break;
         }
-        case deluxe:
+        case deluxe: {
+            if(room_quantity > number_deluxe_room)
+                throw Hotel_Exceptions(NOT_ENOUGH_ROOM);
+            int reserved = 0;
+            for(int i = 0; i < number_deluxe_room; i++) {
+                if(deluxe_rooms[i]->reserve_room(check_in, check_out)) {
+                    wanted_rooms.push_back(deluxe_rooms[i]);
+                    reserved += 1;
+                }
+                if(reserved == room_quantity)
+                    return print_reserved_rooms(wanted_rooms, deluxe_room_price);
+            }
             break;
-        case luxury:
+        }
+        case luxury: {
+            if(room_quantity > number_luxury_room)
+                throw Hotel_Exceptions(NOT_ENOUGH_ROOM);
+            int reserved = 0;
+            for(int i = 0; i < number_luxury_room; i++) {
+                if(luxury_rooms[i]->reserve_room(check_in, check_out)) {
+                    wanted_rooms.push_back(luxury_rooms[i]);
+                    reserved += 1;
+                }
+                if(reserved == room_quantity)
+                    return print_reserved_rooms(wanted_rooms, luxury_room_price);
+            }
             break;
-        case premium:
+        }
+        case premium: {
+            if(room_quantity > number_premium_room)
+                throw Hotel_Exceptions(NOT_ENOUGH_ROOM);
+            int reserved = 0;
+            for(int i = 0; i < number_premium_room; i++) {
+                if(premium_rooms[i]->reserve_room(check_in, check_out)) {
+                    wanted_rooms.push_back(premium_rooms[i]);
+                    reserved += 1;
+                }
+                if(reserved == room_quantity)
+                    rooms_id = print_reserved_rooms(wanted_rooms);
+                    return print_reserved_rooms(wanted_rooms, premium_room_price);
+            }
             break;
+        }
         default:
             throw (Hotel_Exceptions(BAD_REQUEST));
     }
@@ -171,13 +209,32 @@ Hotel::RoomType Hotel::resolve_room_type(const std::string &type) {
     return invalid_type;
 }
 
-void Hotel::print_reserved_rooms(const std::vector<Room *>& reserved_rooms) {
-    for(Room* room : reserved_rooms)
+vector<string> Hotel::print_reserved_rooms(const std::vector<Room *>& reserved_rooms) {
+    vector<string> rooms_id;
+    for(Room* room : reserved_rooms) {
+        rooms_id.push_back(room->get_id());
         cout << room->get_id() << " ";
+    }
     cout << endl;
+    return rooms_id;
 }
 
 void Hotel::reset_reserved_rooms(const std::vector<Room *>& reserved_rooms) {
     for(Room* room : reserved_rooms)
         room->reset_room_reservation();
+}
+
+int Hotel::get_room_price(const string& room_type) {
+    switch (resolve_room_type(room_type)) {
+        case standard:
+            return standard_room_price;
+        case deluxe:
+            return deluxe_room_price;
+        case luxury:
+            return luxury_room_price;
+        case premium:
+            return premium_room_price;
+        case invalid_type:
+            throw Hotel_Exceptions(BAD_REQUEST);
+    }
 }

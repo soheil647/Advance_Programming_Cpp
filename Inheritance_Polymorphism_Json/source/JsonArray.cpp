@@ -56,18 +56,18 @@ int JsonArray::addContainer(int parentId, const std::string &container_key, cons
 void JsonArray::print(int baseTab) {
     string tabs;
     for(int i = 0; i < baseTab; i++)
-        tabs += "\t";
+        tabs += "    ";
     if(!key.empty())
         cout << tabs << "\"" << key << "\"" << ": " << "[" << endl;
     else
         cout << tabs << "[" << endl;
     for(const string& element : allStrings) {
-        cout << tabs << "\t";
+        cout << tabs << "    ";
         cout << "\"";
         cout << element << "\"" << "," << endl;
     }
     for(int element : allInts) {
-        cout << tabs << "\t";
+        cout << tabs << "    ";
         cout << element << "," << endl;;
     }
     for(JsonElement* element : elements) {

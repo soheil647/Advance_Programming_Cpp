@@ -11,7 +11,7 @@ JsonString::JsonString(int _id, const std::string &_key, const std::string &_val
 void JsonString::print(int baseTab) {
     string tabs;
     for(int i = 0; i < baseTab; i++)
-        tabs += "\t";
+        tabs += "    ";
     cout << tabs << "\"" << key << "\"" << ": " << "\"" << value << "\"" << "," << endl;
 }
 
