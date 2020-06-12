@@ -148,6 +148,71 @@ CMakeFiles/Hotel_Reservation.dir/source/userReservation.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Hotel_Reservation.dir/source/userReservation.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sspc/Desktop/AP_Projects/Hotel_Reservation/source/userReservation.cpp -o CMakeFiles/Hotel_Reservation.dir/source/userReservation.cpp.s
 
+CMakeFiles/Hotel_Reservation.dir/source/filter.cpp.o: CMakeFiles/Hotel_Reservation.dir/flags.make
+CMakeFiles/Hotel_Reservation.dir/source/filter.cpp.o: ../source/filter.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sspc/Desktop/AP_Projects/Hotel_Reservation/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/Hotel_Reservation.dir/source/filter.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Hotel_Reservation.dir/source/filter.cpp.o -c /home/sspc/Desktop/AP_Projects/Hotel_Reservation/source/filter.cpp
+
+CMakeFiles/Hotel_Reservation.dir/source/filter.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Hotel_Reservation.dir/source/filter.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/sspc/Desktop/AP_Projects/Hotel_Reservation/source/filter.cpp > CMakeFiles/Hotel_Reservation.dir/source/filter.cpp.i
+
+CMakeFiles/Hotel_Reservation.dir/source/filter.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Hotel_Reservation.dir/source/filter.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sspc/Desktop/AP_Projects/Hotel_Reservation/source/filter.cpp -o CMakeFiles/Hotel_Reservation.dir/source/filter.cpp.s
+
+CMakeFiles/Hotel_Reservation.dir/source/cityFilter.cpp.o: CMakeFiles/Hotel_Reservation.dir/flags.make
+CMakeFiles/Hotel_Reservation.dir/source/cityFilter.cpp.o: ../source/cityFilter.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sspc/Desktop/AP_Projects/Hotel_Reservation/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/Hotel_Reservation.dir/source/cityFilter.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Hotel_Reservation.dir/source/cityFilter.cpp.o -c /home/sspc/Desktop/AP_Projects/Hotel_Reservation/source/cityFilter.cpp
+
+CMakeFiles/Hotel_Reservation.dir/source/cityFilter.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Hotel_Reservation.dir/source/cityFilter.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/sspc/Desktop/AP_Projects/Hotel_Reservation/source/cityFilter.cpp > CMakeFiles/Hotel_Reservation.dir/source/cityFilter.cpp.i
+
+CMakeFiles/Hotel_Reservation.dir/source/cityFilter.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Hotel_Reservation.dir/source/cityFilter.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sspc/Desktop/AP_Projects/Hotel_Reservation/source/cityFilter.cpp -o CMakeFiles/Hotel_Reservation.dir/source/cityFilter.cpp.s
+
+CMakeFiles/Hotel_Reservation.dir/source/starFilter.cpp.o: CMakeFiles/Hotel_Reservation.dir/flags.make
+CMakeFiles/Hotel_Reservation.dir/source/starFilter.cpp.o: ../source/starFilter.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sspc/Desktop/AP_Projects/Hotel_Reservation/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/Hotel_Reservation.dir/source/starFilter.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Hotel_Reservation.dir/source/starFilter.cpp.o -c /home/sspc/Desktop/AP_Projects/Hotel_Reservation/source/starFilter.cpp
+
+CMakeFiles/Hotel_Reservation.dir/source/starFilter.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Hotel_Reservation.dir/source/starFilter.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/sspc/Desktop/AP_Projects/Hotel_Reservation/source/starFilter.cpp > CMakeFiles/Hotel_Reservation.dir/source/starFilter.cpp.i
+
+CMakeFiles/Hotel_Reservation.dir/source/starFilter.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Hotel_Reservation.dir/source/starFilter.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sspc/Desktop/AP_Projects/Hotel_Reservation/source/starFilter.cpp -o CMakeFiles/Hotel_Reservation.dir/source/starFilter.cpp.s
+
+CMakeFiles/Hotel_Reservation.dir/source/costFilter.cpp.o: CMakeFiles/Hotel_Reservation.dir/flags.make
+CMakeFiles/Hotel_Reservation.dir/source/costFilter.cpp.o: ../source/costFilter.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sspc/Desktop/AP_Projects/Hotel_Reservation/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/Hotel_Reservation.dir/source/costFilter.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Hotel_Reservation.dir/source/costFilter.cpp.o -c /home/sspc/Desktop/AP_Projects/Hotel_Reservation/source/costFilter.cpp
+
+CMakeFiles/Hotel_Reservation.dir/source/costFilter.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Hotel_Reservation.dir/source/costFilter.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/sspc/Desktop/AP_Projects/Hotel_Reservation/source/costFilter.cpp > CMakeFiles/Hotel_Reservation.dir/source/costFilter.cpp.i
+
+CMakeFiles/Hotel_Reservation.dir/source/costFilter.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Hotel_Reservation.dir/source/costFilter.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sspc/Desktop/AP_Projects/Hotel_Reservation/source/costFilter.cpp -o CMakeFiles/Hotel_Reservation.dir/source/costFilter.cpp.s
+
+CMakeFiles/Hotel_Reservation.dir/source/roomFilter.cpp.o: CMakeFiles/Hotel_Reservation.dir/flags.make
+CMakeFiles/Hotel_Reservation.dir/source/roomFilter.cpp.o: ../source/roomFilter.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sspc/Desktop/AP_Projects/Hotel_Reservation/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/Hotel_Reservation.dir/source/roomFilter.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Hotel_Reservation.dir/source/roomFilter.cpp.o -c /home/sspc/Desktop/AP_Projects/Hotel_Reservation/source/roomFilter.cpp
+
+CMakeFiles/Hotel_Reservation.dir/source/roomFilter.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Hotel_Reservation.dir/source/roomFilter.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/sspc/Desktop/AP_Projects/Hotel_Reservation/source/roomFilter.cpp > CMakeFiles/Hotel_Reservation.dir/source/roomFilter.cpp.i
+
+CMakeFiles/Hotel_Reservation.dir/source/roomFilter.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Hotel_Reservation.dir/source/roomFilter.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sspc/Desktop/AP_Projects/Hotel_Reservation/source/roomFilter.cpp -o CMakeFiles/Hotel_Reservation.dir/source/roomFilter.cpp.s
+
 # Object files for target Hotel_Reservation
 Hotel_Reservation_OBJECTS = \
 "CMakeFiles/Hotel_Reservation.dir/main.cpp.o" \
@@ -156,7 +221,12 @@ Hotel_Reservation_OBJECTS = \
 "CMakeFiles/Hotel_Reservation.dir/source/user.cpp.o" \
 "CMakeFiles/Hotel_Reservation.dir/source/hotelExceptions.cpp.o" \
 "CMakeFiles/Hotel_Reservation.dir/source/room.cpp.o" \
-"CMakeFiles/Hotel_Reservation.dir/source/userReservation.cpp.o"
+"CMakeFiles/Hotel_Reservation.dir/source/userReservation.cpp.o" \
+"CMakeFiles/Hotel_Reservation.dir/source/filter.cpp.o" \
+"CMakeFiles/Hotel_Reservation.dir/source/cityFilter.cpp.o" \
+"CMakeFiles/Hotel_Reservation.dir/source/starFilter.cpp.o" \
+"CMakeFiles/Hotel_Reservation.dir/source/costFilter.cpp.o" \
+"CMakeFiles/Hotel_Reservation.dir/source/roomFilter.cpp.o"
 
 # External object files for target Hotel_Reservation
 Hotel_Reservation_EXTERNAL_OBJECTS =
@@ -168,9 +238,14 @@ Hotel_Reservation: CMakeFiles/Hotel_Reservation.dir/source/user.cpp.o
 Hotel_Reservation: CMakeFiles/Hotel_Reservation.dir/source/hotelExceptions.cpp.o
 Hotel_Reservation: CMakeFiles/Hotel_Reservation.dir/source/room.cpp.o
 Hotel_Reservation: CMakeFiles/Hotel_Reservation.dir/source/userReservation.cpp.o
+Hotel_Reservation: CMakeFiles/Hotel_Reservation.dir/source/filter.cpp.o
+Hotel_Reservation: CMakeFiles/Hotel_Reservation.dir/source/cityFilter.cpp.o
+Hotel_Reservation: CMakeFiles/Hotel_Reservation.dir/source/starFilter.cpp.o
+Hotel_Reservation: CMakeFiles/Hotel_Reservation.dir/source/costFilter.cpp.o
+Hotel_Reservation: CMakeFiles/Hotel_Reservation.dir/source/roomFilter.cpp.o
 Hotel_Reservation: CMakeFiles/Hotel_Reservation.dir/build.make
 Hotel_Reservation: CMakeFiles/Hotel_Reservation.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/sspc/Desktop/AP_Projects/Hotel_Reservation/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable Hotel_Reservation"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/sspc/Desktop/AP_Projects/Hotel_Reservation/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Linking CXX executable Hotel_Reservation"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Hotel_Reservation.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

@@ -22,7 +22,7 @@ POST reserves ? hotel ba7b9e7b9073e745d38122d74045be00 type premium quantity 2 c
 POST wallet ? amount 520000
 POST reserves ? hotel 60ac1903f046575659e673d05595e452 type standard quantity 1 check_in 21 check_out 21
 POST reserves ? hotel 60ac1903f046575659e673d05595e452 type standard quantity 1 check_in 21 check_out 21
-POST reserves ? hotel 60ac1903f046575659e673d05595e452 type premium quantity 3 check_in 21 check_out 21
+POST reserves ? hotel 60ac1903f046575659e673d05595e452 type premium quantity 1 check_in 21 check_out 21
 GET reserves
 DELETE reserves ? id 1
 GET reserves

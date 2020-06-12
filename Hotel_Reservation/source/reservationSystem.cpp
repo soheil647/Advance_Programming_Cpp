@@ -63,8 +63,8 @@ void ReservationSystem::find_command_action(stringstream& arg, const string& met
                     return post_logout(arg);
                 case wallet:
                     return post_wallet(arg);
-//                case filters:
-//                    return post_filters(arg);
+                case filters:
+                    return post_filters(arg);
                 case reserves:
                     return post_reserves(arg);
                 case comments:
@@ -79,8 +79,8 @@ void ReservationSystem::find_command_action(stringstream& arg, const string& met
             switch(resolve_command(command)){
                 case wallet:
                     return get_wallet(arg);
-//                case show_hotels:
-//                    return get_hotels(arg);
+                case show_hotels:
+                    return get_hotels(arg);
                 case reserves:
                     return get_reserves(arg);
                 case comments:
@@ -93,8 +93,8 @@ void ReservationSystem::find_command_action(stringstream& arg, const string& met
         }
         case DELETE: {
             switch(resolve_command(command)) {
-//                case filters:
-//                    return delete_filters(arg);
+                case filters:
+                    return delete_filters(arg);
                 case reserves:
                     return delete_reserve(arg);
                 default:
@@ -184,7 +184,6 @@ void ReservationSystem::post_logout(std::stringstream &arg) {
     if(logged_user == nullptr)
         throw Hotel_Exceptions(PERMISSION_DENIED);
     logged_user = nullptr;
-    cout << "OK" << endl;
 }
 
 void ReservationSystem::post_wallet(std::stringstream &arg) {
@@ -251,7 +250,6 @@ void ReservationSystem::get_comments(std::stringstream &arg) {
         else throw Hotel_Exceptions(BAD_REQUEST);
     }
     find_hotel_by_id(hotel_id)->show_comments();
-    cout << "OK" << endl;
 }
 
 void ReservationSystem::post_rating(std::stringstream &arg) {
@@ -294,7 +292,6 @@ void ReservationSystem::get_ratings(std::stringstream &arg) {
             throw Hotel_Exceptions(BAD_REQUEST);
     }
     find_hotel_by_id(hotel)->show_ratings();
-    cout << "OK" << endl;
 }
 
 void ReservationSystem::post_reserves(std::stringstream &arg) {
@@ -319,9 +316,9 @@ void ReservationSystem::post_reserves(std::stringstream &arg) {
     }
     if(logged_user->get_wallet() < float(quantity * find_hotel_by_id(hotel)->get_room_price(type)))
         throw Hotel_Exceptions(NOT_ENOUGH_CREDIT);
-    int price = find_hotel_by_id(hotel)->reserve_rooms(type, quantity, check_in, check_out);
-    logged_user->reserve_rooms(hotel, type, quantity, price, check_in, check_out);
-    logged_user->decreasing_wallet(float(quantity * price));
+    vector<Room*> reserved_rooms = find_hotel_by_id(hotel)->reserve_rooms(type, quantity, check_in, check_out);
+    logged_user->reserve_rooms(hotel, reserved_rooms);
+    logged_user->decreasing_wallet(float(quantity * reserved_rooms[0]->get_price()));
 }
 
 void ReservationSystem::get_reserves(std::stringstream &arg) {
@@ -342,5 +339,111 @@ void ReservationSystem::delete_reserve(std::stringstream &arg) {
             throw Hotel_Exceptions(BAD_REQUEST);
     }
      userReservation* reserve =  logged_user->delete_reserve(id);
-    find_hotel_by_id(reserve->get_hotel())->reset_reserve();
+    find_hotel_by_id(reserve->get_hotel())->reset_reserve(reserve->get_reserve_rooms());
+    cout << "OK" << endl;
+}
+
+void ReservationSystem::post_filters(std::stringstream &arg) {
+    vector<string> args = resolve_arguments(arg);
+    if(logged_user == nullptr)
+        throw Hotel_Exceptions(PERMISSION_DENIED);
+    switch (resolve_filter_type(args)) {
+        case city: {
+            logged_user->add_city_filter(args);
+            break;
+        }
+        case star: {
+            logged_user->add_star_filter(args);
+            break;
+        }
+        case cost: {
+            logged_user->add_cost_filter(args);
+            break;
+        }
+        case room: {
+            logged_user->add_room_filter(args);
+            break;
+        }
+        default:
+            throw Hotel_Exceptions(BAD_REQUEST);
+    }
+    cout << "OK" << endl;
+}
+
+ReservationSystem::Filters ReservationSystem::resolve_filter_type(const vector<string>& args){
+    if(args[0] == "city")
+        return city;
+    else if(args[0] == "min_star" || args[0] == "max_star")
+        return star;
+    else if(args[0] == "min_price" || args[0] == "max_price")
+        return cost;
+    else if(args[0] == "type" || args[0] == "quantity" || args[0] == "check_in" || args[0] == "check_out")
+        return room;
+    else
+        return invalid_filter;
+}
+
+void ReservationSystem::delete_filters(std::stringstream &arg) {
+    if(logged_user == nullptr)
+        throw Hotel_Exceptions(PERMISSION_DENIED);
+    logged_user->delete_filters();
+    cout << "OK" << endl;
+}
+
+void ReservationSystem::get_hotels(std::stringstream &arg) {
+    vector<string> args = resolve_arguments(arg);
+    if(logged_user == nullptr)
+        throw Hotel_Exceptions(PERMISSION_DENIED);
+    switch (resolve_hotel_command(args)) {
+        case one: {
+            print_one_hotel(args);
+            break;
+        }
+        case all: {
+            print_filter_hotels();
+            break;
+        }
+        case invalid: {
+            throw Hotel_Exceptions(BAD_REQUEST);
+        }
+    }
+
+}
+
+ReservationSystem::GetHotelType ReservationSystem::resolve_hotel_command(const vector<string>& args){
+    if(args.empty())
+        return all;
+    else if (args[0] == "id")
+        return one;
+    else
+        return invalid;
+}
+
+void ReservationSystem::print_one_hotel(const vector<string>& args){
+    string id;
+    for(int i = 0; i < args.size(); i += 2) {
+        if (args[i] == "id")
+            id = args[i + 1];
+        else
+            throw Hotel_Exceptions(BAD_REQUEST);
+    }
+    find_hotel_by_id(id)->print_hotel();
+}
+
+void ReservationSystem::print_filter_hotels(){
+    vector<Hotel*> filtered_hotels = filter_hotels();
+    if(filtered_hotels.empty())
+        throw Hotel_Exceptions(EMPTY);
+    std::sort(filtered_hotels.begin(), filtered_hotels.end(), [](Hotel *lhs, Hotel*& rhs){return lhs->get_id() < rhs->get_id();});
+    for(auto hotel : filtered_hotels)
+        hotel->print_summery_of_hotel();
+}
+
+vector<Hotel*> ReservationSystem::filter_hotels(){
+    vector<Hotel*> filtered_hotels = hotels;
+    auto filters = logged_user->get_filters();
+    for(auto filter : filters) {
+        filtered_hotels = filter->apply(filtered_hotels);
+    }
+    return filtered_hotels;
 }

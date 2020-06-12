@@ -1,6 +1,5 @@
 #include "./header/reservationSystem.hpp"
 using namespace std;
-
 int main() {
 
     ReservationSystem my_app = ReservationSystem("./Hotels.csv");

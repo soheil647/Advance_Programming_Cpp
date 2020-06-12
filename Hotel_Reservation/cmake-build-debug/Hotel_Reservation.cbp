@@ -84,6 +84,15 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/home/sspc/Desktop/AP_Projects/Hotel_Reservation/header/cityFilter.hpp">
+			<Option target="Hotel_Reservation"/>
+		</Unit>
+		<Unit filename="/home/sspc/Desktop/AP_Projects/Hotel_Reservation/header/costFilter.hpp">
+			<Option target="Hotel_Reservation"/>
+		</Unit>
+		<Unit filename="/home/sspc/Desktop/AP_Projects/Hotel_Reservation/header/filter.hpp">
+			<Option target="Hotel_Reservation"/>
+		</Unit>
 		<Unit filename="/home/sspc/Desktop/AP_Projects/Hotel_Reservation/header/hotel.hpp">
 			<Option target="Hotel_Reservation"/>
 		</Unit>
@@ -96,6 +105,12 @@
 		<Unit filename="/home/sspc/Desktop/AP_Projects/Hotel_Reservation/header/room.hpp">
 			<Option target="Hotel_Reservation"/>
 		</Unit>
+		<Unit filename="/home/sspc/Desktop/AP_Projects/Hotel_Reservation/header/roomFilter.hpp">
+			<Option target="Hotel_Reservation"/>
+		</Unit>
+		<Unit filename="/home/sspc/Desktop/AP_Projects/Hotel_Reservation/header/starFilter.hpp">
+			<Option target="Hotel_Reservation"/>
+		</Unit>
 		<Unit filename="/home/sspc/Desktop/AP_Projects/Hotel_Reservation/header/user.hpp">
 			<Option target="Hotel_Reservation"/>
 		</Unit>
@@ -103,6 +118,15 @@
 			<Option target="Hotel_Reservation"/>
 		</Unit>
 		<Unit filename="/home/sspc/Desktop/AP_Projects/Hotel_Reservation/main.cpp">
+			<Option target="Hotel_Reservation"/>
+		</Unit>
+		<Unit filename="/home/sspc/Desktop/AP_Projects/Hotel_Reservation/source/cityFilter.cpp">
+			<Option target="Hotel_Reservation"/>
+		</Unit>
+		<Unit filename="/home/sspc/Desktop/AP_Projects/Hotel_Reservation/source/costFilter.cpp">
+			<Option target="Hotel_Reservation"/>
+		</Unit>
+		<Unit filename="/home/sspc/Desktop/AP_Projects/Hotel_Reservation/source/filter.cpp">
 			<Option target="Hotel_Reservation"/>
 		</Unit>
 		<Unit filename="/home/sspc/Desktop/AP_Projects/Hotel_Reservation/source/hotel.cpp">
@@ -115,6 +139,12 @@
 			<Option target="Hotel_Reservation"/>
 		</Unit>
 		<Unit filename="/home/sspc/Desktop/AP_Projects/Hotel_Reservation/source/room.cpp">
+			<Option target="Hotel_Reservation"/>
+		</Unit>
+		<Unit filename="/home/sspc/Desktop/AP_Projects/Hotel_Reservation/source/roomFilter.cpp">
+			<Option target="Hotel_Reservation"/>
+		</Unit>
+		<Unit filename="/home/sspc/Desktop/AP_Projects/Hotel_Reservation/source/starFilter.cpp">
 			<Option target="Hotel_Reservation"/>
 		</Unit>
 		<Unit filename="/home/sspc/Desktop/AP_Projects/Hotel_Reservation/source/user.cpp">
