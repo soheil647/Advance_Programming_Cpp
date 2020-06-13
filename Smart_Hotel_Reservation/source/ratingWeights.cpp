@@ -28,7 +28,7 @@ void RatingWeights::show_weights() {
         cout << "cleanliness " << cleanliness_weight << " ";
         cout << "staff " << staff_weight << " ";
         cout << "facilities " << facilities_weight << " ";
-        cout << "value_for_money " << value_for_money_weight << endl;
+        cout << "value_for_money " << value_for_money_weight << " " << endl;
     }
 }
 

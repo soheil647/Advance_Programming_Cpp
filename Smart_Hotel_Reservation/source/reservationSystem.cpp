@@ -155,7 +155,7 @@ ReservationSystem::Commands ReservationSystem::resolve_command(const std::string
     if( command == "ratings" ) return ratings;
     if( command == "default_price_filter" ) return default_price_filter;
     if( command == "sort" ) return sort;
-    if( command == "manual_wights" ) return manual_weights;
+    if( command == "manual_weights" ) return manual_weights;
     return invalid_command;
 }
 

@@ -242,6 +242,7 @@ User::sort_property User::resolve_sort_property(const std::string &sort_property
     if( sort_property == "deluxe_room_price" ) return deluxe_price;
     if( sort_property == "luxury_room_price" ) return luxury_price;
     if( sort_property == "premium_room_price" ) return premium_price;
+    if( sort_property == "rating_personal" ) return rating_personal;
     return invalid_property;
 }
 
@@ -398,12 +399,11 @@ void User::sort_by_average_price(const std::string &order) {
 void User::sort_by_rating_personal(const std::string &order) {
     switch (resolve_sort_order(order)){
         case ascending: {
-            auto wtf = [=](Hotel *lhs, Hotel *rhs) { return lhs->get_rating(given_rating, rating_weights) < rhs->get_rating(given_rating, rating_weights); };
-//            sort_function = [](Hotel *lhs, Hotel *rhs) { return lhs->get_rating(given_rating, rating_weights) < rhs->get_rating(given_rating, rating_weights); };
+            sort_function = [=](Hotel *lhs, Hotel *rhs) { return lhs->get_rating(given_rating, rating_weights) < rhs->get_rating(given_rating, rating_weights); };
             break;
         }
         case descending: {
-            sort_function = [](Hotel *lhs, Hotel *rhs) { return lhs->get_rating(given_rating, rating_weights) < rhs->get_rating(given_rating, rating_weights); };
+            sort_function = [=](Hotel *lhs, Hotel *rhs) { return lhs->get_rating(given_rating, rating_weights) < rhs->get_rating(given_rating, rating_weights); };
             break;
         }
         default:
@@ -411,7 +411,7 @@ void User::sort_by_rating_personal(const std::string &order) {
     }
 }
 
-sort_func User::get_sort_function() { return sort_function;}
+function<bool(Hotel *, Hotel *)> User::get_sort_function() { return sort_function;}
 
 bool User::check_default_filter() {
     for(auto filter : filters){

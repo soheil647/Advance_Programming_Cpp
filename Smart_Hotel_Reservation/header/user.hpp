@@ -13,13 +13,9 @@
 #include "defaultPriceFilter.hpp"
 #include "ratingWeights.hpp"
 
-#define CITY_FILTER "city"
-#define COST_FILTER "cost"
-#define STAR_FILTER "star"
 #define ROOM_FILTER "room"
 #define DEFAULT_FILTER "default"
 
-typedef bool (*sort_func)(Hotel *lhs, Hotel *rhs);
 
 class User {
 private:
@@ -33,10 +29,9 @@ private:
     std::vector<Filter*> filters{};
     int hashed_password{};
     bool default_filter{};
-    bool (* sort_function)(Hotel* lhs, Hotel* rhs);
+    std::function<bool (Hotel *lhs, Hotel *rhs)> sort_function;
     std::vector<Ratings*> given_rating;
     RatingWeights* rating_weights;
-    //TODO: std::function<int (int)>
     static void check_star_filter(int min_star, int max_star);
     static void check_cost_filter(float min_price, float max_price);
     static int hash_password(const std::string &Combine);
@@ -54,6 +49,7 @@ private:
     void sort_by_luxury_price(const std::string &order);
     void sort_by_premium_price(const std::string &order);
     void sort_by_average_price(const std::string &order);
+    void sort_by_rating_personal(const std::string &order);
 public:
     User(const std::string& _email, const std::string& _username, const std::string& _password);
     User(const User& new_user);
@@ -76,22 +72,14 @@ public:
     std::vector<Filter*> get_filters();
     void status_default_filter_price(const std::string& status);
     void save_sort_order(const std::string& sort_property, const std::string& order);
-
-    sort_func get_sort_function();
-
+    std::function<bool(Hotel *, Hotel *)> get_sort_function();
     bool check_default_filter();
-
     void save_rating_weights(const std::string& status ,float location, float cleanliness, float staff, float facilities, float value_for_money);
-
     void show_rating_weights();
-
     void off_rating_weights();
-
     void add_rating(const std::string& hotel_id, float overall_rating);
 
-    void sort_by_rating_personal(const std::string &order);
 
-    bool check_hotel_rating(Hotel *lhs, Hotel *&rhs);
 };
 
 
