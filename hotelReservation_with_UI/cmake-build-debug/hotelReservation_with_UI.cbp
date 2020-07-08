@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="hotelReservation_with_UI"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/home/sspc/Desktop/AP_Projects/hotelReservation_with_UI/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/sspc/Desktop/AP_Projects/hotelReservation_with_UI/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/sspc/Desktop/AP_Projects/hotelReservation_with_UI/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/sspc/Desktop/AP_Projects/hotelReservation_with_UI/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/sspc/Desktop/AP_Projects/hotelReservation_with_UI/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/home/sspc/Desktop/AP_Projects/hotelReservation_with_UI/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/sspc/Desktop/AP_Projects/hotelReservation_with_UI/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/sspc/Desktop/AP_Projects/hotelReservation_with_UI/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/sspc/Desktop/AP_Projects/hotelReservation_with_UI/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/sspc/Desktop/AP_Projects/hotelReservation_with_UI/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="hotelReservation_with_UI">
+				<Option output="/home/sspc/Desktop/AP_Projects/hotelReservation_with_UI/cmake-build-debug/hotelReservation_with_UI" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/sspc/Desktop/AP_Projects/hotelReservation_with_UI/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/sspc/Desktop/AP_Projects/hotelReservation_with_UI/cmake-build-debug/Makefile&quot;  VERBOSE=1 hotelReservation_with_UI"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/sspc/Desktop/AP_Projects/hotelReservation_with_UI/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/sspc/Desktop/AP_Projects/hotelReservation_with_UI/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/sspc/Desktop/AP_Projects/hotelReservation_with_UI/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="hotelReservation_with_UI/fast">
+				<Option output="/home/sspc/Desktop/AP_Projects/hotelReservation_with_UI/cmake-build-debug/hotelReservation_with_UI" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/sspc/Desktop/AP_Projects/hotelReservation_with_UI/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/sspc/Desktop/AP_Projects/hotelReservation_with_UI/cmake-build-debug/Makefile&quot;  VERBOSE=1 hotelReservation_with_UI/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/sspc/Desktop/AP_Projects/hotelReservation_with_UI/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/sspc/Desktop/AP_Projects/hotelReservation_with_UI/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/sspc/Desktop/AP_Projects/hotelReservation_with_UI/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/home/sspc/Desktop/AP_Projects/hotelReservation_with_UI/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/sspc/Desktop/AP_Projects/hotelReservation_with_UI/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/sspc/Desktop/AP_Projects/hotelReservation_with_UI/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/sspc/Desktop/AP_Projects/hotelReservation_with_UI/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/sspc/Desktop/AP_Projects/hotelReservation_with_UI/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/home/sspc/Desktop/AP_Projects/hotelReservation_with_UI/Response/handlers.cpp">
+			<Option target="hotelReservation_with_UI"/>
+		</Unit>
+		<Unit filename="/home/sspc/Desktop/AP_Projects/hotelReservation_with_UI/Response/handlers.hpp">
+			<Option target="hotelReservation_with_UI"/>
+		</Unit>
+		<Unit filename="/home/sspc/Desktop/AP_Projects/hotelReservation_with_UI/header/cityFilter.hpp">
+			<Option target="hotelReservation_with_UI"/>
+		</Unit>
+		<Unit filename="/home/sspc/Desktop/AP_Projects/hotelReservation_with_UI/header/costFilter.hpp">
+			<Option target="hotelReservation_with_UI"/>
+		</Unit>
+		<Unit filename="/home/sspc/Desktop/AP_Projects/hotelReservation_with_UI/header/defaultPriceFilter.hpp">
+			<Option target="hotelReservation_with_UI"/>
+		</Unit>
+		<Unit filename="/home/sspc/Desktop/AP_Projects/hotelReservation_with_UI/header/filter.hpp">
+			<Option target="hotelReservation_with_UI"/>
+		</Unit>
+		<Unit filename="/home/sspc/Desktop/AP_Projects/hotelReservation_with_UI/header/hotel.hpp">
+			<Option target="hotelReservation_with_UI"/>
+		</Unit>
+		<Unit filename="/home/sspc/Desktop/AP_Projects/hotelReservation_with_UI/header/hotelExceptions.hpp">
+			<Option target="hotelReservation_with_UI"/>
+		</Unit>
+		<Unit filename="/home/sspc/Desktop/AP_Projects/hotelReservation_with_UI/header/ratingWeights.hpp">
+			<Option target="hotelReservation_with_UI"/>
+		</Unit>
+		<Unit filename="/home/sspc/Desktop/AP_Projects/hotelReservation_with_UI/header/ratings.hpp">
+			<Option target="hotelReservation_with_UI"/>
+		</Unit>
+		<Unit filename="/home/sspc/Desktop/AP_Projects/hotelReservation_with_UI/header/reservationSystem.hpp">
+			<Option target="hotelReservation_with_UI"/>
+		</Unit>
+		<Unit filename="/home/sspc/Desktop/AP_Projects/hotelReservation_with_UI/header/room.hpp">
+			<Option target="hotelReservation_with_UI"/>
+		</Unit>
+		<Unit filename="/home/sspc/Desktop/AP_Projects/hotelReservation_with_UI/header/roomFilter.hpp">
+			<Option target="hotelReservation_with_UI"/>
+		</Unit>
+		<Unit filename="/home/sspc/Desktop/AP_Projects/hotelReservation_with_UI/header/starFilter.hpp">
+			<Option target="hotelReservation_with_UI"/>
+		</Unit>
+		<Unit filename="/home/sspc/Desktop/AP_Projects/hotelReservation_with_UI/header/user.hpp">
+			<Option target="hotelReservation_with_UI"/>
+		</Unit>
+		<Unit filename="/home/sspc/Desktop/AP_Projects/hotelReservation_with_UI/header/userReservation.hpp">
+			<Option target="hotelReservation_with_UI"/>
+		</Unit>
+		<Unit filename="/home/sspc/Desktop/AP_Projects/hotelReservation_with_UI/main.cpp">
+			<Option target="hotelReservation_with_UI"/>
+		</Unit>
+		<Unit filename="/home/sspc/Desktop/AP_Projects/hotelReservation_with_UI/source/cityFilter.cpp">
+			<Option target="hotelReservation_with_UI"/>
+		</Unit>
+		<Unit filename="/home/sspc/Desktop/AP_Projects/hotelReservation_with_UI/source/costFilter.cpp">
+			<Option target="hotelReservation_with_UI"/>
+		</Unit>
+		<Unit filename="/home/sspc/Desktop/AP_Projects/hotelReservation_with_UI/source/defaultPriceFilter.cpp">
+			<Option target="hotelReservation_with_UI"/>
+		</Unit>
+		<Unit filename="/home/sspc/Desktop/AP_Projects/hotelReservation_with_UI/source/filter.cpp">
+			<Option target="hotelReservation_with_UI"/>
+		</Unit>
+		<Unit filename="/home/sspc/Desktop/AP_Projects/hotelReservation_with_UI/source/hotel.cpp">
+			<Option target="hotelReservation_with_UI"/>
+		</Unit>
+		<Unit filename="/home/sspc/Desktop/AP_Projects/hotelReservation_with_UI/source/hotelExceptions.cpp">
+			<Option target="hotelReservation_with_UI"/>
+		</Unit>
+		<Unit filename="/home/sspc/Desktop/AP_Projects/hotelReservation_with_UI/source/ratingWeights.cpp">
+			<Option target="hotelReservation_with_UI"/>
+		</Unit>
+		<Unit filename="/home/sspc/Desktop/AP_Projects/hotelReservation_with_UI/source/ratings.cpp">
+			<Option target="hotelReservation_with_UI"/>
+		</Unit>
+		<Unit filename="/home/sspc/Desktop/AP_Projects/hotelReservation_with_UI/source/reservationSystem.cpp">
+			<Option target="hotelReservation_with_UI"/>
+		</Unit>
+		<Unit filename="/home/sspc/Desktop/AP_Projects/hotelReservation_with_UI/source/room.cpp">
+			<Option target="hotelReservation_with_UI"/>
+		</Unit>
+		<Unit filename="/home/sspc/Desktop/AP_Projects/hotelReservation_with_UI/source/roomFilter.cpp">
+			<Option target="hotelReservation_with_UI"/>
+		</Unit>
+		<Unit filename="/home/sspc/Desktop/AP_Projects/hotelReservation_with_UI/source/starFilter.cpp">
+			<Option target="hotelReservation_with_UI"/>
+		</Unit>
+		<Unit filename="/home/sspc/Desktop/AP_Projects/hotelReservation_with_UI/source/user.cpp">
+			<Option target="hotelReservation_with_UI"/>
+		</Unit>
+		<Unit filename="/home/sspc/Desktop/AP_Projects/hotelReservation_with_UI/source/userReservation.cpp">
+			<Option target="hotelReservation_with_UI"/>
+		</Unit>
+		<Unit filename="/home/sspc/Desktop/AP_Projects/hotelReservation_with_UI/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

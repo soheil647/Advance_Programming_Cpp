@@ -1,0 +1,3 @@
+/home/sspc/Desktop/AP_Projects/hotelReservation_with_UI/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/sspc/Desktop/AP_Projects/hotelReservation_with_UI/cmake-build-debug/CMakeFiles/hotelReservation_with_UI.dir
+/home/sspc/Desktop/AP_Projects/hotelReservation_with_UI/cmake-build-debug/CMakeFiles/edit_cache.dir

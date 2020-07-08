@@ -14,6 +14,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/Smart_Hotel_Reservation.dir/source/starFilter.cpp.o"
   "CMakeFiles/Smart_Hotel_Reservation.dir/source/user.cpp.o"
   "CMakeFiles/Smart_Hotel_Reservation.dir/source/userReservation.cpp.o"
+  "CMakeFiles/Smart_Hotel_Reservation.dir/test.cpp.o"
   "Smart_Hotel_Reservation"
   "Smart_Hotel_Reservation.pdb"
 )

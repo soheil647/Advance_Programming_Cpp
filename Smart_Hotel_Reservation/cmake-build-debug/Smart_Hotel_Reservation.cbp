@@ -171,6 +171,9 @@
 		<Unit filename="/home/sspc/Desktop/AP_Projects/Smart_Hotel_Reservation/source/userReservation.cpp">
 			<Option target="Smart_Hotel_Reservation"/>
 		</Unit>
+		<Unit filename="/home/sspc/Desktop/AP_Projects/Smart_Hotel_Reservation/test.cpp">
+			<Option target="Smart_Hotel_Reservation"/>
+		</Unit>
 		<Unit filename="/home/sspc/Desktop/AP_Projects/Smart_Hotel_Reservation/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
