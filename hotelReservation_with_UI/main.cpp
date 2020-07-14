@@ -21,11 +21,13 @@ using namespace std;
 
 int main(int argc, char **argv) {
     try {
+        auto my_app = new ReservationSystem("./assets/hotels.csv", "./assets/ratings.csv");
         Server server(8080);
 
-        server.get("/", new Login());
-        server.get("/add", new Adder());
-        server.get("/login", new ShowPage("static/login.html"));
+        server.post("/checkSignUp", new CheckSignUp(my_app));
+        server.post("/add", new Adder());
+        server.get("/", new ShowPage("static/welcome.html"));
+        server.post("/panel", new ShowPage("static/addform.html"));
         server.get("/addform", new ShowPage("static/addform.html"));
 
         server.run();

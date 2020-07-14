@@ -52,7 +52,7 @@ private:
     void get_manual_weights(std::stringstream &arg);
 public:
     ReservationSystem(const std::string& file_path_hotel, const std::string& file_path_rating);
-    void parse_command(std::stringstream& input_line);
+    void parse_command(std::stringstream& input_line, const std::string& method, const std::string& command);
 };
 
 

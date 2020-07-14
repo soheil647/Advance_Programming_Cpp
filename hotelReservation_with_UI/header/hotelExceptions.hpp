@@ -6,6 +6,7 @@
 #include <iostream>
 #include <bits/stdc++.h>
 
+#define DUPLICATE_USER "User already Taken"
 #define NOT_FOUND "Not Found"
 #define BAD_REQUEST "Bad Request"
 #define PERMISSION_DENIED "Permission Denied"
@@ -21,7 +22,7 @@ public:
     std::string error;
     explicit Hotel_Exceptions(const std::string& _error);
 //    const char* what() const throw() override { return error;}
-    void handle_error(){std::cout << error << std::endl;}
+    std::string handle_error(){std::cout << error << std::endl; return error;}
 };
 
 

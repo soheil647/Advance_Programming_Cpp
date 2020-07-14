@@ -23,6 +23,7 @@ Response *Adder::callback(Request *req) {
 
     int num1 = stoi(req->getBodyParam("num1"));
     int num2 = stoi(req->getBodyParam("num2"));
+//    string ss = req->getBody();
 
     ostringstream body;
     body
@@ -36,3 +37,23 @@ Response *Adder::callback(Request *req) {
     return res;
 }
 
+Response *CheckSignUp::callback(Request * req) {
+    auto res = new Response;
+    res->setHeader("Content-Type", "text/html");
+    stringstream input(req->getBody());
+    try {
+        my_app->parse_command(input, "POST", "signup");
+    }
+    catch (Hotel_Exceptions& err){
+        err.handle_error();
+//        throw Server::Exception(err.handle_error());
+        res = Response::redirect("/");
+        res->setBody(err.handle_error());
+        return res;
+    }
+    string args = "true";
+    res = Response::redirect("/");
+    res->setSessionId("SID");
+    res->setHeader("error", args);
+    return res;
+}

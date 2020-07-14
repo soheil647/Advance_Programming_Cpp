@@ -30,13 +30,14 @@ ReservationSystem::ReservationSystem(const std::string &file_path_hotel, const s
     logged_user = nullptr;
 }
 
-void ReservationSystem::parse_command(stringstream& input_line) {
-    string word;
-    getline(input_line, word, ' ');
-    string method = word;
-    getline(input_line, word, ' ');
-    string command = word;
-    getline(input_line, word, ' ');
+void ReservationSystem::parse_command(stringstream& input_line, const string& method, const string& command) {
+//    cout << input_line.str() << endl << endl;
+//    string word;
+//    getline(input_line, word, ' ');
+//    string method = word;
+//    getline(input_line, word, ' ');
+//    string command = word;
+//    getline(input_line, word, ' ');
 
     return find_command_action(input_line, method, command);
 }
@@ -160,10 +161,20 @@ ReservationSystem::Commands ReservationSystem::resolve_command(const std::string
 }
 
 vector<string> ReservationSystem::resolve_arguments(std::stringstream &arg){
-    string word;
+    string word_command;
     vector<string> args;
-    while(getline(arg, word, ' ')){
-        args.push_back(word);
+    while(getline(arg, word_command, '&')){
+        string word;
+
+        size_t pos = 0;
+        std::string token;
+        string delimiter = "=";
+        word_command += '=';
+        while ((pos = word_command.find(delimiter)) != std::string::npos) {
+            token = word_command.substr(0, pos);
+            args.push_back(token);
+            word_command.erase(0, pos + delimiter.length());
+        }
     }
     return args;
 }
@@ -180,11 +191,11 @@ void ReservationSystem::post_signup(std::stringstream &arg) {
             _password = args[i+1];
         else throw Hotel_Exceptions(BAD_REQUEST);
     }
-
     User* new_user = new User(_email, _username, _password);
     for(User *user : users){
-        if(user->operator==(*new_user))
-            throw Hotel_Exceptions(BAD_REQUEST);
+        if(user->operator==(*new_user)) {
+            throw Hotel_Exceptions(DUPLICATE_USER);
+        }
     }
     users.push_back(new_user);
     logged_user = new_user;

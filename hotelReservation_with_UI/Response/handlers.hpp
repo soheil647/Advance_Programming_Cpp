@@ -5,6 +5,7 @@
 #include <iostream>
 #include <string>
 #include <sstream>
+#include "../header/reservationSystem.hpp"
 
 class Login : public RequestHandler {
 public:
@@ -13,6 +14,14 @@ public:
 
 class Adder : public RequestHandler {
 public:
+    Response *callback(Request *) override;
+};
+
+class CheckSignUp : public RequestHandler {
+private:
+    ReservationSystem* my_app;
+public:
+    explicit CheckSignUp(ReservationSystem* app){my_app = app;};
     Response *callback(Request *) override;
 };
 
