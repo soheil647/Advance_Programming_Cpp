@@ -88,7 +88,7 @@ public:
     void show_rating_weights();
     void off_rating_weights();
     void add_rating(const std::string& hotel_id, float location, float cleanliness, float staff, float facilities, float value_for_money, float overall_Rating);
-
+    std::vector<float> get_wallet_history();
 
 };
 

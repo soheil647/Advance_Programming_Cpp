@@ -79,12 +79,19 @@ public:
     int get_luxury_price();
     int get_premium_price();
     float get_average_price();
+    std::string get_image();
 
     void save_rating(const std::vector<std::string>& rating_information);
 
     float get_rating(const std::vector<Ratings *>& user_ratings, RatingWeights *user_rating_weights, RatingWeights *estimate_weights);
 
     float personal_rating_by_weights(RatingWeights *user_weights);
+
+    std::vector<int> get_rooms_details();
+
+    std::string get_amenities();
+
+    std::string get_overview();
 };
 
 

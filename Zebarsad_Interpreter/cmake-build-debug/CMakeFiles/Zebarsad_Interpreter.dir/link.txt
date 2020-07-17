@@ -1,1 +1,1 @@
-/usr/bin/c++  -g   CMakeFiles/Zebarsad_Interpreter.dir/main.cpp.o CMakeFiles/Zebarsad_Interpreter.dir/2.cpp.o  -o Zebarsad_Interpreter 
+/usr/bin/c++  -g   CMakeFiles/Zebarsad_Interpreter.dir/810195416.cpp.o CMakeFiles/Zebarsad_Interpreter.dir/2.cpp.o  -o Zebarsad_Interpreter 

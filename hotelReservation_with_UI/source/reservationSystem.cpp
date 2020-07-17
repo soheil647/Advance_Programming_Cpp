@@ -249,8 +249,9 @@ void ReservationSystem::get_wallet(std::stringstream &arg) {
             count = stoi(args[i+1]);
         else throw Hotel_Exceptions(BAD_REQUEST);
     }
-    logged_user->show_wallet_history(count);
+    return logged_user->show_wallet_history(count);
     cout << "OK" << endl;
+
 }
 
 void ReservationSystem::post_comments(std::stringstream &arg) {
@@ -450,7 +451,7 @@ ReservationSystem::GetHotelType ReservationSystem::resolve_hotel_command(const v
         return invalid;
 }
 
-void ReservationSystem::print_one_hotel(const vector<string>& args){
+Hotel * ReservationSystem::print_one_hotel(const vector<string>& args){
     string id;
     for(int i = 0; i < args.size(); i += 2) {
         if (args[i] == "id")
@@ -459,9 +460,10 @@ void ReservationSystem::print_one_hotel(const vector<string>& args){
             throw Hotel_Exceptions(BAD_REQUEST);
     }
     find_hotel_by_id(id)->print_hotel();
+    return find_hotel_by_id(id);
 }
 
-void ReservationSystem::print_filter_hotels(){
+vector<Hotel *> ReservationSystem::print_filter_hotels(){
     check_logged_user();
     vector<Hotel*> filtered_hotels = filter_hotels();
     if(filtered_hotels.empty())
@@ -471,6 +473,7 @@ void ReservationSystem::print_filter_hotels(){
         cout << "* Results have been filtered by the default price filter." << endl;
     for(auto hotel : filtered_hotels)
         hotel->print_summery_of_hotel();
+    return filtered_hotels;
 }
 
 vector<Hotel*> ReservationSystem::filter_hotels(){
@@ -558,4 +561,54 @@ void ReservationSystem::post_manual_weights(std::stringstream &arg) {
 void ReservationSystem::get_manual_weights(std::stringstream &arg) {
     check_logged_user();
     logged_user->show_rating_weights();
+}
+
+User *ReservationSystem::get_logged_user() {
+    return logged_user;
+}
+
+void ReservationSystem::set_logged_user(const std::string& user_name) {
+    for(auto user : users)
+        if(user->get_username() == user_name) {
+            logged_user = user;
+            return;
+        }
+
+    throw Hotel_Exceptions(BAD_REQUEST);
+}
+
+std::vector<Hotel *> ReservationSystem::get_hotels(std::stringstream &arg, bool all_is=true) {
+    vector<string> args = resolve_arguments(arg);
+    check_logged_user();
+//    switch (resolve_hotel_command(args)) {
+//        case one: {
+//            vector<Hotel*> new_hotel {print_one_hotel(args)};
+//            return new_hotel;
+//        }
+//        case all: {
+//            return print_filter_hotels();
+//        }
+//        case invalid: {
+//            throw Hotel_Exceptions(BAD_REQUEST);
+//        }
+//    }
+    return print_filter_hotels();
+}
+
+std::vector<float> ReservationSystem::get_wallet() {
+    return logged_user->get_wallet_history();
+}
+
+void ReservationSystem::add_wallet(const std::string& new_wallet) {
+    this->logged_user->charging_wallet(stof(new_wallet));
+
+}
+
+Hotel *ReservationSystem::get_hotel(const std::string& hotel_id) {
+    string id = hotel_id.substr(0, hotel_id.size()-1);
+    for(auto hotel : hotels) {
+        if (hotel->get_id() == id)
+            return hotel;
+    }
+    throw Hotel_Exceptions(BAD_REQUEST);
 }

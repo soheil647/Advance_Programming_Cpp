@@ -150,32 +150,32 @@ Zebarsad_Interpreter/fast:
 	$(MAKE) -f CMakeFiles/Zebarsad_Interpreter.dir/build.make CMakeFiles/Zebarsad_Interpreter.dir/2.cpp.s
 .PHONY : 2.cpp.s
 
-main.o: main.cpp.o
+810195416.o: 810195416.cpp.o
 
-.PHONY : main.o
+.PHONY : 810195416.o
 
 # target to build an object file
-main.cpp.o:
-	$(MAKE) -f CMakeFiles/Zebarsad_Interpreter.dir/build.make CMakeFiles/Zebarsad_Interpreter.dir/main.cpp.o
-.PHONY : main.cpp.o
+810195416.cpp.o:
+	$(MAKE) -f CMakeFiles/Zebarsad_Interpreter.dir/build.make CMakeFiles/Zebarsad_Interpreter.dir/810195416.cpp.o
+.PHONY : 810195416.cpp.o
 
-main.i: main.cpp.i
+810195416.i: 810195416.cpp.i
 
-.PHONY : main.i
+.PHONY : 810195416.i
 
 # target to preprocess a source file
-main.cpp.i:
-	$(MAKE) -f CMakeFiles/Zebarsad_Interpreter.dir/build.make CMakeFiles/Zebarsad_Interpreter.dir/main.cpp.i
-.PHONY : main.cpp.i
+810195416.cpp.i:
+	$(MAKE) -f CMakeFiles/Zebarsad_Interpreter.dir/build.make CMakeFiles/Zebarsad_Interpreter.dir/810195416.cpp.i
+.PHONY : 810195416.cpp.i
 
-main.s: main.cpp.s
+810195416.s: 810195416.cpp.s
 
-.PHONY : main.s
+.PHONY : 810195416.s
 
 # target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) -f CMakeFiles/Zebarsad_Interpreter.dir/build.make CMakeFiles/Zebarsad_Interpreter.dir/main.cpp.s
-.PHONY : main.cpp.s
+810195416.cpp.s:
+	$(MAKE) -f CMakeFiles/Zebarsad_Interpreter.dir/build.make CMakeFiles/Zebarsad_Interpreter.dir/810195416.cpp.s
+.PHONY : 810195416.cpp.s
 
 # Help Target
 help:
@@ -189,9 +189,9 @@ help:
 	@echo "... 2.o"
 	@echo "... 2.i"
 	@echo "... 2.s"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
+	@echo "... 810195416.o"
+	@echo "... 810195416.i"
+	@echo "... 810195416.s"
 .PHONY : help
 
 

@@ -57,18 +57,18 @@ include CMakeFiles/Zebarsad_Interpreter.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/Zebarsad_Interpreter.dir/flags.make
 
-CMakeFiles/Zebarsad_Interpreter.dir/main.cpp.o: CMakeFiles/Zebarsad_Interpreter.dir/flags.make
-CMakeFiles/Zebarsad_Interpreter.dir/main.cpp.o: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sspc/Desktop/AP_Projects/Zebarsad_Interpreter/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Zebarsad_Interpreter.dir/main.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Zebarsad_Interpreter.dir/main.cpp.o -c /home/sspc/Desktop/AP_Projects/Zebarsad_Interpreter/main.cpp
+CMakeFiles/Zebarsad_Interpreter.dir/810195416.cpp.o: CMakeFiles/Zebarsad_Interpreter.dir/flags.make
+CMakeFiles/Zebarsad_Interpreter.dir/810195416.cpp.o: ../810195416.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sspc/Desktop/AP_Projects/Zebarsad_Interpreter/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Zebarsad_Interpreter.dir/810195416.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Zebarsad_Interpreter.dir/810195416.cpp.o -c /home/sspc/Desktop/AP_Projects/Zebarsad_Interpreter/810195416.cpp
 
-CMakeFiles/Zebarsad_Interpreter.dir/main.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Zebarsad_Interpreter.dir/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/sspc/Desktop/AP_Projects/Zebarsad_Interpreter/main.cpp > CMakeFiles/Zebarsad_Interpreter.dir/main.cpp.i
+CMakeFiles/Zebarsad_Interpreter.dir/810195416.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Zebarsad_Interpreter.dir/810195416.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/sspc/Desktop/AP_Projects/Zebarsad_Interpreter/810195416.cpp > CMakeFiles/Zebarsad_Interpreter.dir/810195416.cpp.i
 
-CMakeFiles/Zebarsad_Interpreter.dir/main.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Zebarsad_Interpreter.dir/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sspc/Desktop/AP_Projects/Zebarsad_Interpreter/main.cpp -o CMakeFiles/Zebarsad_Interpreter.dir/main.cpp.s
+CMakeFiles/Zebarsad_Interpreter.dir/810195416.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Zebarsad_Interpreter.dir/810195416.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sspc/Desktop/AP_Projects/Zebarsad_Interpreter/810195416.cpp -o CMakeFiles/Zebarsad_Interpreter.dir/810195416.cpp.s
 
 CMakeFiles/Zebarsad_Interpreter.dir/2.cpp.o: CMakeFiles/Zebarsad_Interpreter.dir/flags.make
 CMakeFiles/Zebarsad_Interpreter.dir/2.cpp.o: ../2.cpp
@@ -85,13 +85,13 @@ CMakeFiles/Zebarsad_Interpreter.dir/2.cpp.s: cmake_force
 
 # Object files for target Zebarsad_Interpreter
 Zebarsad_Interpreter_OBJECTS = \
-"CMakeFiles/Zebarsad_Interpreter.dir/main.cpp.o" \
+"CMakeFiles/Zebarsad_Interpreter.dir/810195416.cpp.o" \
 "CMakeFiles/Zebarsad_Interpreter.dir/2.cpp.o"
 
 # External object files for target Zebarsad_Interpreter
 Zebarsad_Interpreter_EXTERNAL_OBJECTS =
 
-Zebarsad_Interpreter: CMakeFiles/Zebarsad_Interpreter.dir/main.cpp.o
+Zebarsad_Interpreter: CMakeFiles/Zebarsad_Interpreter.dir/810195416.cpp.o
 Zebarsad_Interpreter: CMakeFiles/Zebarsad_Interpreter.dir/2.cpp.o
 Zebarsad_Interpreter: CMakeFiles/Zebarsad_Interpreter.dir/build.make
 Zebarsad_Interpreter: CMakeFiles/Zebarsad_Interpreter.dir/link.txt

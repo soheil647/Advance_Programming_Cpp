@@ -366,3 +366,20 @@ float Hotel::get_rating(const std::vector<Ratings *> &user_ratings, RatingWeight
 float Hotel::personal_rating_by_weights(RatingWeights *user_weights) {
     return file_rating->find_weighted_rate(user_weights);
 }
+
+std::string Hotel::get_image() {
+    return this->image_url;
+}
+
+vector<int> Hotel::get_rooms_details() {
+    vector<int> prices = {number_standard_room, standard_room_price, number_deluxe_room, deluxe_room_price, number_luxury_room, luxury_room_price, number_premium_room, premium_room_price};
+    return prices;
+}
+
+string Hotel::get_amenities() {
+    return this->property_amenities;
+}
+
+string Hotel::get_overview() {
+    return this->hotel_overview;
+}

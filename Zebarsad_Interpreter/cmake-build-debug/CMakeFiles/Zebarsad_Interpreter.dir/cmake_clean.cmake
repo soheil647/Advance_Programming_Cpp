@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/Zebarsad_Interpreter.dir/2.cpp.o"
-  "CMakeFiles/Zebarsad_Interpreter.dir/main.cpp.o"
+  "CMakeFiles/Zebarsad_Interpreter.dir/810195416.cpp.o"
   "Zebarsad_Interpreter"
   "Zebarsad_Interpreter.pdb"
 )

@@ -5,7 +5,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
   "/home/sspc/Desktop/AP_Projects/Zebarsad_Interpreter/2.cpp" "/home/sspc/Desktop/AP_Projects/Zebarsad_Interpreter/cmake-build-debug/CMakeFiles/Zebarsad_Interpreter.dir/2.cpp.o"
-  "/home/sspc/Desktop/AP_Projects/Zebarsad_Interpreter/main.cpp" "/home/sspc/Desktop/AP_Projects/Zebarsad_Interpreter/cmake-build-debug/CMakeFiles/Zebarsad_Interpreter.dir/main.cpp.o"
+  "/home/sspc/Desktop/AP_Projects/Zebarsad_Interpreter/810195416.cpp" "/home/sspc/Desktop/AP_Projects/Zebarsad_Interpreter/cmake-build-debug/CMakeFiles/Zebarsad_Interpreter.dir/810195416.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

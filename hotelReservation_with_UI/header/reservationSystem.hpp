@@ -26,9 +26,9 @@ private:
     static Filters resolve_filter_type(const std::vector<std::string> &args);
     static GetHotelType resolve_hotel_command(const std::vector<std::string> &args);
     void get_hotels(std::stringstream &arg);
-    void print_one_hotel(const std::vector<std::string> &args);
+    Hotel * print_one_hotel(const std::vector<std::string> &args);
     std::vector<Hotel *> filter_hotels();
-    void print_filter_hotels();
+    std::vector<Hotel *> print_filter_hotels();
     bool check_default_filter();
     void post_sort(std::stringstream &arg);
     void check_logged_user();
@@ -53,6 +53,13 @@ private:
 public:
     ReservationSystem(const std::string& file_path_hotel, const std::string& file_path_rating);
     void parse_command(std::stringstream& input_line, const std::string& method, const std::string& command);
+    User* get_logged_user();
+
+    void set_logged_user(const std::string& user_name);
+    std::vector<Hotel *> get_hotels(std::stringstream &arg, bool all);
+    std::vector<float> get_wallet();
+    void add_wallet(const std::string& new_wallet);
+    Hotel* get_hotel(const std::string& hotel_id);
 };
 
 

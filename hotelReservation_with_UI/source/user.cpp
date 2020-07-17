@@ -141,8 +141,12 @@ void User::add_star_filter(std::vector<std::string> args) {
             max_star = stoi(args[i + 1]);
         else
             throw Hotel_Exceptions(BAD_REQUEST);
+
     }
     check_star_filter(min_star, max_star);
+    for(int i = 0; i < filters.size(); i++)
+        if (filters[i]->get_name() == "star")
+            filters.erase(filters.begin() + i);
     filters.push_back(new StarFilter(min_star, max_star));
 }
 
@@ -524,6 +528,10 @@ double User::cut_float(double number, double high, double low){
         return low;
     else
         return number;
+}
+
+std::vector<float> User::get_wallet_history() {
+    return wallet_history;
 }
 
 

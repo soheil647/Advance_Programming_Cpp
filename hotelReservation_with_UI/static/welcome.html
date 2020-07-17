@@ -366,7 +366,10 @@
             alert("Password Cant be Empty");
             return false;
         }
-        alert('Code has accepted : you can try another');
+        if(document.forms["signup"]["password"].value !== document.getElementById("confirm").value){
+            alert("Passwords are not the same!!");
+            return false;
+        }
         return true;
     }
 
@@ -470,7 +473,7 @@
                         <div class="cont_img_back_">
                             <img src="https://images.unsplash.com/42/U7Fc1sy5SCUDIu4tlJY3_NY_by_PhilippHenzler_philmotion.de.jpg?ixlib=rb-0.3.5&q=50&fm=jpg&crop=entropy&s=7686972873678f32efaf2cd79671673d" alt="" />
                         </div>
-                        <form class="cont_form_login" action="/panel" method="post">
+                        <form class="cont_form_login" action="/checkLogin" method="post">
                             <a href="#" onclick="ocultar_login_sign_up()" ><i class="material-icons">&#xE5C4;</i></a>
                             <h2>LOGIN</h2>
                             <input name="email" type="text" placeholder="Email" />
@@ -484,7 +487,7 @@
                             <input name="email" type="text" placeholder="Email" />
                             <input name="username" type="text" placeholder="User" />
                             <input name="password" type="password" placeholder="Password" />
-                            <input type="password" placeholder="Confirm Password" />
+                            <input id="confirm" type="password" placeholder="Confirm Password" />
                             <button type="submit" class="btn_sign_up" value="SIGN UP"> SIGN UP </button>
                         </form>
 
