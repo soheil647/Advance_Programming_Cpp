@@ -1,0 +1,8 @@
+?a
+  ? b
+? s
+  diff  =  b - a
+!  a
+! b
+! diff
+$ 2 4 5

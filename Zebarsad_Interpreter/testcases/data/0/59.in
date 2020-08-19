@@ -1,0 +1,9 @@
+? a
+b = a
+c = a
+d = a
+e = a
+l = b + c + d + e
+!l
+? x
+$ 1 2
